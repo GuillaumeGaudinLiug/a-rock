@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d08san4f4qgl2"]
+
+[ext_resource type="Script" uid="uid://bqqrhl6vqdl7x" path="res://donjond/common/room.gd" id="1_gqni1"]
+
+[node name="Room" type="Node2D" unique_id=1634010203]
+script = ExtResource("1_gqni1")
+
+[node name="Zone" type="Area2D" parent="." unique_id=1380694902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=862488573]
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=675097533]
+
+[node name="WallTop" type="CollisionShape2D" parent="Walls" unique_id=1871280577]
+
+[node name="WallBottom" type="CollisionShape2D" parent="Walls" unique_id=1260568104]
+
+[node name="WallLeft" type="CollisionShape2D" parent="Walls" unique_id=1622712943]
+
+[node name="WallRight" type="CollisionShape2D" parent="Walls" unique_id=1403481496]

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c1wosqdvf44qg"]
+
+[ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://player_exp/player.gd" id="1_e0b2u"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3den"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(404, 447, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk21e"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(422, 447, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thhhj"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(364, 449, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qes40"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(382, 449, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72e7y"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(444, 449, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjum6"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(462, 449, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcisb"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(444, 449, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ov5b"]
+atlas = ExtResource("2_mnirw")
+region = Rect2(462, 449, 18, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iadmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3den")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk21e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thhhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qes40")
+}],
+"loop": 1,
+"name": &"walkdown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72e7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjum6")
+}],
+"loop": 1,
+"name": &"walkleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcisb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ov5b")
+}],
+"loop": 1,
+"name": &"walkright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3den")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk21e")
+}],
+"loop": 1,
+"name": &"walkup",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1261763557]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=927143671]
+script = ExtResource("1_e0b2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=37263839]
+shape = SubResource("RectangleShape2D_e0b2u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=381921272]
+sprite_frames = SubResource("SpriteFrames_iadmu")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1896209301]
+zoom = Vector2(2, 2)
