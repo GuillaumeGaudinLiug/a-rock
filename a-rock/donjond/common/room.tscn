@@ -2,26 +2,44 @@
 
 [ext_resource type="Script" uid="uid://bqqrhl6vqdl7x" path="res://donjond/common/room.gd" id="1_gqni1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqni1"]
+size = Vector2(800, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_optp2"]
+size = Vector2(800, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o4vm"]
+size = Vector2(800, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umqf8"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f14ae"]
+size = Vector2(20, 600)
+
 [node name="Room" type="Node2D" unique_id=1634010203]
 script = ExtResource("1_gqni1")
-size = null
-wall_thickness = null
 
 [node name="Zone" type="Area2D" parent="." unique_id=1380694902]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=862488573]
+shape = SubResource("RectangleShape2D_gqni1")
 debug_color = Color(0.072747625, 0.61239403, 0.60952616, 0.41960785)
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=675097533]
 
 [node name="WallTop" type="CollisionShape2D" parent="Walls" unique_id=1871280577]
+position = Vector2(0, -300)
+shape = SubResource("RectangleShape2D_optp2")
 
 [node name="WallBottom" type="CollisionShape2D" parent="Walls" unique_id=1260568104]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_0o4vm")
 
 [node name="WallLeft" type="CollisionShape2D" parent="Walls" unique_id=1622712943]
+position = Vector2(-400, 0)
+shape = SubResource("RectangleShape2D_umqf8")
 
 [node name="WallRight" type="CollisionShape2D" parent="Walls" unique_id=1403481496]
-
-[node name="SpawnFromRoom" type="Marker2D" parent="." unique_id=1042243586]
-
-[node name="SpawnFromRoom2" type="Marker2D" parent="." unique_id=621700846]
+position = Vector2(400, 0)
+shape = SubResource("RectangleShape2D_f14ae")

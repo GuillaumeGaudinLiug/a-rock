@@ -98,18 +98,19 @@ animations = [{
 
 [node name="Node2D" type="Node2D" unique_id=1261763557]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=927143671]
+[node name="PlayerExpl" type="CharacterBody2D" parent="." unique_id=927143671 groups=["player"]]
 script = ExtResource("1_e0b2u")
 speed = 150.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=37263839]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerExpl" unique_id=37263839]
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_e0b2u")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=381921272]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerExpl" unique_id=381921272]
 sprite_frames = SubResource("SpriteFrames_iadmu")
+animation = &"walkdown"
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1896209301 groups=["main_camera"]]
+[node name="Camera2D" type="Camera2D" parent="PlayerExpl" unique_id=1896209301 groups=["main_camera"]]
 zoom = Vector2(2, 2)
 limit_left = -10000
 limit_top = -10000
