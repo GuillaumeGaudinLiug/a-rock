@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]
+size = Vector2(15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3den"]
 atlas = ExtResource("2_mnirw")
@@ -99,12 +100,18 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=927143671]
 script = ExtResource("1_e0b2u")
+speed = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=37263839]
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_e0b2u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=381921272]
 sprite_frames = SubResource("SpriteFrames_iadmu")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1896209301]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1896209301 groups=["main_camera"]]
 zoom = Vector2(2, 2)
+limit_left = -10000
+limit_top = -10000
+limit_right = 10000
+limit_bottom = 10000

@@ -4,10 +4,13 @@
 
 [node name="Room" type="Node2D" unique_id=1634010203]
 script = ExtResource("1_gqni1")
+size = null
+wall_thickness = null
 
 [node name="Zone" type="Area2D" parent="." unique_id=1380694902]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=862488573]
+debug_color = Color(0.072747625, 0.61239403, 0.60952616, 0.41960785)
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=675097533]
 
@@ -18,3 +21,7 @@ script = ExtResource("1_gqni1")
 [node name="WallLeft" type="CollisionShape2D" parent="Walls" unique_id=1622712943]
 
 [node name="WallRight" type="CollisionShape2D" parent="Walls" unique_id=1403481496]
+
+[node name="SpawnFromRoom" type="Marker2D" parent="." unique_id=1042243586]
+
+[node name="SpawnFromRoom2" type="Marker2D" parent="." unique_id=621700846]
