@@ -3,8 +3,8 @@ class_name Weapon
 extends Resource
 
 @export var weapon_name: String = ""
-@export var icon: Texture2D
-@export var max_level: int = 10
+@export var icon: SpriteFrames
+@export var max_level: int = 6
 
 @export var level_bonuses: Array[WeaponLevelStats] = []  # index 0 = niveau 1, index 9 = niveau 10
 

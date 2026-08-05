@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://b2hexck2gqsdd"]
+
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://GameManagers/database/character_classes/Character_class.gd" id="1_d2vci"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_mfutj"]
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://GameManagers/database/ProgressionLevelEntry.gd" id="1_s0v7b"]
+[ext_resource type="Resource" uid="uid://c1ri8ixxfrw78" path="res://GameManagers/database/Weapons/Shield.tres" id="2_mfutj"]
+
+[sub_resource type="Resource" id="Resource_g1ui6"]
+script = ExtResource("1_s0v7b")
+xp_required = 100
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_j4wau"]
+script = ExtResource("1_s0v7b")
+xp_required = 250
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_gg8vd"]
+script = ExtResource("1_s0v7b")
+xp_required = 500
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_2gc1c"]
+script = ExtResource("1_s0v7b")
+xp_required = 1000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_lg4hu"]
+script = ExtResource("1_s0v7b")
+xp_required = 2000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0v7b"]
+atlas = ExtResource("1_mfutj")
+region = Rect2(0, 29, 18, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wj7py"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0v7b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_d2vci")
+class_name_display = "Protector"
+combat_sprite_frames = SubResource("SpriteFrames_wj7py")
+base_determination = 7
+base_courage = 10
+base_spirit = 8
+base_max_ep = 130
+default_weapon = ExtResource("2_mfutj")
+class_levels = Array[ExtResource("1_s0v7b")]([SubResource("Resource_g1ui6"), SubResource("Resource_j4wau"), SubResource("Resource_gg8vd"), SubResource("Resource_2gc1c"), SubResource("Resource_lg4hu")])
+metadata/_custom_type_script = "uid://c3m2paatdugg7"

@@ -4,7 +4,7 @@ signal state_changed(old_state: GameState, new_state: GameState)
 
 enum GameState { EXPLORATION, COMBAT, MENU, CUTSCENE, TITLESCREEN }
 
-var current_state: GameState = GameState.EXPLORATION
+var current_state: GameState = GameState.TITLESCREEN
 var _state_stack: Array[GameState] = []
 
 
@@ -35,3 +35,7 @@ func _apply_pause(state: GameState) -> void:
 
 func is_state(state: GameState) -> bool:
 	return current_state == state
+
+func goto_scene(scene_path: String, new_state: GameState = GameState.EXPLORATION) -> void:
+	get_tree().change_scene_to_file(scene_path)
+	change_state(new_state)

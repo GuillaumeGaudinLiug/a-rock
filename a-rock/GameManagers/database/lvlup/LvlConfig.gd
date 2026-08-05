@@ -1,13 +1,12 @@
-# BalanceConfig.gd (Autoload)
-extends Node
+# LvlConfig.gd (Autoload)
 
 const INVESTABLE_STATS := ["determination", "courage", "passion", "spirit", "adaptability"]
-
+@export var max_lvl_for_stats: int = 30
 @export var ep_bonus_per_stat: Dictionary = {
-	"determination": 2, "courage": 1, "passion": 0, "spirit": 3, "adaptability": 1,
+	"determination": 1, "courage": 2, "passion": 0, "spirit": 1, "adaptability": 1
 }
 @export var sp_bonus_per_stat: Dictionary = {
-	"determination": 0, "courage": 1, "passion": 3, "spirit": 1, "adaptability": 2,
+	"determination": 0, "courage": 0, "passion": 2, "spirit": 2, "adaptability": 1,
 }
 
 @export var stat_level_costs: Array[ProgressionLevelEntry] = []  # index 0 = coût du 1er stat_level, etc.

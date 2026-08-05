@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="LvlConfig" format=3 uid="uid://cduftdgiwd3tt"]
+
+[ext_resource type="Script" uid="uid://bb8qa81laqo46" path="res://GameManagers/database/lvlup/LvlConfig.gd" id="1_nxxcd"]
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://GameManagers/database/ProgressionLevelEntry.gd" id="2_0acvt"]
+
+[sub_resource type="Resource" id="Resource_uv5i0"]
+script = ExtResource("2_0acvt")
+xp_required = 20
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_j3bgk"]
+script = ExtResource("2_0acvt")
+xp_required = 25
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_dnr05"]
+script = ExtResource("2_0acvt")
+xp_required = 35
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_xr858"]
+script = ExtResource("2_0acvt")
+xp_required = 50
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_jkux4"]
+script = ExtResource("2_0acvt")
+xp_required = 65
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_svn00"]
+script = ExtResource("2_0acvt")
+xp_required = 80
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_rl1cj"]
+script = ExtResource("2_0acvt")
+xp_required = 105
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_6myp1"]
+script = ExtResource("2_0acvt")
+xp_required = 140
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_eyh2j"]
+script = ExtResource("2_0acvt")
+xp_required = 180
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_xr1y4"]
+script = ExtResource("2_0acvt")
+xp_required = 230
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_nxxcd"]
+script = ExtResource("2_0acvt")
+xp_required = 290
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[resource]
+script = ExtResource("1_nxxcd")
+stat_level_costs = Array[ExtResource("2_0acvt")]([SubResource("Resource_uv5i0"), SubResource("Resource_j3bgk"), SubResource("Resource_dnr05"), SubResource("Resource_xr858"), SubResource("Resource_jkux4"), SubResource("Resource_svn00"), SubResource("Resource_rl1cj"), SubResource("Resource_6myp1"), SubResource("Resource_eyh2j"), SubResource("Resource_xr1y4"), SubResource("Resource_nxxcd"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://bb8qa81laqo46"

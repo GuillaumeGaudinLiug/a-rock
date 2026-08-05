@@ -9,6 +9,7 @@ var can_transition: bool = true
 
 @onready var point_a: Area2D = $PointA
 @onready var point_b: Area2D = $PointB
+@onready var sfx: AudioStreamPlayer = $SFX
 
 
 func _ready() -> void:
@@ -33,6 +34,8 @@ func _on_point_b_entered(body: Node2D) -> void:
 
 func _teleport(body: Node2D, target_point: Area2D, target_room: Room) -> void:
 	can_transition = false
+	sfx.play()
+
 	body.global_position = target_point.global_position
 	if target_room != null:
 		target_room.apply_camera_limits()

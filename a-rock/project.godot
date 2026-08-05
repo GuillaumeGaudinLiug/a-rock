@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://b6brnphfracnr"
 GameData="*uid://ddkqq5jrf1t1h"
+Database="*uid://boosqtt1t2sck"
 LvlConfig="*uid://bb8qa81laqo46"
 
 [display]

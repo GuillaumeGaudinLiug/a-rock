@@ -1,0 +1,617 @@
+[gd_scene format=4 uid="uid://bv2s7unt4nhqv"]
+
+[ext_resource type="TileSet" uid="uid://v3yxx15h2fgs" path="res://donjon/prison/prison.tres" id="2_g4tr2"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_s6u1d"]
+[ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="4_4oi1w"]
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://player_exp/player_expl.tscn" id="4_sqt8m"]
+[ext_resource type="PackedScene" uid="uid://cg24qfuuww32f" path="res://donjon/common/door.tscn" id="5_4oi1w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4tr2"]
+texture = ExtResource("2_s6u1d")
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+13:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+15:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+8:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+10:23/0 = 0
+11:23/0 = 0
+12:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+10:24/0 = 0
+11:24/0 = 0
+12:24/0 = 0
+13:24/0 = 0
+14:24/0 = 0
+15:24/0 = 0
+0:25/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+9:25/0 = 0
+10:25/0 = 0
+11:25/0 = 0
+12:25/0 = 0
+13:25/0 = 0
+14:25/0 = 0
+15:25/0 = 0
+0:26/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+4:26/0 = 0
+5:26/0 = 0
+6:26/0 = 0
+7:26/0 = 0
+8:26/0 = 0
+9:26/0 = 0
+10:26/0 = 0
+11:26/0 = 0
+12:26/0 = 0
+13:26/0 = 0
+14:26/0 = 0
+15:26/0 = 0
+0:27/0 = 0
+1:27/0 = 0
+2:27/0 = 0
+3:27/0 = 0
+4:27/0 = 0
+5:27/0 = 0
+6:27/0 = 0
+7:27/0 = 0
+8:27/0 = 0
+9:27/0 = 0
+10:27/0 = 0
+11:27/0 = 0
+12:27/0 = 0
+13:27/0 = 0
+14:27/0 = 0
+15:27/0 = 0
+0:28/0 = 0
+1:28/0 = 0
+2:28/0 = 0
+3:28/0 = 0
+4:28/0 = 0
+5:28/0 = 0
+6:28/0 = 0
+7:28/0 = 0
+8:28/0 = 0
+9:28/0 = 0
+10:28/0 = 0
+11:28/0 = 0
+12:28/0 = 0
+13:28/0 = 0
+14:28/0 = 0
+15:28/0 = 0
+0:29/0 = 0
+1:29/0 = 0
+2:29/0 = 0
+3:29/0 = 0
+4:29/0 = 0
+5:29/0 = 0
+6:29/0 = 0
+7:29/0 = 0
+8:29/0 = 0
+9:29/0 = 0
+10:29/0 = 0
+11:29/0 = 0
+12:29/0 = 0
+13:29/0 = 0
+14:29/0 = 0
+15:29/0 = 0
+0:30/0 = 0
+1:30/0 = 0
+2:30/0 = 0
+3:30/0 = 0
+4:30/0 = 0
+5:30/0 = 0
+6:30/0 = 0
+7:30/0 = 0
+8:30/0 = 0
+9:30/0 = 0
+10:30/0 = 0
+11:30/0 = 0
+12:30/0 = 0
+13:30/0 = 0
+14:30/0 = 0
+15:30/0 = 0
+0:31/0 = 0
+1:31/0 = 0
+2:31/0 = 0
+3:31/0 = 0
+4:31/0 = 0
+5:31/0 = 0
+6:31/0 = 0
+7:31/0 = 0
+8:31/0 = 0
+9:31/0 = 0
+10:31/0 = 0
+11:31/0 = 0
+12:31/0 = 0
+13:31/0 = 0
+14:31/0 = 0
+15:31/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+15:10/0 = 0
+14:10/0 = 0
+13:10/0 = 0
+13:9/0 = 0
+15:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s6u1d"]
+sources/0 = SubResource("TileSetAtlasSource_g4tr2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oi1w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lfe6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0g3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42yvf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsha8"]
+size = Vector2(25, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxvs5"]
+size = Vector2(16, 16)
+
+[node name="Prison" type="Node2D" unique_id=1182097121]
+
+[node name="GraphicLayer" type="Node2D" parent="." unique_id=1234169246]
+
+[node name="Ground" type="TileMapLayer" parent="GraphicLayer" unique_id=533147786]
+tile_map_data = PackedByteArray("AAD6/wEAAAABABcAAAD6/wIAAAABABcAAAD6/wMAAAABABcAAAD7/wEAAAAAABcAAAD7/wIAAAAAABcAAAD7/wMAAAAAABcAAAD8/wEAAAABABcAAAD8/wIAAAABABcAAAD8/wMAAAABABcAAAD4/wIAAAABABcAAAD4/wMAAAABABcAAAD4/wQAAAABABcAAAD5/wIAAAAAABcAAAD5/wMAAAAAABcAAAD5/wQAAAAAABcAAAD6/wQAAAABABcAAAD+/wAAAAABABcAAAD+/wEAAAABABcAAAD/////AAAAABcAAAAAAP//AAABABcAAAAAAAEAAAABABcAAAD+/wIAAAABABcAAAD9/wAAAAAAABcAAAD9/wEAAAAAABcAAAD9/wIAAAAAABcAAAD+/wMAAAABABcAAAD+/wQAAAABABcAAAD+/wUAAAAEABgAAAD//wQAAAAAABcAAAD//wUAAAAEABgAAAAAAAMAAAABABcAAAAAAAQAAAABABcAAAAAAAUAAAAEABgAAAD2////AAADABcAAAD2/wAAAAADABcAAAD2/wEAAAADABcAAAD3/wAAAAAAABcAAAD3/wEAAAAAABcAAAD4/wAAAAABABcAAAD4/wEAAAABABcAAAD5/wAAAAAAABcAAAD5/wEAAAAAABcAAAD6/wAAAAABABcAAAD7/wAAAAAAABcAAAD7/wQAAAAAABcAAAD8/wQAAAABABcAAAD9/wMAAAAAABcAAAD9/wQAAAAAABcAAAD//wIAAAAAABcAAAD//wMAAAAAABcAAAAAAAIAAAABABcAAAABAAIAAAAAABcAAAABAAMAAAAAABcAAAABAAQAAAAAABcAAAACAAIAAAABABcAAAACAAMAAAABABcAAAACAAQAAAABABcAAAADAAIAAAAAABcAAAADAAMAAAAAABcAAAADAAQAAAAAABcAAAAEAAIAAAABABcAAAAEAAMAAAABABcAAAAEAAQAAAABABcAAAD//wEAAAAAABcAAAD3/wQAAAAAABcAAAAFAAQAAAAAABcAAAAGAAQAAAABABcAAAAHAAQAAAAAABcAAAAIAAQAAAABABcAAAD3/wMAAAAAABcAAAAFAAMAAAAAABcAAAAGAAMAAAABABcAAAAHAAMAAAAAABcAAAAIAAMAAAABABcAAAAHAAIAAAAAABcAAAAIAAIAAAABABcAAAAFAAIAAAAAABcAAAAGAAIAAAABABcAAAD3/wIAAAAAABcAAAABAAEAAAAAABcAAAACAAEAAAABABcAAAADAAEAAAAAABcAAAAEAAEAAAABABcAAAAFAAEAAAAAABcAAAAGAAEAAAABABcAAAAHAAEAAAAAABcAAAAIAAEAAAABABcAAAD8/wAAAAABABcAAAD//wAAAAAAABcAAAAAAAAAAAABABcAAAABAAAAAAAAABcAAAACAAAAAAABABcAAAADAAAAAAAAABcAAAAEAAAAAAABABcAAAAFAAAAAAAAABcAAAAGAAAAAAABABcAAAAHAAAAAAAAABcAAAAIAAAAAAABABcAAAAHAP//AAAAABcAAAAIAP//AAABABcAAAAFAP//AAAAABcAAAAGAP//AAABABcAAAADAP//AAAAABcAAAAEAP//AAABABcAAAABAP//AAAAABcAAAACAP//AAABABcAAAD9////AAAAABcAAAD+////AAABABcAAAD7////AAAAABcAAAD8////AAABABcAAAD5////AAAAABcAAAD6////AAABABcAAAD3////AAAAABcAAAD4////AAABABcAAAD3//3/AAAAABcAAAD4//3/AAABABcAAAD3//7/AAAAABcAAAD4//7/AAABABcAAAD5//3/AAAAABcAAAD6//3/AAAAABcAAAD5//7/AAAAABcAAAD6//7/AAAAABcAAAD8//3/AAAAABcAAAD9//3/AAABABcAAAD8//7/AAAAABcAAAD9//7/AAABABcAAAAAAP3/AAAAABcAAAABAP3/AAABABcAAAAAAP7/AAAAABcAAAABAP7/AAABABcAAAAFAP3/AAABABcAAAAGAP3/AAAAABcAAAAFAP7/AAABABcAAAAGAP7/AAAAABcAAAAHAP3/AAABABcAAAAIAP3/AAAAABcAAAAHAP7/AAABABcAAAAIAP7/AAABABcAAAD7//7/AAABABcAAAD7//3/AAABABcAAAD6//z/AAAAABcAAAD7//z/AAABABcAAAD4//z/AAABABcAAAD5//z/AAABABcAAAD8//z/AAAAABcAAAD9//z/AAABABcAAAD+//7/AAAAABcAAAD///7/AAABABcAAAAAAPz/AAAAABcAAAABAPz/AAABABcAAAD+//z/AAAAABcAAAD///z/AAABABcAAAD+//3/AAAAABcAAAD///3/AAABABcAAAACAP3/AAAAABcAAAADAP3/AAABABcAAAACAPz/AAAAABcAAAADAPz/AAABABcAAAAEAP3/AAAAABcAAAAEAP7/AAAAABcAAAACAP7/AAAAABcAAAADAP7/AAABABcAAAAEAPz/AAAAABcAAAAFAPz/AAABABcAAAAGAPz/AAAAABcAAAAHAPz/AAAAABcAAAAJAP3/AAAFABcAAAD2//v/AAADABcAAAD2//z/AAADABcAAAD2//3/AAADABcAAAD2//7/AAADABcAAAD2/wIAAAADABcAAAD2/wMAAAADABcAAAD2/wQAAAADABcAAAD2/wUAAAADABgAAAD3/wUAAAAEABgAAAD4/wUAAAAEABgAAAD5/wUAAAAEABgAAAD6/wUAAAAEABgAAAD7/wUAAAAEABgAAAD8/wUAAAAEABgAAAD9/wUAAAAEABgAAAABAAUAAAAEABgAAAACAAUAAAAEABgAAAADAAUAAAAEABgAAAAEAAUAAAAEABgAAAAFAAUAAAAEABgAAAAGAAUAAAAEABgAAAAHAAUAAAAEABgAAAAIAAUAAAAEABgAAAAJAAUAAAAFABgAAAAJAAQAAAAFABcAAAAJAAMAAAAFABcAAAAJAAIAAAAFABcAAAAJAAEAAAAFABcAAAAJAAAAAAAFABcAAAAJAP//AAAFABcAAAAJAP7/AAAFABcAAAAJAPz/AAAFABcAAAAJAPv/AAAFABcAAAAJAPr/AAAFABYAAAAIAPr/AAAEABYAAAAHAPr/AAAEABYAAAAGAPr/AAAEABYAAAAFAPr/AAAEABYAAAAEAPr/AAAEABYAAAADAPr/AAAEABYAAAACAPr/AAAEABYAAAABAPr/AAAEABYAAAAAAPr/AAAEABYAAAD///r/AAAEABYAAAD+//r/AAAEABYAAAD9//r/AAAEABYAAAD8//r/AAAEABYAAAD7//r/AAAEABYAAAD6//r/AAAEABYAAAD3//r/AAAEABYAAAD4//r/AAAEABYAAAD5//r/AAAEABYAAAD2//r/AAAEABYAAAD3//z/AAAAABcAAAD3//v/AAAAABcAAAD4//v/AAABABcAAAD5//v/AAAAABcAAAD6//v/AAABABcAAAD7//v/AAAAABcAAAD8//v/AAABABcAAAD9//v/AAAAABcAAAD+//v/AAABABcAAAD///v/AAAAABcAAAAAAPv/AAABABcAAAABAPv/AAAAABcAAAACAPv/AAABABcAAAADAPv/AAAAABcAAAAEAPv/AAABABcAAAAFAPv/AAAAABcAAAAGAPv/AAABABcAAAAHAPv/AAAAABcAAAAIAPv/AAABABcAAAAIAPz/AAABABcAAAD0/+f/AAADABcAAAD0/+j/AAADABcAAAD0/+n/AAADABcAAAD0/+r/AAADABcAAAD0/+v/AAADABcAAAD0/+z/AAADABcAAAD0/+3/AAADABcAAAD0/+7/AAADABcAAAD0/+//AAADABcAAAD0//D/AAADABcAAAD0//H/AAADABcAAAD0//L/AAADABcAAAD0//P/AAADABcAAAD4/+f/AAAFABcAAAD4/+j/AAAFABcAAAD4/+n/AAAFABcAAAD4/+r/AAAFABcAAAD4/+v/AAAFABcAAAD4/+z/AAAFABcAAAD4/+3/AAAFABcAAAD4/+7/AAAFABcAAAD4/+//AAAFABcAAAD4//D/AAAFABcAAAD4//H/AAAFABcAAAD4//L/AAAFABcAAAD4//P/AAAFABcAAAD+/+j/AAADABcAAAD+/+n/AAADABcAAAD+/+r/AAADABcAAAD+/+v/AAADABcAAAD+/+z/AAADABcAAAD+/+3/AAADABcAAAD+/+7/AAADABcAAAD+/+//AAADABcAAAD+//D/AAADABcAAAD+//H/AAADABcAAAD+//L/AAADABcAAAABAOj/AAAFABcAAAABAOn/AAAFABcAAAABAOr/AAAFABcAAAABAOv/AAAFABcAAAABAOz/AAAFABcAAAABAO3/AAAFABcAAAABAO7/AAAFABcAAAABAO//AAAFABcAAAABAPD/AAAFABcAAAABAPH/AAAFABcAAAABAPL/AAAFABcAAAAKAOf/AAAFABcAAAAKAOj/AAAFABcAAAAKAOn/AAAFABcAAAAKAOr/AAAFABcAAAAKAOv/AAAFABcAAAAKAOz/AAAFABcAAAAKAO3/AAAFABcAAAAKAO7/AAAFABcAAAAKAO//AAAFABcAAAAKAPD/AAAFABcAAAAKAPH/AAAFABcAAAAKAPL/AAAFABcAAAAKAPP/AAAFABcAAAAHAOf/AAADABcAAAAHAOj/AAADABcAAAAHAOn/AAADABcAAAAHAOr/AAADABcAAAAHAOv/AAADABcAAAAHAOz/AAADABcAAAAHAO3/AAADABcAAAAHAO7/AAADABcAAAAHAO//AAADABcAAAAHAPD/AAADABcAAAAHAPH/AAADABcAAAAHAPL/AAADABcAAAAHAPP/AAADABcAAAA=")
+tile_set = SubResource("TileSet_s6u1d")
+
+[node name="Player" parent="." unique_id=1261763557 instance=ExtResource("4_sqt8m")]
+position = Vector2(0, 50)
+
+[node name="GraphicLayer2" type="Node2D" parent="." unique_id=1713926902]
+
+[node name="decoration" type="TileMapLayer" parent="GraphicLayer2" unique_id=1999258978]
+light_mask = 2
+visibility_layer = 2
+tile_map_data = PackedByteArray("AAD4/wEAAAAJABcAAAD4/wIAAAAJABgAAAD7/wEAAAAJABcAAAD7/wIAAAAJABgAAAD7/wMAAAAJABkAAAD7/wQAAAAJABoAAAD+/wEAAAAJABcAAAD+/wIAAAAJABgAAAD+/wMAAAAJABkAAAD+/wQAAAAJABoAAAABAAEAAAAJABcAAAABAAIAAAAJABgAAAABAAMAAAAJABkAAAABAAQAAAAJABoAAAAEAAEAAAAJABcAAAAEAAIAAAAJABgAAAAEAAMAAAAJABkAAAAEAAQAAAAJABoAAAAHAAEAAAAJABcAAAAHAAIAAAAJABgAAAAHAAMAAAAJABkAAAAHAAQAAAAJABoAAAD4/wMAAAAJABkAAAD4/wQAAAAJABoAAAD3//3/AAAIABYAAAD3//7/AAAIABcAAAD4//3/AAAIABYAAAD4//7/AAAIABcAAAD5//3/AAAIABYAAAD5//7/AAAIABcAAAD6//3/AAAIABYAAAD6//7/AAAIABcAAAD8//3/AAAIABYAAAD8//7/AAAIABcAAAD9//3/AAAIABYAAAD9//7/AAAIABcAAAD+//3/AAAIABYAAAD+//7/AAAIABcAAAAAAP3/AAAIABYAAAAAAP7/AAAIABcAAAABAP3/AAAIABYAAAABAP7/AAAIABcAAAACAP3/AAAIABYAAAACAP7/AAAIABcAAAAFAP3/AAAIABYAAAAFAP7/AAAIABcAAAAGAP3/AAAIABYAAAAGAP7/AAAIABcAAAAHAP3/AAAIABYAAAAHAP7/AAAIABcAAAAIAP3/AAAIABYAAAAIAP7/AAAIABcAAAA=")
+tile_set = ExtResource("2_g4tr2")
+
+[node name="Rooms" type="Node2D" parent="." unique_id=1918993174]
+
+[node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("4_4oi1w")]
+size = Vector2(300, 150)
+
+[node name="Corridor 1" parent="Rooms" unique_id=1721985898 instance=ExtResource("4_4oi1w")]
+position = Vector2(-150, -300)
+size = Vector2(40, 150)
+
+[node name="Corridor 2" parent="Rooms" unique_id=1495489132 instance=ExtResource("4_4oi1w")]
+position = Vector2(0, -300)
+size = Vector2(40, 150)
+
+[node name="Corridor 3" parent="Rooms" unique_id=1538396814 instance=ExtResource("4_4oi1w")]
+position = Vector2(150, -300)
+size = Vector2(40, 150)
+
+[node name="Doors" type="Node2D" parent="." unique_id=1787965241]
+
+[node name="Door2" parent="Doors" unique_id=849133815 instance=ExtResource("5_4oi1w")]
+
+[node name="PointA" parent="Doors/Door2" index="0" unique_id=330268095]
+position = Vector2(-4, -31)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door2/PointA" index="0" unique_id=1177554015]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_4oi1w")
+
+[node name="PointB" parent="Doors/Door2" index="1" unique_id=462719431]
+position = Vector2(1, -242)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door2/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_2lfe6")
+
+[node name="Door1" parent="Doors" unique_id=1328313244 node_paths=PackedStringArray("room_a", "room_b") instance=ExtResource("5_4oi1w")]
+room_a = NodePath("../../Rooms/Room")
+room_b = NodePath("../../Rooms/Corridor 1")
+
+[node name="PointA" parent="Doors/Door1" index="0" unique_id=330268095]
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door1/PointA" index="0" unique_id=1177554015]
+position = Vector2(-72, -30)
+shape = SubResource("RectangleShape2D_bu0g3")
+
+[node name="PointB" parent="Doors/Door1" index="1" unique_id=462719431]
+position = Vector2(-150, -241)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door1/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_42yvf")
+
+[node name="Door3" parent="Doors" unique_id=313421834 instance=ExtResource("5_4oi1w")]
+
+[node name="PointA" parent="Doors/Door3" index="0" unique_id=330268095]
+position = Vector2(64, -36)
+size = Vector2(25, 16)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door3/PointA" index="0" unique_id=1177554015]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_bsha8")
+
+[node name="PointB" parent="Doors/Door3" index="1" unique_id=462719431]
+position = Vector2(150, -247)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door3/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_xxvs5")
+
+[editable path="Doors/Door2"]
+[editable path="Doors/Door1"]
+[editable path="Doors/Door3"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d1sr48r8pyhg2"]
+
+[ext_resource type="Script" uid="uid://wa24iispw2xo" path="res://TitleScreen/character_creation.gd" id="1_7dqax"]
+
+[node name="CharacterCreation" type="Node2D" unique_id=1453094998]
+script = ExtResource("1_7dqax")
+
+[node name="Control" type="Control" parent="." unique_id=897009558]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot 1" type="OptionButton" parent="Control" unique_id=378499174]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="Slot 2" type="OptionButton" parent="Control" unique_id=480598678]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="Slot 3" type="OptionButton" parent="Control" unique_id=801762347]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="ConfirmButton" type="Button" parent="Control" unique_id=2045573642]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Confirm"

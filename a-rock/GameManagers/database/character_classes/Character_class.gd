@@ -15,5 +15,5 @@ extends Resource
 @export var base_max_sp: int = 10
 
 @export var default_weapon: Weapon
-
+@export var class_levels : Array[ProgressionLevelEntry] = []
 # TODO: Skills
