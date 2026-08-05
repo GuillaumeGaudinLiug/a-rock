@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cg24qfuuww32f"]
 
-[ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjond/common/door.gd" id="1_pvsrx"]
-[ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjond/common/door_point.gd" id="2_iytac"]
+[ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjon/common/door.gd" id="1_pvsrx"]
+[ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjon/common/door_point.gd" id="2_iytac"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iytac"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w766e"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_30d68"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dupkr"]
 size = Vector2(16, 16)
 
 [node name="Door" type="Node2D" unique_id=849133815]
@@ -18,7 +18,7 @@ size = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointA" unique_id=1177554015]
 position = Vector2(3, -1.5)
-shape = SubResource("RectangleShape2D_iytac")
+shape = SubResource("RectangleShape2D_w766e")
 
 [node name="PointB" type="Area2D" parent="." unique_id=462719431]
 script = ExtResource("2_iytac")
@@ -26,4 +26,4 @@ size = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointB" unique_id=614549298]
 position = Vector2(3, -1.5)
-shape = SubResource("RectangleShape2D_30d68")
+shape = SubResource("RectangleShape2D_dupkr")

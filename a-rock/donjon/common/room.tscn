@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d08san4f4qgl2"]
 
-[ext_resource type="Script" uid="uid://bqqrhl6vqdl7x" path="res://donjond/common/room.gd" id="1_gqni1"]
+[ext_resource type="Script" uid="uid://bqqrhl6vqdl7x" path="res://donjon/common/room.gd" id="1_gqni1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqni1"]
 size = Vector2(800, 600)
