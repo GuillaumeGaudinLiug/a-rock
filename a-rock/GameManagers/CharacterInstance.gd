@@ -34,7 +34,7 @@ func _init() -> void:
 
 
 func resync_attributes() -> CharacterInstance:
-	var cls: CharacterClass = load(character_class)
+	var cls: CharacterClass = character_class
 	if cls == null:
 		push_warning("CharacterInstance.resync_attributes: classe introuvable ('%s')." % character_class)
 		return self
@@ -75,28 +75,41 @@ func resync_attributes() -> CharacterInstance:
 	return self
 
 func to_dict() -> Dictionary:
+	var weapon_levels_serialized: Dictionary = {}
+	for weapon in weapon_levels.keys():
+		if weapon != null:
+			weapon_levels_serialized[weapon.resource_path] = weapon_levels[weapon]
+
 	return {
 		"class_level": class_level,
-		"character_class": character_class,
-		"equipped_weapon": equipped_weapon,
-		"weapon_levels": weapon_levels,
+		"character_class": character_class.resource_path if character_class != null else "",
+		"equipped_weapon": equipped_weapon.resource_path if equipped_weapon != null else "",
+		"weapon_levels": weapon_levels_serialized,
 		"determination_lvl": determination_lvl,
 		"courage_lvl": courage_lvl,
 		"passion_lvl": passion_lvl,
 		"spirit_lvl": spirit_lvl,
-		"adaptability_lvl": adaptability_lvl
+		"adaptability_lvl": adaptability_lvl,
 	}
 
 
 static func from_dict(data: Dictionary) -> CharacterInstance:
 	var instance := CharacterInstance.new()
 	instance.class_level = data["class_level"]
-	instance.character_class = data["character_class"]
-	instance.equipped_weapon = data["equipped_weapon"]
-	instance.weapon_levels = data["weapon_levels"]
+	instance.character_class = load(data["character_class"]) if data["character_class"] != "" else null
+	instance.equipped_weapon = load(data["equipped_weapon"]) if data["equipped_weapon"] != "" else null
+
+	instance.weapon_levels = {}
+	for weapon_path in data["weapon_levels"].keys():
+		var weapon: Weapon = load(weapon_path)
+		instance.weapon_levels[weapon] = data["weapon_levels"][weapon_path]
+
 	instance.determination_lvl = data["determination_lvl"]
 	instance.courage_lvl = data["courage_lvl"]
 	instance.passion_lvl = data["passion_lvl"]
 	instance.spirit_lvl = data["spirit_lvl"]
 	instance.adaptability_lvl = data["adaptability_lvl"]
+
+	instance.resync_attributes()
+
 	return instance

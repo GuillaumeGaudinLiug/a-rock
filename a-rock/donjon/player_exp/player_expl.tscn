@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1wosqdvf44qg"]
 
-[ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://player_exp/player.gd" id="1_e0b2u"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
+[ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://donjon/player_exp/player.gd" id="1_e0b2u"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]
 size = Vector2(15, 15)

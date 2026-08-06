@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b6u1438jsce1j"]
+
+[ext_resource type="Script" uid="uid://c74t4phg0c8po" path="res://TitleScreen/load_game_scene.gd" id="1_rqoql"]
+
+[node name="LoadGameScene" type="Control" unique_id=858121533]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rqoql")
+
+[node name="SlotsContainer" type="VBoxContainer" parent="." unique_id=1607702752]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

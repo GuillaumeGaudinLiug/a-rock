@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://cuajb1w58ra8i"]
 
-[ext_resource type="Texture2D" uid="uid://e5jribcsj0bd" path="res://ressources/SNES - Final Fantasy V - Tilesets - Castle.png" id="1_x50fc"]
+[ext_resource type="Texture2D" uid="uid://e5jribcsj0bd" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle.png" id="1_x50fc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7aqf"]
 texture = ExtResource("1_x50fc")

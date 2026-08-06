@@ -9,3 +9,4 @@ var xp_global: int = 0
 var current_scene_path: String = ""
 var story_flags: Dictionary = {}  # ex: { "boss_forest_defeated": true }
 var chest_flags: Dictionary = {}  # ex: { "Zone1_chest1": true }
+var cycle_number : int = 1

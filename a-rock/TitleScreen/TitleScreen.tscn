@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf8b53cxygsda"]
 
-[ext_resource type="Script" uid="uid://bfr4605jcrt7a" path="res://TitleScreen/title_screen.gd" id="1_0wg1c"]
+[ext_resource type="Script" uid="uid://bfr4605jcrt7a" path="res://TitleScreen/title_screen.gd" id="1_bkvni"]
 
 [node name="TitleScrene" type="Node2D" unique_id=505272646]
 
@@ -9,7 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_0wg1c")
+script = ExtResource("1_bkvni")
 
 [node name="NewGameButton" type="Button" parent="TitleScreen" unique_id=178780492]
 layout_mode = 0

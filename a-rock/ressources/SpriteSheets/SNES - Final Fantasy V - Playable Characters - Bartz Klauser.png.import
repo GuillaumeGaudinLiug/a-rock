@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyoac27uri5c"
-path="res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-e1705b942802ea7ae246562df43558df.ctex"
+uid="uid://dliccs0ptxvek"
+path="res://.godot/imported/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png-2decfabf3f4fb86dfdb1741cd4bf893f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-e1705b942802ea7ae246562df43558df.ctex"]
+source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png-2decfabf3f4fb86dfdb1741cd4bf893f.ctex"]
 
 [params]
 

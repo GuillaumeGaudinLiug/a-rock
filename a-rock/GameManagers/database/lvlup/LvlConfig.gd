@@ -1,4 +1,5 @@
 # LvlConfig.gd (Autoload)
+extends Node
 
 const INVESTABLE_STATS := ["determination", "courage", "passion", "spirit", "adaptability"]
 @export var max_lvl_for_stats: int = 30

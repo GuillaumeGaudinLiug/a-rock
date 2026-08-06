@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lphyaka20ygf"
-path="res://.godot/imported/SNES - Final Fantasy V - Effects - Weapons Effects.png-91deb4492f2df7bdcdb2e9755427835f.ctex"
+uid="uid://e5jribcsj0bd"
+path="res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle.png-8e60472655362d791547667485fc7630.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SNES - Final Fantasy V - Effects - Weapons Effects.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Effects - Weapons Effects.png-91deb4492f2df7bdcdb2e9755427835f.ctex"]
+source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle.png-8e60472655362d791547667485fc7630.ctex"]
 
 [params]
 

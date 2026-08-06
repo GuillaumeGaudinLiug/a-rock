@@ -11,8 +11,8 @@ func _ready() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	GameManager.goto_scene("res://ui/character_creation.tscn", GameManager.GameState.TITLESCREEN)
+	GameManager.goto_scene("res://TitleScreen/CharacterCreation.tscn", GameManager.GameState.TITLESCREEN)
 
 
 func _on_load_game_pressed() -> void:
-	GameManager.goto_scene("res://ui/load_game_screen.tscn", GameManager.GameState.TITLESCREEN)
+	GameManager.goto_scene("res://TitleScreen/LoadGameScene.tscn", GameManager.GameState.TITLESCREEN)

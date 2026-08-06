@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://v3yxx15h2fgs"]
 
-[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="1_7su6y"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="1_7su6y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62iog"]
 texture = ExtResource("1_7su6y")

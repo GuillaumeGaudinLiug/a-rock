@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ceqfnem3vguuw"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_b3vc7"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_b3vc7"]
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://GameManagers/database/Weapons/WeaponLevelStats.gd" id="1_dep6e"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://GameManagers/database/Weapons/Weapon.gd" id="2_b3vc7"]
 

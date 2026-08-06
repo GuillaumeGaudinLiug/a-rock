@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cuajb1w58ra8i" path="res://donjon/test/castle.tres" id="1_7ffkg"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="2_1hd26"]
 [ext_resource type="PackedScene" uid="uid://cg24qfuuww32f" path="res://donjon/common/door.tscn" id="3_o5l2j"]
-[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://player_exp/player_expl.tscn" id="4_b5c0q"]
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_b5c0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3qh8"]
 size = Vector2(150, 150)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e5jribcsj0bd"
-path="res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle.png-3e50f23f98c0d6f73ac0d304ef078d62.ctex"
+uid="uid://dnyoac27uri5c"
+path="res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-f74a24cb5cba559e1a3f211cf11f9af1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SNES - Final Fantasy V - Tilesets - Castle.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle.png-3e50f23f98c0d6f73ac0d304ef078d62.ctex"]
+source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-f74a24cb5cba559e1a3f211cf11f9af1.ctex"]
 
 [params]
 

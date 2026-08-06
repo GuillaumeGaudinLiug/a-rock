@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://GameManagers/database/Weapons/WeaponLevelStats.gd" id="1_jyo5y"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://GameManagers/database/Weapons/Weapon.gd" id="1_mv30q"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_nwefo"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_nwefo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rd10c"]
 atlas = ExtResource("1_nwefo")

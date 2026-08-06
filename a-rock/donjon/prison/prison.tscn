@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://bv2s7unt4nhqv"]
 
 [ext_resource type="TileSet" uid="uid://v3yxx15h2fgs" path="res://donjon/prison/prison.tres" id="2_g4tr2"]
-[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_s6u1d"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_s6u1d"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="4_4oi1w"]
-[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://player_exp/player_expl.tscn" id="4_sqt8m"]
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_sqt8m"]
 [ext_resource type="PackedScene" uid="uid://cg24qfuuww32f" path="res://donjon/common/door.tscn" id="5_4oi1w"]
+[ext_resource type="Script" uid="uid://c3l6wbjs566s7" path="res://donjon/prison/save_point.gd" id="6_2lfe6"]
+[ext_resource type="AudioStream" uid="uid://bns8we5nsrjn8" path="res://ressources/soundeffect/save_point.wav" id="7_bu0g3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4tr2"]
 texture = ExtResource("2_s6u1d")
@@ -518,6 +520,23 @@ size = Vector2(25, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxvs5"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu0g3"]
+atlas = ExtResource("2_s6u1d")
+region = Rect2(59, 472, 26, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ov0la"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu0g3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Prison" type="Node2D" unique_id=1182097121]
 
 [node name="GraphicLayer" type="Node2D" parent="." unique_id=1234169246]
@@ -540,7 +559,8 @@ tile_set = ExtResource("2_g4tr2")
 [node name="Rooms" type="Node2D" parent="." unique_id=1918993174]
 
 [node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("4_4oi1w")]
-size = Vector2(300, 150)
+position = Vector2(5, 10)
+size = Vector2(300, 120)
 
 [node name="Corridor 1" parent="Rooms" unique_id=1721985898 instance=ExtResource("4_4oi1w")]
 position = Vector2(-150, -300)
@@ -611,6 +631,22 @@ show_debug_rect = false
 [node name="CollisionShape2D" parent="Doors/Door3/PointB" index="0" unique_id=614549298]
 position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_xxvs5")
+
+[node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
+position = Vector2(-95, 20)
+script = ExtResource("6_2lfe6")
+size = null
+save_slot = null
+show_debug_rect = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SavePoint" unique_id=1843414105]
+stream = ExtResource("7_bu0g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]
+shape = SubResource("RectangleShape2D_ov0la")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SavePoint" unique_id=1499129942]
+sprite_frames = SubResource("SpriteFrames_ov0la")
 
 [editable path="Doors/Door2"]
 [editable path="Doors/Door1"]
