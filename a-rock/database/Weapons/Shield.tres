@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c1ri8ixxfrw78"]
+
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_g4wut"]
+[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_daq44"]
+[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_4ppst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bovy6"]
+atlas = ExtResource("1_g4wut")
+region = Rect2(628.6279, 671.3795, 10.46521, 16.70813)
+
+[sub_resource type="Resource" id="Resource_nwefo"]
+script = ExtResource("2_daq44")
+determination = 1
+courage = 3
+spirit = 2
+adaptability = 1
+max_ep = 5
+max_sp = 2
+xp_required = 100
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_rd10c"]
+script = ExtResource("2_daq44")
+determination = 1
+courage = 1
+passion = 2
+spirit = 2
+adaptability = 1
+max_ep = 5
+xp_required = 200
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_507xv"]
+script = ExtResource("2_daq44")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_g6pa6"]
+script = ExtResource("2_daq44")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_flhn4"]
+script = ExtResource("2_daq44")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_7hba5"]
+script = ExtResource("2_daq44")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[resource]
+resource_name = "Shield"
+script = ExtResource("3_4ppst")
+weapon_name = "Shield"
+icon = SubResource("AtlasTexture_bovy6")
+level_bonuses = Array[ExtResource("2_daq44")]([SubResource("Resource_nwefo"), SubResource("Resource_rd10c"), SubResource("Resource_507xv"), SubResource("Resource_g6pa6"), SubResource("Resource_flhn4"), SubResource("Resource_7hba5")])
+metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

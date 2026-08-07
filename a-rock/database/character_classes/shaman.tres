@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://drfwctiuhlhxo"]
+
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_nh5cd"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_fe8iw"]
+[ext_resource type="Resource" uid="uid://ceqfnem3vguuw" path="res://database/Weapons/Book.tres" id="3_exd6x"]
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="4_2k2r2"]
+
+[sub_resource type="Resource" id="Resource_i4r2f"]
+script = ExtResource("1_nh5cd")
+xp_required = 500
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_kgywf"]
+script = ExtResource("1_nh5cd")
+xp_required = 1000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiidu"]
+atlas = ExtResource("2_fe8iw")
+region = Rect2(58, 388, 18, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iihqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiidu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh5cd"]
+atlas = ExtResource("2_fe8iw")
+region = Rect2(0, 389, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nh5cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh5cd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("4_2k2r2")
+class_name_display = "shaman"
+combat_sprite_frames = SubResource("SpriteFrames_iihqn")
+idle_sprite_frame = SubResource("SpriteFrames_nh5cd")
+base_courage = 7
+base_passion = 8
+base_spirit = 10
+base_adaptability = 6
+base_max_ep = 90
+base_max_sp = 25
+default_weapon = ExtResource("3_exd6x")
+class_levels = Array[ExtResource("1_nh5cd")]([SubResource("Resource_i4r2f"), SubResource("Resource_kgywf")])
+metadata/_custom_type_script = "uid://c3m2paatdugg7"

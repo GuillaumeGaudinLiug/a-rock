@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cld2y8nmhp4pd"]
+
+[ext_resource type="Script" uid="uid://b2mfisja6wo5g" path="res://UI/scripts/party_card_members.gd" id="1_l8r5a"]
+[ext_resource type="LabelSettings" uid="uid://bv6lyykk674j4" path="res://UI/fonts/menu_label.tres" id="2_5f77e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqxiv"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="PartyCardMembers" type="HBoxContainer" unique_id=555477135]
+script = ExtResource("1_l8r5a")
+
+[node name="PreviewViewport" type="SubViewportContainer" parent="." unique_id=429602362]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 65)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="PreviewViewport" unique_id=1567147419]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PreviewViewport/SubViewport" unique_id=1276270561]
+position = Vector2(30, 30)
+scale = Vector2(3, 3)
+
+[node name="InfoColumn" type="VBoxContainer" parent="." unique_id=774428661]
+custom_minimum_size = Vector2(100, 100)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="InfoColumn" unique_id=1452289578]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_xqxiv")
+
+[node name="EPRow" type="HBoxContainer" parent="InfoColumn" unique_id=1100398841]
+layout_mode = 2
+
+[node name="EPBar" type="ProgressBar" parent="InfoColumn/EPRow" unique_id=959841215]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+show_percentage = false
+
+[node name="EPLabel" type="Label" parent="InfoColumn/EPRow" unique_id=1474664414]
+layout_mode = 2
+label_settings = ExtResource("2_5f77e")
+
+[node name="SPRow" type="HBoxContainer" parent="InfoColumn" unique_id=282733051]
+layout_mode = 2
+
+[node name="SPBar" type="ProgressBar" parent="InfoColumn/SPRow" unique_id=316096456]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+show_percentage = false
+
+[node name="SPLabel" type="Label" parent="InfoColumn/SPRow" unique_id=1045530406]
+layout_mode = 2
+label_settings = ExtResource("2_5f77e")

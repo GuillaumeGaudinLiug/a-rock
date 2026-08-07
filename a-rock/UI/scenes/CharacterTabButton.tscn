@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dm77kmxv0qoax"]
+
+[ext_resource type="Script" uid="uid://cpb8wrrn037cr" path="res://UI/scripts/character_tab_button.gd" id="1_3ojas"]
+[ext_resource type="LabelSettings" uid="uid://bv6lyykk674j4" path="res://UI/fonts/menu_label.tres" id="2_8gr8p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc23l"]
+bg_color = Color(0.423573, 0.6859387, 0.11547648, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.4077756, 0.93378973, 0.383584, 1)
+
+[node name="CharacterTabButton" type="Button" unique_id=1824531658]
+offset_right = 50.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.8784314, 0.8784314, 0.8784314, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+script = ExtResource("1_3ojas")
+
+[node name="SelectionFrame" type="Panel" parent="." unique_id=1901556913]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc23l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=361060454]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 98.0
+theme_override_constants/separation = 10
+
+[node name="PreviewViewport" type="SubViewportContainer" parent="VBoxContainer" unique_id=88800437]
+custom_minimum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(50, 65)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/PreviewViewport" unique_id=360276688]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/PreviewViewport/SubViewport" unique_id=334547146]
+position = Vector2(20, 30)
+scale = Vector2(3, 3)
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1073690736]
+layout_mode = 2
+label_settings = ExtResource("2_8gr8p")

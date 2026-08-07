@@ -4,6 +4,7 @@ extends RefCounted
 
 # Champs modifiables par opération de lvlup et sauvegardables
 var class_level : int = 0
+var character_name : String = ""
 var character_class: CharacterClass 
 var determination_lvl: int = 0
 var courage_lvl: int = 0
@@ -62,7 +63,7 @@ func resync_attributes() -> CharacterInstance:
 
 	# --- Bonus de l'arme équipée, selon son niveau actuel ---
 	if equipped_weapon != null:
-		var weapon_level: int = weapon_levels.get(equipped_weapon, 1)
+		var weapon_level: int = weapon_levels.get(equipped_weapon, 0)
 
 		determination += equipped_weapon.get_stat_bonus("determination", weapon_level)
 		courage += equipped_weapon.get_stat_bonus("courage", weapon_level)
@@ -82,6 +83,7 @@ func to_dict() -> Dictionary:
 
 	return {
 		"class_level": class_level,
+		'character_name': character_name, 
 		"character_class": character_class.resource_path if character_class != null else "",
 		"equipped_weapon": equipped_weapon.resource_path if equipped_weapon != null else "",
 		"weapon_levels": weapon_levels_serialized,
@@ -96,6 +98,7 @@ func to_dict() -> Dictionary:
 static func from_dict(data: Dictionary) -> CharacterInstance:
 	var instance := CharacterInstance.new()
 	instance.class_level = data["class_level"]
+	instance.character_name = data["character_name"]
 	instance.character_class = load(data["character_class"]) if data["character_class"] != "" else null
 	instance.equipped_weapon = load(data["equipped_weapon"]) if data["equipped_weapon"] != "" else null
 
@@ -109,7 +112,70 @@ static func from_dict(data: Dictionary) -> CharacterInstance:
 	instance.passion_lvl = data["passion_lvl"]
 	instance.spirit_lvl = data["spirit_lvl"]
 	instance.adaptability_lvl = data["adaptability_lvl"]
-
+	
 	instance.resync_attributes()
-
+	# Redonner max ep/sp à load
+	instance.current_ep = instance.max_ep
+	instance.current_sp = instance.max_sp
+	
 	return instance
+
+
+# ajouts dans lvlup.gd
+
+func try_level_up_weapon(weapon: Weapon) -> bool:
+	if weapon == null:
+		return false
+
+	var current_level: int = weapon_levels.get(weapon, 1)
+	if current_level >= weapon.max_level:
+		push_warning("Weapon '%s' déjà au niveau maximum." % weapon.weapon_name)
+		return false
+
+	var next_level := current_level + 1
+	var cost := weapon.get_xp_required(next_level)
+
+	if cost < 0 or GameData.xp_global < cost:
+		return false
+
+	GameData.xp_global -= cost
+	weapon_levels[weapon] = next_level
+
+	resync_attributes()
+	return true
+
+
+func try_level_up_stat(stat_name: String) -> bool:
+	if stat_name not in LvlConfig.INVESTABLE_STATS:
+		push_warning("Stat '%s' non investissable." % stat_name)
+		return false
+
+	var total_levels := determination_lvl + courage_lvl + passion_lvl + spirit_lvl + adaptability_lvl
+	var cost : int = LvlConfig.get_stat_level_cost(total_levels)
+
+	if cost < 0 or GameData.xp_global < cost:
+		return false
+
+	GameData.xp_global -= cost
+
+	match stat_name:
+		"determination": determination_lvl += 1
+		"courage": courage_lvl += 1
+		"passion": passion_lvl += 1
+		"spirit": spirit_lvl += 1
+		"adaptability": adaptability_lvl += 1
+
+	resync_attributes()
+	return true
+
+
+func try_level_up_class() -> bool:
+	var cost : int = LvlConfig.get_stat_level_cost(class_level)
+	if cost < 0 or GameData.xp_global < cost:
+		return false
+
+	GameData.xp_global -= cost
+	class_level += 1
+
+	resync_attributes()
+	return true

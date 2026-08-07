@@ -502,12 +502,6 @@ texture = ExtResource("2_s6u1d")
 [sub_resource type="TileSet" id="TileSet_s6u1d"]
 sources/0 = SubResource("TileSetAtlasSource_g4tr2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oi1w"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lfe6"]
-size = Vector2(16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0g3"]
 size = Vector2(16, 16)
 
@@ -515,9 +509,15 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsha8"]
-size = Vector2(25, 16)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxvs5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u6ji"]
+size = Vector2(25, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m6bi"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
@@ -561,18 +561,22 @@ tile_set = ExtResource("2_g4tr2")
 [node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("4_4oi1w")]
 position = Vector2(5, 10)
 size = Vector2(300, 120)
+show_debug_rect = false
 
 [node name="Corridor 1" parent="Rooms" unique_id=1721985898 instance=ExtResource("4_4oi1w")]
 position = Vector2(-150, -300)
 size = Vector2(40, 150)
+show_debug_rect = false
 
 [node name="Corridor 2" parent="Rooms" unique_id=1495489132 instance=ExtResource("4_4oi1w")]
 position = Vector2(0, -300)
 size = Vector2(40, 150)
+show_debug_rect = false
 
 [node name="Corridor 3" parent="Rooms" unique_id=1538396814 instance=ExtResource("4_4oi1w")]
 position = Vector2(150, -300)
 size = Vector2(40, 150)
+show_debug_rect = false
 
 [node name="Doors" type="Node2D" parent="." unique_id=1787965241]
 
@@ -584,7 +588,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door2/PointA" index="0" unique_id=1177554015]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_4oi1w")
+shape = SubResource("RectangleShape2D_bu0g3")
 
 [node name="PointB" parent="Doors/Door2" index="1" unique_id=462719431]
 position = Vector2(1, -242)
@@ -592,7 +596,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door2/PointB" index="0" unique_id=614549298]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_2lfe6")
+shape = SubResource("RectangleShape2D_42yvf")
 
 [node name="Door1" parent="Doors" unique_id=1328313244 node_paths=PackedStringArray("room_a", "room_b") instance=ExtResource("5_4oi1w")]
 room_a = NodePath("../../Rooms/Room")
@@ -603,7 +607,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door1/PointA" index="0" unique_id=1177554015]
 position = Vector2(-72, -30)
-shape = SubResource("RectangleShape2D_bu0g3")
+shape = SubResource("RectangleShape2D_bsha8")
 
 [node name="PointB" parent="Doors/Door1" index="1" unique_id=462719431]
 position = Vector2(-150, -241)
@@ -611,7 +615,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door1/PointB" index="0" unique_id=614549298]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_42yvf")
+shape = SubResource("RectangleShape2D_xxvs5")
 
 [node name="Door3" parent="Doors" unique_id=313421834 instance=ExtResource("5_4oi1w")]
 
@@ -622,7 +626,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door3/PointA" index="0" unique_id=1177554015]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_bsha8")
+shape = SubResource("RectangleShape2D_5u6ji")
 
 [node name="PointB" parent="Doors/Door3" index="1" unique_id=462719431]
 position = Vector2(150, -247)
@@ -630,7 +634,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door3/PointB" index="0" unique_id=614549298]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_xxvs5")
+shape = SubResource("RectangleShape2D_4m6bi")
 
 [node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
 position = Vector2(-95, 20)
@@ -639,7 +643,7 @@ size = null
 save_slot = null
 show_debug_rect = null
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SavePoint" unique_id=1843414105]
+[node name="SFX" type="AudioStreamPlayer" parent="SavePoint" unique_id=1843414105]
 stream = ExtResource("7_bu0g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]

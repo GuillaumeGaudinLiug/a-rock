@@ -1,0 +1,310 @@
+[gd_scene format=3 uid="uid://bwomo4yud11oo"]
+
+[ext_resource type="Script" uid="uid://dfnldiacvnnrp" path="res://UI/scripts/exploration_menu.gd" id="1_bs34l"]
+[ext_resource type="Script" uid="uid://ul0n8d8utvct" path="res://UI/scripts/weapons_panel.gd" id="2_b353f"]
+[ext_resource type="Script" uid="uid://xavyrgi65e1t" path="res://UI/scripts/return_to_prison_panel.gd" id="3_awccc"]
+[ext_resource type="Script" uid="uid://dkjpjyp5uaxsg" path="res://UI/scripts/inventory_panel.gd" id="3_xqxiv"]
+[ext_resource type="Script" uid="uid://4cwcwjnan54o" path="res://UI/scripts/level_stats_panel.gd" id="3_yknk0"]
+[ext_resource type="Script" uid="uid://cpywko06mf14j" path="res://UI/scripts/skills_panel.gd" id="5_iihh1"]
+[ext_resource type="LabelSettings" uid="uid://bv6lyykk674j4" path="res://UI/fonts/menu_label.tres" id="6_xfk2d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqxiv"]
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+
+[node name="ExplorationMenu" type="CanvasLayer" unique_id=1898646546]
+process_mode = 3
+script = ExtResource("1_bs34l")
+
+[node name="Root" type="Control" parent="." unique_id=1038195664]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="Background" type="ColorRect" parent="Root" unique_id=274414521]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 664.0
+offset_bottom = 595.0
+
+[node name="PartyList" type="VBoxContainer" parent="Root" unique_id=1158816883]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 84.0
+offset_right = 326.0
+offset_bottom = 476.0
+theme_override_constants/separation = 20
+
+[node name="MainPanel" type="VBoxContainer" parent="Root" unique_id=116313652]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 78.0
+offset_right = 583.0
+offset_bottom = 448.0
+theme_override_constants/separation = 40
+
+[node name="WeaponsButton" type="Button" parent="Root/MainPanel" unique_id=1924074720]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Weapons"
+
+[node name="LevelStatsButton" type="Button" parent="Root/MainPanel" unique_id=1136232098]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Status"
+
+[node name="InventoryButton" type="Button" parent="Root/MainPanel" unique_id=948895077]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Inventory"
+
+[node name="SkillsButton" type="Button" parent="Root/MainPanel" unique_id=356780568]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Skills"
+
+[node name="ReturnToPrisonButton" type="Button" parent="Root/MainPanel" unique_id=1066625246]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "End the day"
+
+[node name="QuitButton" type="Button" parent="Root/MainPanel" unique_id=1898982589]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Quit Game"
+
+[node name="WeaponsPanel" type="Control" parent="Root" unique_id=1198815411]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_b353f")
+
+[node name="CharacterTabs" type="HBoxContainer" parent="Root/WeaponsPanel" unique_id=1952663685]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 126.0
+offset_bottom = 123.0
+theme_override_constants/separation = 100
+
+[node name="WeaponListContainer" type="VBoxContainer" parent="Root/WeaponsPanel" unique_id=1583737599]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 0
+offset_left = 61.0
+offset_top = 126.0
+offset_right = 308.0
+offset_bottom = 398.0
+
+[node name="StatsPreview" type="VBoxContainer" parent="Root/WeaponsPanel" unique_id=2042280439]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 102.0
+offset_right = 496.0
+offset_bottom = 321.0
+
+[node name="EquipButton" type="Button" parent="Root/WeaponsPanel" unique_id=952418228]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 341.0
+offset_right = 491.0
+offset_bottom = 374.0
+text = "Equip"
+
+[node name="LevelUpButton" type="Button" parent="Root/WeaponsPanel" unique_id=1178831726]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 457.0
+offset_right = 280.0
+offset_bottom = 511.0
+text = "Improve Weapon"
+
+[node name="CostLabel" type="Label" parent="Root/WeaponsPanel" unique_id=1205148074]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 469.0
+offset_right = 362.0
+offset_bottom = 518.0
+text = "
+"
+
+[node name="BackButton" type="Button" parent="Root/WeaponsPanel" unique_id=1907393030]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 526.0
+offset_right = 254.0
+offset_bottom = 560.0
+text = "Back"
+
+[node name="InventoryPanel" type="Control" parent="Root" unique_id=1723155307]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+script = ExtResource("3_xqxiv")
+
+[node name="ReturnToPrisonPanel" type="Control" parent="Root" unique_id=1323384205]
+visible = false
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0
+script = ExtResource("3_awccc")
+
+[node name="MessageLabel" type="Label" parent="Root/ReturnToPrisonPanel" unique_id=1938414974]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 149.0
+offset_right = 387.0
+offset_bottom = 172.0
+label_settings = SubResource("LabelSettings_xqxiv")
+
+[node name="ConfirmButton" type="Button" parent="Root/ReturnToPrisonPanel" unique_id=686992825]
+custom_minimum_size = Vector2(120, 50)
+custom_maximum_size = Vector2(200, 80)
+layout_mode = 0
+offset_left = 210.0
+offset_top = 320.0
+offset_right = 330.0
+offset_bottom = 370.0
+text = "Confirm"
+
+[node name="BackButton" type="Button" parent="Root/ReturnToPrisonPanel" unique_id=1638938824]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 395.0
+offset_right = 330.0
+offset_bottom = 445.0
+text = "Back"
+
+[node name="LevelStatsPanel" type="Control" parent="Root" unique_id=468393180]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+script = ExtResource("3_yknk0")
+
+[node name="CharacterTabs" type="HBoxContainer" parent="Root/LevelStatsPanel" unique_id=811650032]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 23.0
+offset_right = 126.0
+offset_bottom = 123.0
+theme_override_constants/separation = 100
+
+[node name="ClassLevelSection" type="VBoxContainer" parent="Root/LevelStatsPanel" unique_id=1553984921]
+custom_minimum_size = Vector2(200, 80)
+custom_maximum_size = Vector2(250, 85)
+layout_mode = 0
+offset_left = 350.0
+offset_top = 33.0
+offset_right = 550.0
+offset_bottom = 118.0
+
+[node name="ClassLevelLabel" type="Label" parent="Root/LevelStatsPanel/ClassLevelSection" unique_id=518132042]
+layout_mode = 2
+
+[node name="ClassLevelUpButton" type="Button" parent="Root/LevelStatsPanel/ClassLevelSection" unique_id=811980754]
+custom_minimum_size = Vector2(200, 70)
+custom_maximum_size = Vector2(250, 70)
+layout_mode = 2
+text = "Class LvlUp"
+
+[node name="StatButtons" type="VBoxContainer" parent="Root/LevelStatsPanel" unique_id=1122597569]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 138.0
+offset_right = 512.0
+offset_bottom = 468.0
+theme_override_constants/separation = 20
+
+[node name="DeterminationRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatButtons" unique_id=1800136998]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Root/LevelStatsPanel/StatButtons/DeterminationRow" unique_id=491084710]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="CourageRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatButtons" unique_id=429055132]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Root/LevelStatsPanel/StatButtons/CourageRow" unique_id=1279518388]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="PassionRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatButtons" unique_id=671379916]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Root/LevelStatsPanel/StatButtons/PassionRow" unique_id=564734800]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="SpiritRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatButtons" unique_id=880825052]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Root/LevelStatsPanel/StatButtons/SpiritRow" unique_id=1308764850]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="AdaptabilityRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatButtons" unique_id=957212389]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Root/LevelStatsPanel/StatButtons/AdaptabilityRow" unique_id=154129123]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+
+[node name="CostLevel" type="Label" parent="Root/LevelStatsPanel/StatButtons" unique_id=733495609]
+layout_mode = 2
+label_settings = ExtResource("6_xfk2d")
+
+[node name="StatsPreview" type="VBoxContainer" parent="Root/LevelStatsPanel" unique_id=335146578]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 167.0
+offset_right = 230.0
+offset_bottom = 453.0
+theme_override_constants/separation = 15
+
+[node name="BackButton" type="Button" parent="Root/LevelStatsPanel" unique_id=1861562452]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_right = 0.1
+offset_left = 114.0
+offset_top = 499.0
+offset_right = 234.0
+offset_bottom = 568.0
+text = "Back"
+
+[node name="SkillsPanel" type="Control" parent="Root" unique_id=1194252359]
+visible = false
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0
+script = ExtResource("5_iihh1")
+
+[node name="QuitPanel" type="Control" parent="Root" unique_id=363460372]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuitGameButton" type="Button" parent="Root/QuitPanel" unique_id=715164925]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="TitleScreenButton" type="Button" parent="Root/QuitPanel" unique_id=639885185]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

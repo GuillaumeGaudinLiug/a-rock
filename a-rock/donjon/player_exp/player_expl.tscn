@@ -111,7 +111,7 @@ sprite_frames = SubResource("SpriteFrames_iadmu")
 animation = &"walkdown"
 
 [node name="Camera2D" type="Camera2D" parent="PlayerExpl" unique_id=1896209301 groups=["main_camera"]]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 limit_left = -10000
 limit_top = -10000
 limit_right = 10000

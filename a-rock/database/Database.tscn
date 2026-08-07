@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://g3ca4rpbxoeg"]
+
+[ext_resource type="Script" uid="uid://boosqtt1t2sck" path="res://database/Database.gd" id="1_npldw"]
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="2_4fl0v"]
+[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="2_yk66w"]
+[ext_resource type="Resource" uid="uid://b2hexck2gqsdd" path="res://database/character_classes/protector.tres" id="3_12we1"]
+[ext_resource type="Resource" uid="uid://c1ri8ixxfrw78" path="res://database/Weapons/Shield.tres" id="3_daujv"]
+[ext_resource type="Resource" uid="uid://ceqfnem3vguuw" path="res://database/Weapons/Book.tres" id="4_4fl0v"]
+[ext_resource type="Resource" uid="uid://drfwctiuhlhxo" path="res://database/character_classes/shaman.tres" id="4_12we1"]
+
+[node name="Database" type="Node" unique_id=595269518]
+script = ExtResource("1_npldw")
+all_classes = Array[ExtResource("2_4fl0v")]([ExtResource("3_12we1"), ExtResource("4_12we1")])
+all_weapons = Array[ExtResource("2_yk66w")]([ExtResource("3_daujv"), ExtResource("4_4fl0v")])

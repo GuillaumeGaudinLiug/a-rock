@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://b2hexck2gqsdd"]
+
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_m76wr"]
+[ext_resource type="Resource" uid="uid://c1ri8ixxfrw78" path="res://database/Weapons/Shield.tres" id="2_d6xft"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_t34gp"]
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_t34gp"]
+
+[sub_resource type="Resource" id="Resource_g1ui6"]
+script = ExtResource("1_m76wr")
+xp_required = 100
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_j4wau"]
+script = ExtResource("1_m76wr")
+xp_required = 250
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_gg8vd"]
+script = ExtResource("1_m76wr")
+xp_required = 500
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_2gc1c"]
+script = ExtResource("1_m76wr")
+xp_required = 1000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_lg4hu"]
+script = ExtResource("1_m76wr")
+xp_required = 2000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62iog"]
+atlas = ExtResource("2_t34gp")
+region = Rect2(0, 29, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj2fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62iog")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwgjb"]
+atlas = ExtResource("2_t34gp")
+region = Rect2(0, 29, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58gu6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwgjb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_t34gp")
+class_name_display = "Protector"
+combat_sprite_frames = SubResource("SpriteFrames_tj2fj")
+idle_sprite_frame = SubResource("SpriteFrames_58gu6")
+base_determination = 7
+base_courage = 10
+base_spirit = 8
+base_max_ep = 130
+default_weapon = ExtResource("2_d6xft")
+class_levels = Array[ExtResource("1_m76wr")]([SubResource("Resource_g1ui6"), SubResource("Resource_j4wau"), SubResource("Resource_gg8vd"), SubResource("Resource_2gc1c"), SubResource("Resource_lg4hu")])
+metadata/_custom_type_script = "uid://c3m2paatdugg7"

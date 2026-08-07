@@ -1,25 +1,25 @@
 extends Control
 
-@onready var slots: Array[OptionButton] = [$VBoxContainer/SlotRow1/Slot1, $VBoxContainer/SlotRow2/Slot2]
+@onready var slots: Array[OptionButton] = [
+	$VBoxContainer/SlotRow1/Slot1, 
+	$VBoxContainer/SlotRow2/Slot2,
+	$VBoxContainer/SlotRow3/Slot3 ]
 @onready var previews: Array[AnimatedSprite2D] = [
 	$VBoxContainer/SlotRow1/PreviewViewport1/SubViewport1/Preview1,
 	$VBoxContainer/SlotRow2/PreviewViewport2/SubViewport2/Preview2,
+	$VBoxContainer/SlotRow3/PreviewViewport3/SubViewport3/Preview3,
+
+]
+@onready var name_inputs: Array[LineEdit] = [
+	$VBoxContainer/SlotRow1/NameInput1,
+	$VBoxContainer/SlotRow2/NameInput2,
+	$VBoxContainer/SlotRow3/NameInput3
 ]
 @onready var confirm_button: Button = $VBoxContainer/ConfirmButton
 
 
 func _ready() -> void:
-	#print("Racine du script: ", self.name, " | scene file: ", scene_file_path)
-	#print("VBoxContainer: ", get_node_or_null("VBoxContainer"))
-	#print("SlotRow1: ", get_node_or_null("VBoxContainer/SlotRow1"))
-	#print("PreviewViewport1: ", get_node_or_null("VBoxContainer/SlotRow1/PreviewViewport1"))
-	#print("SubViewport1: ", get_node_or_null("VBoxContainer/SlotRow1/PreviewViewport1/SubViewport1"))
-	#print("Preview1: ", get_node_or_null("VBoxContainer/SlotRow1/PreviewViewport1/Preview1"))
-	#print("SlotRow2: ", get_node_or_null("VBoxContainer/SlotRow2"))
-	#print("PreviewViewport2: ", get_node_or_null("VBoxContainer/SlotRow2/PreviewViewport2"))
-	#print("SubViewport2: ", get_node_or_null("VBoxContainer/SlotRow2/PreviewViewport2/SubViewport2"))
-	#print("Preview2: ", get_node_or_null("VBoxContainer/SlotRow2/PreviewViewport2/SubViewport2/Preview2"))
-	
+
 	for i in slots.size():
 		var slot := slots[i]
 		for character_class in Database.all_classes:
@@ -47,18 +47,25 @@ func _update_preview(slot_number: int, class_index: int) -> void:
 		preview.play("idle")
 
 func _on_confirm_pressed() -> void:
-	GameData.party.clear()
+	for i in slots.size():
+		var name_text := name_inputs[i].text.strip_edges()
+		if name_text == "":
+			push_warning("Le personnage du slot %d n'a pas de nom." % (i + 1))
+			name_inputs[i].grab_focus()
+			return
 
-	for slot in slots:
-		var selected_class: CharacterClass = Database.all_classes[slot.selected]
-		GameData.party.append(_create_character_instance(selected_class))
+	GameData.party.clear()
+	for i in slots.size():
+		var selected_class: CharacterClass = Database.all_classes[slots[i].selected]
+		GameData.party.append(_create_character_instance(selected_class, name_inputs[i].text.strip_edges()))
 
 	GameManager.goto_scene("res://donjon/prison/prison.tscn")
 
 
-func _create_character_instance(character_class: CharacterClass) -> CharacterInstance:
+func _create_character_instance(character_class: CharacterClass, character_name: String) -> CharacterInstance:
 	var instance := CharacterInstance.new()
 	instance.character_class = character_class
+	instance.character_name = character_name
 	instance.class_level = 1
 
 	instance.determination_lvl = 0

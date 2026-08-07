@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bwomo4yud11oo"]
+
+[ext_resource type="Script" uid="uid://dfnldiacvnnrp" path="res://UI/exploration_menu.gd" id="1_bs34l"]
+[ext_resource type="Script" uid="uid://ul0n8d8utvct" path="res://UI/weapons_panel.gd" id="2_b353f"]
+[ext_resource type="Script" uid="uid://xavyrgi65e1t" path="res://UI/return_to_prison_panel.gd" id="3_awccc"]
+[ext_resource type="Script" uid="uid://4cwcwjnan54o" path="res://UI/level_stats_panel.gd" id="3_yknk0"]
+
+[node name="ExplorationMenu" type="CanvasLayer" unique_id=1898646546]
+script = ExtResource("1_bs34l")
+
+[node name="Root" type="Control" parent="." unique_id=1038195664]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Root" unique_id=274414521]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainPanel" type="VBoxContainer" parent="Root" unique_id=116313652]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelStatsButton" type="Button" parent="Root/MainPanel" unique_id=1136232098]
+layout_mode = 2
+
+[node name="InventoryButton" type="Button" parent="Root/MainPanel" unique_id=948895077]
+layout_mode = 2
+
+[node name="WeaponsButton" type="Button" parent="Root/MainPanel" unique_id=1924074720]
+layout_mode = 2
+
+[node name="SkillsButton" type="Button" parent="Root/MainPanel" unique_id=356780568]
+layout_mode = 2
+
+[node name="ReturnToPrisonButton" type="Button" parent="Root/MainPanel" unique_id=1066625246]
+layout_mode = 2
+
+[node name="WeaponsPanel" type="Control" parent="Root" unique_id=1198815411]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_b353f")
+
+[node name="BackButton" type="Button" parent="Root/WeaponsPanel" unique_id=1907393030]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="CharacterSelector" type="OptionButton" parent="Root/WeaponsPanel" unique_id=946003678]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="WeaponList" type="ItemList" parent="Root/WeaponsPanel" unique_id=549713337]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EquipButton" type="Button" parent="Root/WeaponsPanel" unique_id=952418228]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="LevelUpButton" type="Button" parent="Root/WeaponsPanel" unique_id=1178831726]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="InventoryPanel" type="Control" parent="Root" unique_id=1723155307]
+anchors_preset = 0
+offset_right = 40.0
+
+[node name="ReturnToPrisonPanel" type="Control" parent="Root" unique_id=1323384205]
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0
+script = ExtResource("3_awccc")
+
+[node name="MessageLabel" type="Label" parent="Root/ReturnToPrisonPanel" unique_id=1938414974]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ConfirmButton" type="Button" parent="Root/ReturnToPrisonPanel" unique_id=686992825]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="Root/ReturnToPrisonPanel" unique_id=1638938824]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="LevelStatsPanel" type="Control" parent="Root" unique_id=468393180]
+anchors_preset = 0
+offset_right = 40.0
+script = ExtResource("3_yknk0")
+
+[node name="CharacterSelector" type="OptionButton" parent="Root/LevelStatsPanel" unique_id=1636319567]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="ClassLevelSection" type="VBoxContainer" parent="Root/LevelStatsPanel" unique_id=1553984921]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClassLevelLabel" type="Label" parent="Root/LevelStatsPanel/ClassLevelSection" unique_id=518132042]
+layout_mode = 2
+
+[node name="ClassLevelUpButton" type="Button" parent="Root/LevelStatsPanel/ClassLevelSection" unique_id=811980754]
+layout_mode = 2
+
+[node name="StatsButtons" type="VBoxContainer" parent="Root/LevelStatsPanel" unique_id=1122597569]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DeterminationRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatsButtons" unique_id=1800136998]
+layout_mode = 2
+
+[node name="CourageRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatsButtons" unique_id=429055132]
+layout_mode = 2
+
+[node name="PassionRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatsButtons" unique_id=671379916]
+layout_mode = 2
+
+[node name="SpiritRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatsButtons" unique_id=880825052]
+layout_mode = 2
+
+[node name="AdapatabilityRow" type="HBoxContainer" parent="Root/LevelStatsPanel/StatsButtons" unique_id=957212389]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Root/LevelStatsPanel" unique_id=1861562452]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="SkillsPanel" type="Control" parent="Root" unique_id=1194252359]
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 40.0
+offset_bottom = 4.0

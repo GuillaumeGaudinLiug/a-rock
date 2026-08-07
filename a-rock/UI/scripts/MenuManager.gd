@@ -1,7 +1,7 @@
 # MenuManager.gd (Autoload)
 extends Node
 
-const MENU_SCENE := preload("res://UI/ExplorationMenu.tscn")
+const MENU_SCENE := preload("res://UI/scenes/ExplorationMenu.tscn")
 
 var menu_instance: CanvasLayer
 

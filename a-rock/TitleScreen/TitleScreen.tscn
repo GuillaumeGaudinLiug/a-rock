@@ -5,6 +5,7 @@
 [node name="TitleScrene" type="Node2D" unique_id=505272646]
 
 [node name="TitleScreen" type="Control" parent="." unique_id=248257662]
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -12,15 +13,19 @@ offset_bottom = 40.0
 script = ExtResource("1_bkvni")
 
 [node name="NewGameButton" type="Button" parent="TitleScreen" unique_id=178780492]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 650.0
+offset_bottom = 350.0
 text = "New Game"
 
 [node name="LoadGameButton" type="Button" parent="TitleScreen" unique_id=1322631344]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 0
-offset_left = 1.0
-offset_top = 73.0
-offset_right = 97.0
-offset_bottom = 104.0
+offset_left = 250.0
+offset_top = 400.0
+offset_right = 650.0
+offset_bottom = 500.0
 text = "Load Game"
