@@ -1,15 +1,16 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ceqfnem3vguuw"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_bovy6"]
-[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_1fxyi"]
-[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_nkgii"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_74223"]
+[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_y1q07"]
+[ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="3_niwv0"]
+[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="4_hjm1i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkvni"]
-atlas = ExtResource("1_bovy6")
+atlas = ExtResource("1_74223")
 region = Rect2(323.77225, 706.75165, 13.482605, 13.320129)
 
 [sub_resource type="Resource" id="Resource_enalh"]
-script = ExtResource("2_1fxyi")
+script = ExtResource("2_y1q07")
 courage = 1
 passion = 4
 spirit = 5
@@ -19,30 +20,31 @@ xp_required = 100
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_e3dx3"]
-script = ExtResource("2_1fxyi")
-max_sp = 20
-xp_required = 300
+script = ExtResource("2_y1q07")
+spirit = 1
+max_sp = 10
+xp_required = 500
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_hxi15"]
-script = ExtResource("2_1fxyi")
+script = ExtResource("2_y1q07")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_5psba"]
-script = ExtResource("2_1fxyi")
+script = ExtResource("2_y1q07")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_ikxex"]
-script = ExtResource("2_1fxyi")
+script = ExtResource("2_y1q07")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_10ybm"]
-script = ExtResource("2_1fxyi")
+script = ExtResource("2_y1q07")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [resource]
-script = ExtResource("3_nkgii")
+script = ExtResource("4_hjm1i")
 weapon_name = "Book"
 icon = SubResource("AtlasTexture_bkvni")
-level_bonuses = Array[ExtResource("2_1fxyi")]([SubResource("Resource_enalh"), SubResource("Resource_e3dx3"), SubResource("Resource_hxi15"), SubResource("Resource_5psba"), SubResource("Resource_ikxex"), SubResource("Resource_10ybm")])
+level_bonuses = Array[ExtResource("2_y1q07")]([SubResource("Resource_enalh"), SubResource("Resource_e3dx3"), SubResource("Resource_hxi15"), SubResource("Resource_5psba"), SubResource("Resource_ikxex"), SubResource("Resource_10ybm")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

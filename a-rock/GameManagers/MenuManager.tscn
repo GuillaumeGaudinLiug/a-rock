@@ -4,3 +4,22 @@
 
 [node name="MenuManager" type="CanvasLayer" unique_id=776578795]
 script = ExtResource("1_w8y1m")
+
+[node name="HudLayer" type="CanvasLayer" parent="." unique_id=287056421]
+
+[node name="InteractLabel" type="Label" parent="HudLayer" unique_id=1703779967]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MessageLabel" type="Label" parent="HudLayer" unique_id=2114632431]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0

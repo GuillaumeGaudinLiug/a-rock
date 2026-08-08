@@ -515,12 +515,13 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5u6ji"]
-size = Vector2(25, 16)
+size = Vector2(17.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4m6bi"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3l6a"]
+size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu0g3"]
 atlas = ExtResource("2_s6u1d")
@@ -553,29 +554,33 @@ position = Vector2(0, 50)
 [node name="decoration" type="TileMapLayer" parent="GraphicLayer2" unique_id=1999258978]
 light_mask = 2
 visibility_layer = 2
-tile_map_data = PackedByteArray("AAD4/wEAAAAJABcAAAD4/wIAAAAJABgAAAD7/wEAAAAJABcAAAD7/wIAAAAJABgAAAD7/wMAAAAJABkAAAD7/wQAAAAJABoAAAD+/wEAAAAJABcAAAD+/wIAAAAJABgAAAD+/wMAAAAJABkAAAD+/wQAAAAJABoAAAABAAEAAAAJABcAAAABAAIAAAAJABgAAAABAAMAAAAJABkAAAABAAQAAAAJABoAAAAEAAEAAAAJABcAAAAEAAIAAAAJABgAAAAEAAMAAAAJABkAAAAEAAQAAAAJABoAAAAHAAEAAAAJABcAAAAHAAIAAAAJABgAAAAHAAMAAAAJABkAAAAHAAQAAAAJABoAAAD4/wMAAAAJABkAAAD4/wQAAAAJABoAAAD3//3/AAAIABYAAAD3//7/AAAIABcAAAD4//3/AAAIABYAAAD4//7/AAAIABcAAAD5//3/AAAIABYAAAD5//7/AAAIABcAAAD6//3/AAAIABYAAAD6//7/AAAIABcAAAD8//3/AAAIABYAAAD8//7/AAAIABcAAAD9//3/AAAIABYAAAD9//7/AAAIABcAAAD+//3/AAAIABYAAAD+//7/AAAIABcAAAAAAP3/AAAIABYAAAAAAP7/AAAIABcAAAABAP3/AAAIABYAAAABAP7/AAAIABcAAAACAP3/AAAIABYAAAACAP7/AAAIABcAAAAFAP3/AAAIABYAAAAFAP7/AAAIABcAAAAGAP3/AAAIABYAAAAGAP7/AAAIABcAAAAHAP3/AAAIABYAAAAHAP7/AAAIABcAAAAIAP3/AAAIABYAAAAIAP7/AAAIABcAAAA=")
+tile_map_data = PackedByteArray("AAD4/wEAAAAJABcAAAD4/wIAAAAJABgAAAD7/wEAAAAJABcAAAD7/wIAAAAJABgAAAD7/wMAAAAJABkAAAD7/wQAAAAJABoAAAD+/wEAAAAJABcAAAD+/wIAAAAJABgAAAD+/wMAAAAJABkAAAD+/wQAAAAJABoAAAABAAEAAAAJABcAAAABAAIAAAAJABgAAAABAAMAAAAJABkAAAABAAQAAAAJABoAAAAEAAEAAAAJABcAAAAEAAIAAAAJABgAAAAEAAMAAAAJABkAAAAEAAQAAAAJABoAAAAHAAEAAAAJABcAAAAHAAIAAAAJABgAAAAHAAMAAAAJABkAAAAHAAQAAAAJABoAAAD4/wMAAAAJABkAAAD4/wQAAAAJABoAAAD3//3/AAAIABYAAAD3//7/AAAIABcAAAD4//3/AAAIABYAAAD4//7/AAAIABcAAAD5//3/AAAIABYAAAD5//7/AAAIABcAAAD6//3/AAAIABYAAAD6//7/AAAIABcAAAD8//3/AAAIABYAAAD8//7/AAAIABcAAAD9//3/AAAIABYAAAD9//7/AAAIABcAAAD+//3/AAAIABYAAAD+//7/AAAIABcAAAAAAP3/AAAIABYAAAAAAP7/AAAIABcAAAABAP3/AAAIABYAAAABAP7/AAAIABcAAAACAP3/AAAIABYAAAACAP7/AAAIABcAAAAFAP3/AAAIABYAAAAFAP7/AAAIABcAAAAGAP3/AAAIABYAAAAGAP7/AAAIABcAAAAHAP3/AAAIABYAAAAHAP7/AAAIABcAAAAIAP3/AAAIABYAAAAIAP7/AAAIABcAAAD7//3/AAAHABAAAAD7//7/AAAHABEAAAD///3/AAAHABAAAAD///7/AAAHABEAAAADAP3/AAAHABAAAAADAP7/AAAHABEAAAAEAP3/AAAGABAAAAAEAP7/AAAGABEAAAA=")
 tile_set = ExtResource("2_g4tr2")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=1918993174]
 
 [node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("4_4oi1w")]
-position = Vector2(5, 10)
-size = Vector2(300, 120)
+position = Vector2(0, 10)
+size = Vector2(305, 120)
+wall_thickness = 20.0
 show_debug_rect = false
 
 [node name="Corridor 1" parent="Rooms" unique_id=1721985898 instance=ExtResource("4_4oi1w")]
 position = Vector2(-150, -300)
 size = Vector2(40, 150)
+wall_thickness = 20.0
 show_debug_rect = false
 
 [node name="Corridor 2" parent="Rooms" unique_id=1495489132 instance=ExtResource("4_4oi1w")]
 position = Vector2(0, -300)
 size = Vector2(40, 150)
+wall_thickness = 20.0
 show_debug_rect = false
 
 [node name="Corridor 3" parent="Rooms" unique_id=1538396814 instance=ExtResource("4_4oi1w")]
 position = Vector2(150, -300)
 size = Vector2(40, 150)
+wall_thickness = 20.0
 show_debug_rect = false
 
 [node name="Doors" type="Node2D" parent="." unique_id=1787965241]
@@ -625,7 +630,7 @@ size = Vector2(25, 16)
 show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Doors/Door3/PointA" index="0" unique_id=1177554015]
-position = Vector2(0, 0)
+position = Vector2(-9, 1)
 shape = SubResource("RectangleShape2D_5u6ji")
 
 [node name="PointB" parent="Doors/Door3" index="1" unique_id=462719431]
@@ -637,17 +642,14 @@ position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_4m6bi")
 
 [node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
-position = Vector2(-95, 20)
+position = Vector2(-135, 20)
 script = ExtResource("6_2lfe6")
-size = null
-save_slot = null
-show_debug_rect = null
 
 [node name="SFX" type="AudioStreamPlayer" parent="SavePoint" unique_id=1843414105]
 stream = ExtResource("7_bu0g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]
-shape = SubResource("RectangleShape2D_ov0la")
+shape = SubResource("RectangleShape2D_v3l6a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SavePoint" unique_id=1499129942]
 sprite_frames = SubResource("SpriteFrames_ov0la")

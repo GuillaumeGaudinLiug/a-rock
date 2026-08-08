@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bjo6sajjeogfk"]
+
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_1fpw7"]
+[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="1_bm3xy"]
+[ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_1fpw7"]
+[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_vxgy0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkdil"]
+atlas = ExtResource("1_1fpw7")
+region = Rect2(20.19051, 18.657837, 11.730217, 13.884743)
+
+[sub_resource type="Resource" id="Resource_vxgy0"]
+script = ExtResource("1_bm3xy")
+determination = 2
+courage = 1
+spirit = 1
+adaptability = 3
+max_ep = 5
+max_sp = 2
+xp_required = 100
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_bfute"]
+script = ExtResource("1_bm3xy")
+determination = 3
+courage = 1
+spirit = 1
+adaptability = 5
+max_ep = 5
+max_sp = 2
+xp_required = 500
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_dkdil"]
+script = ExtResource("1_bm3xy")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_w1s0b"]
+script = ExtResource("1_bm3xy")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_mcjps"]
+script = ExtResource("1_bm3xy")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_6ku65"]
+script = ExtResource("1_bm3xy")
+metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[resource]
+script = ExtResource("3_vxgy0")
+weapon_name = "Knife"
+icon = SubResource("AtlasTexture_dkdil")
+level_bonuses = Array[ExtResource("1_bm3xy")]([SubResource("Resource_vxgy0"), SubResource("Resource_bfute"), SubResource("Resource_dkdil"), SubResource("Resource_w1s0b"), SubResource("Resource_mcjps"), SubResource("Resource_6ku65")])
+metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

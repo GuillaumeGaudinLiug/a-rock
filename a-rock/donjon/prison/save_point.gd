@@ -52,7 +52,8 @@ func _on_body_entered(body: Node2D) -> void:
 	GameData.current_scene_path = get_tree().current_scene.scene_file_path
 
 	SaveManager.save_game(save_slot)
-
+	MenuManager.show_message("Game Saved")
+	
 	if sfx != null:
 		sfx.play()
 

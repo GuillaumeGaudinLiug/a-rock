@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://kab6i8vmtdd8"]
+
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_52wkc"]
+[ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_6v4x3"]
+[ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="2_lqjpe"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_m8n82"]
+
+[sub_resource type="Resource" id="Resource_d4www"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_g86rf"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_1fpw7"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_vxgy0"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_bfute"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_dkdil"]
+script = ExtResource("1_52wkc")
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjpe"]
+atlas = ExtResource("2_m8n82")
+region = Rect2(0, 149, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqjpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqjpe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_m8n82")
+idle_sprite_frame = SubResource("SpriteFrames_lqjpe")
+base_determination = 8
+base_courage = 6
+base_spirit = 6
+base_adaptability = 10
+base_max_ep = 110
+base_max_sp = 15
+default_weapon = ExtResource("2_lqjpe")
+class_levels = Array[ExtResource("1_52wkc")]([SubResource("Resource_d4www"), SubResource("Resource_g86rf"), SubResource("Resource_1fpw7"), SubResource("Resource_vxgy0"), SubResource("Resource_bfute"), SubResource("Resource_dkdil")])
+metadata/_custom_type_script = "uid://c3m2paatdugg7"

@@ -7,6 +7,7 @@
 font_color = Color(0, 0, 0, 1)
 
 [node name="PartyCardMembers" type="HBoxContainer" unique_id=555477135]
+theme_override_constants/separation = 80
 script = ExtResource("1_l8r5a")
 
 [node name="PreviewViewport" type="SubViewportContainer" parent="." unique_id=429602362]

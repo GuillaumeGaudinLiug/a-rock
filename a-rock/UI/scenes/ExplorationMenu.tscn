@@ -38,12 +38,11 @@ offset_bottom = 476.0
 theme_override_constants/separation = 20
 
 [node name="MainPanel" type="VBoxContainer" parent="Root" unique_id=116313652]
-visible = false
 layout_mode = 0
-offset_left = 383.0
-offset_top = 78.0
-offset_right = 583.0
-offset_bottom = 448.0
+offset_left = 422.0
+offset_top = 66.0
+offset_right = 622.0
+offset_bottom = 566.0
 theme_override_constants/separation = 40
 
 [node name="WeaponsButton" type="Button" parent="Root/MainPanel" unique_id=1924074720]

@@ -9,7 +9,7 @@ extends Node2D
 			_setup_shapes()
 		queue_redraw()
 
-@export var wall_thickness: float = 20.0
+@export var wall_thickness: float = 10.0
 @export var camera_override: Camera2D
 @export var show_debug_rect: bool = true
 

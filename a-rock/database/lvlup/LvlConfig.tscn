@@ -1,48 +1,88 @@
 [gd_scene format=3 uid="uid://bcpb0t44dp3nr"]
 
-[ext_resource type="Script" uid="uid://bb8qa81laqo46" path="res://database/lvlup/LvlConfig.gd" id="1_aouq7"]
-[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="2_58keu"]
+[ext_resource type="Script" uid="uid://bb8qa81laqo46" path="res://database/lvlup/LvlConfig.gd" id="1_ynn4y"]
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="2_v25sq"]
 
 [sub_resource type="Resource" id="Resource_blpni"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 50
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_mmqhp"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 100
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_sh4up"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 150
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_aouq7"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 200
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_58keu"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 250
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_nqowm"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 300
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_51xip"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 350
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
 [sub_resource type="Resource" id="Resource_tmood"]
-script = ExtResource("2_58keu")
+script = ExtResource("2_v25sq")
 xp_required = 400
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
+[sub_resource type="Resource" id="Resource_o8hfs"]
+script = ExtResource("2_v25sq")
+xp_required = 450
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_y4qh0"]
+script = ExtResource("2_v25sq")
+xp_required = 450
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_ynn4y"]
+script = ExtResource("2_v25sq")
+xp_required = 450
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_v25sq"]
+script = ExtResource("2_v25sq")
+xp_required = 500
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_o0kta"]
+script = ExtResource("2_v25sq")
+xp_required = 500
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_ej4rw"]
+script = ExtResource("2_v25sq")
+xp_required = 550
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_h7psf"]
+script = ExtResource("2_v25sq")
+xp_required = 550
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_4kgxn"]
+script = ExtResource("2_v25sq")
+xp_required = 600
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
 [node name="LvlConfig" type="Node" unique_id=163924926]
-script = ExtResource("1_aouq7")
-stat_level_costs = Array[ExtResource("2_58keu")]([SubResource("Resource_blpni"), SubResource("Resource_mmqhp"), SubResource("Resource_sh4up"), SubResource("Resource_aouq7"), SubResource("Resource_58keu"), SubResource("Resource_nqowm"), SubResource("Resource_51xip"), SubResource("Resource_tmood"), null, null])
+script = ExtResource("1_ynn4y")
+stat_level_costs = Array[ExtResource("2_v25sq")]([SubResource("Resource_blpni"), SubResource("Resource_mmqhp"), SubResource("Resource_sh4up"), SubResource("Resource_aouq7"), SubResource("Resource_58keu"), SubResource("Resource_nqowm"), SubResource("Resource_51xip"), SubResource("Resource_tmood"), SubResource("Resource_o8hfs"), SubResource("Resource_y4qh0"), SubResource("Resource_ynn4y"), SubResource("Resource_v25sq"), SubResource("Resource_o0kta"), SubResource("Resource_ej4rw"), SubResource("Resource_h7psf"), SubResource("Resource_4kgxn"), null, null, null, null, null])

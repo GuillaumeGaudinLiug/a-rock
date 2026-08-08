@@ -3,6 +3,8 @@ class_name CharacterInstance
 extends RefCounted
 
 # Champs modifiables par opération de lvlup et sauvegardables
+enum PartyRow { FRONT, BACK }
+
 var class_level : int = 0
 var character_name : String = ""
 var character_class: CharacterClass 
@@ -27,7 +29,10 @@ var adaptability: int
 var equipped_weapon: Weapon
 var available_skills: Array[Skill] = []  # calculé, jamais sauvegardé
 
+var row: PartyRow = PartyRow.FRONT
+
 var status: Array[String] # TODO : statuts effect
+
 
 
 func _init() -> void:
@@ -92,7 +97,7 @@ func to_dict() -> Dictionary:
 
 	return {
 		"class_level": class_level,
-		'character_name': character_name, 
+		"character_name": character_name, 
 		"character_class": character_class.resource_path if character_class != null else "",
 		"equipped_weapon": equipped_weapon.resource_path if equipped_weapon != null else "",
 		"weapon_levels": weapon_levels_serialized,
@@ -101,6 +106,7 @@ func to_dict() -> Dictionary:
 		"passion_lvl": passion_lvl,
 		"spirit_lvl": spirit_lvl,
 		"adaptability_lvl": adaptability_lvl,
+		"row": row
 	}
 
 
@@ -121,6 +127,7 @@ static func from_dict(data: Dictionary) -> CharacterInstance:
 	instance.passion_lvl = data["passion_lvl"]
 	instance.spirit_lvl = data["spirit_lvl"]
 	instance.adaptability_lvl = data["adaptability_lvl"]
+	instance.row = data.get("row", PartyRow.FRONT)
 	
 	instance.resync_attributes()
 	# Redonner max ep/sp à load
@@ -207,3 +214,6 @@ func try_use_skill(skill: Skill, context: Dictionary) -> bool:
 
 	skill.effect.execute(self, context)
 	return true
+
+func set_row(new_row: PartyRow) -> void:
+	row = new_row

@@ -96,11 +96,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
+size = Vector2(37, 32)
+
 [node name="Node2D" type="Node2D" unique_id=1261763557]
 
 [node name="PlayerExpl" type="CharacterBody2D" parent="." unique_id=927143671 groups=["player"]]
 script = ExtResource("1_e0b2u")
-speed = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerExpl" unique_id=37263839]
 position = Vector2(-0.5, 2.5)
@@ -116,3 +118,9 @@ limit_left = -10000
 limit_top = -10000
 limit_right = 10000
 limit_bottom = 10000
+
+[node name="InteractionZone" type="Area2D" parent="PlayerExpl" unique_id=694718610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerExpl/InteractionZone" unique_id=41529766]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ov0la")
