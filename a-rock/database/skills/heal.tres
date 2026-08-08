@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://cswrvd8ocdfxs"]
+
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="1_kt82p"]
+[ext_resource type="Script" uid="uid://copqmwidbebvd" path="res://database/effects/healing_effect.gd" id="1_rk5ya"]
+
+[sub_resource type="Resource" id="Resource_rk5ya"]
+script = ExtResource("1_rk5ya")
+metadata/_custom_type_script = "uid://copqmwidbebvd"
+
+[resource]
+script = ExtResource("1_kt82p")
+skill_name = "Heal"
+description = "Heal small amount of EP"
+usable_contexts = 7
+effect = SubResource("Resource_rk5ya")
+sp_cost = 2
+sp_cost_percent = 0.05
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

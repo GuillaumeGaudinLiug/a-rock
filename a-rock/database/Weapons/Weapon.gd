@@ -7,7 +7,8 @@ extends Resource
 @export var max_level: int = 6
 
 @export var level_bonuses: Array[WeaponLevelStats] = []  # index 0 = niveau 1, index 9 = niveau 10
-
+@export_group("Compétences d'arme")
+@export var level_unlocks: Array[LevelUnlock] = []
 
 func get_stat_bonus(stat_name: String, weapon_level: int) -> int:
 	if weapon_level <= 0:
@@ -18,7 +19,7 @@ func get_stat_bonus(stat_name: String, weapon_level: int) -> int:
 		return 0
 	return level_bonuses[index].get_stat(stat_name)
 
-# dans weapon.gd
+# 
 func get_xp_required(weapon_level: int) -> int:
 	var index := weapon_level - 1
 	if index < 0 or index >= level_bonuses.size():
@@ -26,4 +27,10 @@ func get_xp_required(weapon_level: int) -> int:
 		return -1
 	return level_bonuses[index].xp_required
 	
-# TODO: SKILLS
+	
+func get_skills_by_level(weapon_level: int) -> Array[Skill]:
+	var result: Array[Skill] = []
+	for unlock in level_unlocks:
+		if unlock.level <= weapon_level:
+			result.append_array(unlock.skills)
+	return result

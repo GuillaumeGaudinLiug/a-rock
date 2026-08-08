@@ -25,6 +25,7 @@ var passion: int
 var spirit:int
 var adaptability: int
 var equipped_weapon: Weapon
+var available_skills: Array[Skill] = []  # calculé, jamais sauvegardé
 
 var status: Array[String] # TODO : statuts effect
 
@@ -72,6 +73,14 @@ func resync_attributes() -> CharacterInstance:
 		adaptability += equipped_weapon.get_stat_bonus("adaptability", weapon_level)
 		max_ep += equipped_weapon.get_stat_bonus("max_ep", weapon_level)
 		max_sp += equipped_weapon.get_stat_bonus("max_sp", weapon_level)
+
+	# --- Compétences débloquées (classe + arme) ---
+	available_skills = []
+	if cls != null:
+		available_skills.append_array(cls.get_skills_by_level(class_level))
+	if equipped_weapon != null:
+		var weapon_level: int = weapon_levels.get(equipped_weapon, 0)
+		available_skills.append_array(equipped_weapon.get_skills_by_level(weapon_level))
 
 	return self
 
@@ -178,4 +187,23 @@ func try_level_up_class() -> bool:
 	class_level += 1
 
 	resync_attributes()
+	return true
+
+
+func try_use_skill(skill: Skill, context: Dictionary) -> bool:
+	if not skill.is_usable_in(GameManager.current_state):
+		return false
+	if skill.effect == null:
+		return false
+
+	var ep_cost := skill.get_ep_cost(self)
+	var sp_cost := skill.get_sp_cost(self)
+
+	if current_ep < ep_cost or current_sp < sp_cost:
+		return false
+
+	current_ep -= ep_cost
+	current_sp -= sp_cost
+
+	skill.effect.execute(self, context)
 	return true

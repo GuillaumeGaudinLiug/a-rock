@@ -1,15 +1,18 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c1ri8ixxfrw78"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_g4wut"]
-[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_daq44"]
-[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_4ppst"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_mjf68"]
+[ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_38nse"]
+[ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="3_irfkd"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_b2vrb"]
+[ext_resource type="Resource" uid="uid://cswrvd8ocdfxs" path="res://database/skills/heal.tres" id="5_g0y68"]
+[ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="6_8d7nh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bovy6"]
-atlas = ExtResource("1_g4wut")
+atlas = ExtResource("1_mjf68")
 region = Rect2(628.6279, 671.3795, 10.46521, 16.70813)
 
 [sub_resource type="Resource" id="Resource_nwefo"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 determination = 1
 courage = 3
 spirit = 2
@@ -20,7 +23,7 @@ xp_required = 100
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_rd10c"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 determination = 1
 courage = 1
 passion = 2
@@ -31,25 +34,31 @@ xp_required = 200
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_507xv"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_g6pa6"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_flhn4"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_7hba5"]
-script = ExtResource("2_daq44")
+script = ExtResource("2_38nse")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
+
+[sub_resource type="Resource" id="Resource_bdtav"]
+script = ExtResource("3_irfkd")
+skills = Array[ExtResource("4_b2vrb")]([ExtResource("5_g0y68")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
 
 [resource]
 resource_name = "Shield"
-script = ExtResource("3_4ppst")
+script = ExtResource("6_8d7nh")
 weapon_name = "Shield"
 icon = SubResource("AtlasTexture_bovy6")
-level_bonuses = Array[ExtResource("2_daq44")]([SubResource("Resource_nwefo"), SubResource("Resource_rd10c"), SubResource("Resource_507xv"), SubResource("Resource_g6pa6"), SubResource("Resource_flhn4"), SubResource("Resource_7hba5")])
+level_bonuses = Array[ExtResource("2_38nse")]([SubResource("Resource_nwefo"), SubResource("Resource_rd10c"), SubResource("Resource_507xv"), SubResource("Resource_g6pa6"), SubResource("Resource_flhn4"), SubResource("Resource_7hba5")])
+level_unlocks = Array[ExtResource("3_irfkd")]([SubResource("Resource_bdtav")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

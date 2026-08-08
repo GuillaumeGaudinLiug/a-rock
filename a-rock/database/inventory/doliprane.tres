@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://bguhpqyj3qla7"]
+
+[ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="1_a5bwe"]
+[ext_resource type="Script" uid="uid://copqmwidbebvd" path="res://database/effects/healing_effect.gd" id="1_ukxu0"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="2_xxlvq"]
+
+[sub_resource type="Resource" id="Resource_kyd1c"]
+script = ExtResource("1_ukxu0")
+metadata/_custom_type_script = "uid://copqmwidbebvd"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukxu0"]
+atlas = ExtResource("2_xxlvq")
+region = Rect2(430.2784, 607.7273, 18.061401, 16.078125)
+
+[resource]
+script = ExtResource("1_a5bwe")
+item_name = "Doliprane"
+description = "Heal small EP amount"
+icon = SubResource("AtlasTexture_ukxu0")
+usable_contexts = 3
+effect = SubResource("Resource_kyd1c")
+metadata/_custom_type_script = "uid://bsuvjr7ywgfp"

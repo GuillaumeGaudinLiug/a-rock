@@ -17,10 +17,19 @@ extends Resource
 
 @export var default_weapon: Weapon
 @export var class_levels : Array[ProgressionLevelEntry] = []
-# TODO: Skills
+@export_group("Compétences de classe avec level necessaire")
+@export var level_unlocks: Array[LevelUnlock] = []
 
 func get_class_level_cost(current_class_level: int) -> int:
 	var index := current_class_level - 1
 	if index < 0 or index >= class_levels.size():
 		return -1
 	return class_levels[index].xp_required
+
+
+func get_skills_by_level(class_level: int) -> Array[Skill]:
+	var result: Array[Skill] = []
+	for unlock in level_unlocks:
+		if unlock.level <= class_level:
+			result.append_array(unlock.skills)
+	return result

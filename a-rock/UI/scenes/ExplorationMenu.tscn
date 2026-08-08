@@ -27,6 +27,7 @@ layout_mode = 0
 offset_top = -3.0
 offset_right = 664.0
 offset_bottom = 595.0
+color = Color(0.99999124, 0.38747475, 0.4202969, 1)
 
 [node name="PartyList" type="VBoxContainer" parent="Root" unique_id=1158816883]
 layout_mode = 0
@@ -37,6 +38,7 @@ offset_bottom = 476.0
 theme_override_constants/separation = 20
 
 [node name="MainPanel" type="VBoxContainer" parent="Root" unique_id=116313652]
+visible = false
 layout_mode = 0
 offset_left = 383.0
 offset_top = 78.0
@@ -102,6 +104,7 @@ offset_left = 61.0
 offset_top = 126.0
 offset_right = 308.0
 offset_bottom = 398.0
+theme_override_constants/separation = 15
 
 [node name="StatsPreview" type="VBoxContainer" parent="Root/WeaponsPanel" unique_id=2042280439]
 layout_mode = 0
@@ -148,6 +151,55 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 script = ExtResource("3_xqxiv")
+
+[node name="CateroryTabs" type="HBoxContainer" parent="Root/InventoryPanel" unique_id=2131194351]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="ConsumableTabButton" type="Button" parent="Root/InventoryPanel/CateroryTabs" unique_id=1405123798]
+layout_mode = 2
+text = "Consumable"
+
+[node name="MaterialTabButton" type="Button" parent="Root/InventoryPanel/CateroryTabs" unique_id=1874002160]
+layout_mode = 2
+text = "Materials"
+
+[node name="KeyTabButton" type="Button" parent="Root/InventoryPanel/CateroryTabs" unique_id=509305388]
+layout_mode = 2
+text = "Key"
+
+[node name="ItemListContainer" type="VBoxContainer" parent="Root/InventoryPanel" unique_id=984249706]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 117.0
+offset_right = 593.0
+offset_bottom = 418.0
+theme_override_constants/separation = 20
+
+[node name="DescriptionLabel" type="Label" parent="Root/InventoryPanel" unique_id=1020861599]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 417.0
+offset_right = 512.0
+offset_bottom = 454.0
+
+[node name="CharacterTabs" type="HBoxContainer" parent="Root/InventoryPanel" unique_id=912822665]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 345.0
+offset_right = 632.0
+offset_bottom = 460.0
+theme_override_constants/separation = 50
+
+[node name="BackButton" type="Button" parent="Root/InventoryPanel" unique_id=244132913]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 529.0
+offset_right = 179.0
+offset_bottom = 571.0
+text = "Back"
 
 [node name="ReturnToPrisonPanel" type="Control" parent="Root" unique_id=1323384205]
 visible = false
@@ -287,14 +339,53 @@ offset_bottom = 568.0
 text = "Back"
 
 [node name="SkillsPanel" type="Control" parent="Root" unique_id=1194252359]
-visible = false
 anchors_preset = 0
 offset_top = 4.0
 offset_right = 40.0
 offset_bottom = 4.0
 script = ExtResource("5_iihh1")
 
+[node name="CasterTabs" type="HBoxContainer" parent="Root/SkillsPanel" unique_id=1836307750]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 4.0
+offset_right = 459.0
+offset_bottom = 110.0
+theme_override_constants/separation = 50
+
+[node name="SkillListContainer" type="VBoxContainer" parent="Root/SkillsPanel" unique_id=1606779285]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 119.0
+offset_right = 503.0
+offset_bottom = 361.0
+theme_override_constants/separation = 20
+
+[node name="DescriptionLabel" type="Label" parent="Root/SkillsPanel" unique_id=800999710]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 385.0
+offset_right = 602.0
+offset_bottom = 427.0
+
+[node name="TargetTabs" type="HBoxContainer" parent="Root/SkillsPanel" unique_id=948155635]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 392.0
+offset_right = 623.0
+offset_bottom = 524.0
+theme_override_constants/separation = 50
+
+[node name="BackButton" type="Button" parent="Root/SkillsPanel" unique_id=1047777561]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 529.0
+offset_right = 179.0
+offset_bottom = 571.0
+text = "Back"
+
 [node name="QuitPanel" type="Control" parent="Root" unique_id=363460372]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
