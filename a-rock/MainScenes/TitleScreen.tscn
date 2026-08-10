@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf8b53cxygsda"]
 
-[ext_resource type="Script" uid="uid://bfr4605jcrt7a" path="res://TitleScreen/title_screen.gd" id="1_bkvni"]
+[ext_resource type="Script" uid="uid://bfr4605jcrt7a" path="res://MainScenes/title_screen.gd" id="1_bkvni"]
 
 [node name="TitleScrene" type="Node2D" unique_id=505272646]
 

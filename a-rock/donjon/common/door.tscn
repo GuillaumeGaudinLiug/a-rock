@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cg24qfuuww32f"]
+[gd_scene format=3 uid="uid://bjr3durc8wpvs"]
 
 [ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjon/common/door.gd" id="1_pvsrx"]
 [ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjon/common/door_point.gd" id="2_iytac"]

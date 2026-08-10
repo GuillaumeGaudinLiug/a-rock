@@ -23,7 +23,6 @@ func _ready() -> void:
 	for i in slots.size():
 		var slot := slots[i]
 		for character_class in Database.all_classes:
-			print("Character class : " + character_class.class_name_display)
 			slot.add_item(character_class.class_name_display)
 
 		slot.item_selected.connect(_on_slot_item_selected.bind(i))
@@ -39,7 +38,6 @@ func _on_slot_item_selected(index: int, slot_number: int) -> void:
 
 
 func _update_preview(slot_number: int, class_index: int) -> void:
-	print("slot_number=", slot_number, " previews[slot_number]=", previews[slot_number])
 	var character_class: CharacterClass = Database.all_classes[class_index]
 	var preview := previews[slot_number]
 	preview.sprite_frames = character_class.idle_sprite_frame

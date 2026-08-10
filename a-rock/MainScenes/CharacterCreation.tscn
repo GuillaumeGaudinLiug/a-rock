@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1sr48r8pyhg2"]
 
-[ext_resource type="Script" uid="uid://wa24iispw2xo" path="res://TitleScreen/character_creation.gd" id="1_7dqax"]
+[ext_resource type="Script" uid="uid://wa24iispw2xo" path="res://MainScenes/character_creation.gd" id="1_7dqax"]
 
 [node name="CharacterCreation" type="Control" unique_id=1852840250]
 layout_mode = 3
@@ -11,9 +11,10 @@ script = ExtResource("1_7dqax")
 propagate_maximum_size = false
 layout_mode = 0
 offset_left = 27.0
-offset_top = 52.0
-offset_right = 939.0
-offset_bottom = 1115.0
+offset_top = 42.0
+offset_right = 404.0
+offset_bottom = 371.0
+theme_override_constants/separation = 25
 
 [node name="SlotRow1" type="HBoxContainer" parent="VBoxContainer" unique_id=1610439470]
 custom_minimum_size = Vector2(100, 20)

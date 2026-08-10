@@ -3,20 +3,17 @@
 [ext_resource type="Script" uid="uid://dbs8ja6tflhed" path="res://donjon/common/exploration_scene.gd" id="1_4m6bi"]
 [ext_resource type="TileSet" uid="uid://v3yxx15h2fgs" path="res://donjon/prison/prison.tres" id="2_g4tr2"]
 [ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_s6u1d"]
-[ext_resource type="AudioStream" uid="uid://bgxrs3fvm12oc" path="res://ressources/music/Belurat.mp3" id="2_v3l6a"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="4_4oi1w"]
 [ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_sqt8m"]
+[ext_resource type="PackedScene" uid="uid://cg24qfuuww32f" path="res://donjon/common/door.tscn" id="5_4oi1w"]
 [ext_resource type="Script" uid="uid://c3l6wbjs566s7" path="res://donjon/prison/save_point.gd" id="6_2lfe6"]
 [ext_resource type="AudioStream" uid="uid://bns8we5nsrjn8" path="res://ressources/soundeffect/save_point.wav" id="7_bu0g3"]
 [ext_resource type="Script" uid="uid://baijy5httxwar" path="res://database/chests/chest.gd" id="8_xxvs5"]
 [ext_resource type="Script" uid="uid://7mxxayajin70" path="res://database/chests/loot_entry.gd" id="9_5u6ji"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="10_4m6bi"]
 [ext_resource type="AudioStream" uid="uid://bxuxfs8hrpis3" path="res://ressources/soundeffect/chess.wav" id="11_5u6ji"]
-[ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjon/common/door_point.gd" id="11_px68n"]
-[ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjon/common/door.gd" id="11_vi7sx"]
-[ext_resource type="Script" uid="uid://csvw1bl87q4l8" path="res://donjon/common/scene_door.gd" id="14_px68n"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi7sx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4tr2"]
 texture = ExtResource("2_s6u1d")
 2:0/0 = 0
 3:0/0 = 0
@@ -508,7 +505,7 @@ texture = ExtResource("2_s6u1d")
 15:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_s6u1d"]
-sources/0 = SubResource("TileSetAtlasSource_vi7sx")
+sources/0 = SubResource("TileSetAtlasSource_g4tr2")
 
 [sub_resource type="Resource" id="Resource_ov0la"]
 script = ExtResource("9_5u6ji")
@@ -570,6 +567,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3l6a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px68n"]
+size = Vector2(16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7sx"]
 size = Vector2(16, 16)
 
@@ -577,15 +580,9 @@ size = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkjj1"]
-size = Vector2(16, 16)
+size = Vector2(25, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22hvn"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8f0"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sokw1"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmu0"]
@@ -606,14 +603,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fguc3"]
-
-[node name="Prison" type="Node2D" unique_id=1182097121 node_paths=PackedStringArray("spawn_points")]
+[node name="Prison" type="Node2D" unique_id=1182097121]
 script = ExtResource("1_4m6bi")
-scene_name = "prison"
-spawn_points = NodePath("SpawnPoints/FromStart")
-encounter_chance_per_step = 0.0
-music = ExtResource("2_v3l6a")
 
 [node name="GraphicLayer" type="Node2D" parent="." unique_id=1234169246]
 
@@ -621,13 +612,15 @@ music = ExtResource("2_v3l6a")
 tile_map_data = PackedByteArray("AAD6/wEAAAABABcAAAD6/wIAAAABABcAAAD6/wMAAAABABcAAAD7/wEAAAAAABcAAAD7/wIAAAAAABcAAAD7/wMAAAAAABcAAAD8/wEAAAABABcAAAD8/wIAAAABABcAAAD8/wMAAAABABcAAAD4/wIAAAABABcAAAD4/wMAAAABABcAAAD4/wQAAAABABcAAAD5/wIAAAAAABcAAAD5/wMAAAAAABcAAAD5/wQAAAAAABcAAAD6/wQAAAABABcAAAD+/wAAAAABABcAAAD+/wEAAAABABcAAAD/////AAAAABcAAAAAAP//AAABABcAAAAAAAEAAAABABcAAAD+/wIAAAABABcAAAD9/wAAAAAAABcAAAD9/wEAAAAAABcAAAD9/wIAAAAAABcAAAD+/wMAAAABABcAAAD+/wQAAAABABcAAAD+/wUAAAAEABgAAAD//wQAAAAAABcAAAD//wUAAAAEABgAAAAAAAMAAAABABcAAAAAAAQAAAABABcAAAAAAAUAAAAEABgAAAD2////AAADABcAAAD2/wAAAAADABcAAAD2/wEAAAADABcAAAD3/wAAAAAAABcAAAD3/wEAAAAAABcAAAD4/wAAAAABABcAAAD4/wEAAAABABcAAAD5/wAAAAAAABcAAAD5/wEAAAAAABcAAAD6/wAAAAABABcAAAD7/wAAAAAAABcAAAD7/wQAAAAAABcAAAD8/wQAAAABABcAAAD9/wMAAAAAABcAAAD9/wQAAAAAABcAAAD//wIAAAAAABcAAAD//wMAAAAAABcAAAAAAAIAAAABABcAAAABAAIAAAAAABcAAAABAAMAAAAAABcAAAABAAQAAAAAABcAAAACAAIAAAABABcAAAACAAMAAAABABcAAAACAAQAAAABABcAAAADAAIAAAAAABcAAAADAAMAAAAAABcAAAADAAQAAAAAABcAAAAEAAIAAAABABcAAAAEAAMAAAABABcAAAAEAAQAAAABABcAAAD//wEAAAAAABcAAAD3/wQAAAAAABcAAAAFAAQAAAAAABcAAAAGAAQAAAABABcAAAAHAAQAAAAAABcAAAAIAAQAAAABABcAAAD3/wMAAAAAABcAAAAFAAMAAAAAABcAAAAGAAMAAAABABcAAAAHAAMAAAAAABcAAAAIAAMAAAABABcAAAAHAAIAAAAAABcAAAAIAAIAAAABABcAAAAFAAIAAAAAABcAAAAGAAIAAAABABcAAAD3/wIAAAAAABcAAAABAAEAAAAAABcAAAACAAEAAAABABcAAAADAAEAAAAAABcAAAAEAAEAAAABABcAAAAFAAEAAAAAABcAAAAGAAEAAAABABcAAAAHAAEAAAAAABcAAAAIAAEAAAABABcAAAD8/wAAAAABABcAAAD//wAAAAAAABcAAAAAAAAAAAABABcAAAABAAAAAAAAABcAAAACAAAAAAABABcAAAADAAAAAAAAABcAAAAEAAAAAAABABcAAAAFAAAAAAAAABcAAAAGAAAAAAABABcAAAAHAAAAAAAAABcAAAAIAAAAAAABABcAAAAHAP//AAAAABcAAAAIAP//AAABABcAAAAFAP//AAAAABcAAAAGAP//AAABABcAAAADAP//AAAAABcAAAAEAP//AAABABcAAAABAP//AAAAABcAAAACAP//AAABABcAAAD9////AAAAABcAAAD+////AAABABcAAAD7////AAAAABcAAAD8////AAABABcAAAD5////AAAAABcAAAD6////AAABABcAAAD3////AAAAABcAAAD4////AAABABcAAAD3//3/AAAAABcAAAD4//3/AAABABcAAAD3//7/AAAAABcAAAD4//7/AAABABcAAAD5//3/AAAAABcAAAD6//3/AAAAABcAAAD5//7/AAAAABcAAAD6//7/AAAAABcAAAD8//3/AAAAABcAAAD9//3/AAABABcAAAD8//7/AAAAABcAAAD9//7/AAABABcAAAAAAP3/AAAAABcAAAABAP3/AAABABcAAAAAAP7/AAAAABcAAAABAP7/AAABABcAAAAFAP3/AAABABcAAAAGAP3/AAAAABcAAAAFAP7/AAABABcAAAAGAP7/AAAAABcAAAAHAP3/AAABABcAAAAIAP3/AAAAABcAAAAHAP7/AAABABcAAAAIAP7/AAABABcAAAD7//7/AAABABcAAAD7//3/AAABABcAAAD6//z/AAAAABcAAAD7//z/AAABABcAAAD4//z/AAABABcAAAD5//z/AAABABcAAAD8//z/AAAAABcAAAD9//z/AAABABcAAAD+//7/AAAAABcAAAD///7/AAABABcAAAAAAPz/AAAAABcAAAABAPz/AAABABcAAAD+//z/AAAAABcAAAD///z/AAABABcAAAD+//3/AAAAABcAAAD///3/AAABABcAAAACAP3/AAAAABcAAAADAP3/AAABABcAAAACAPz/AAAAABcAAAADAPz/AAABABcAAAAEAP3/AAAAABcAAAAEAP7/AAAAABcAAAACAP7/AAAAABcAAAADAP7/AAABABcAAAAEAPz/AAAAABcAAAAFAPz/AAABABcAAAAGAPz/AAAAABcAAAAHAPz/AAAAABcAAAAJAP3/AAAFABcAAAD2//v/AAADABcAAAD2//z/AAADABcAAAD2//3/AAADABcAAAD2//7/AAADABcAAAD2/wIAAAADABcAAAD2/wMAAAADABcAAAD2/wQAAAADABcAAAD2/wUAAAADABgAAAD3/wUAAAAEABgAAAD4/wUAAAAEABgAAAD5/wUAAAAEABgAAAD6/wUAAAAEABgAAAD7/wUAAAAEABgAAAD8/wUAAAAEABgAAAD9/wUAAAAEABgAAAABAAUAAAAEABgAAAACAAUAAAAEABgAAAADAAUAAAAEABgAAAAEAAUAAAAEABgAAAAFAAUAAAAEABgAAAAGAAUAAAAEABgAAAAHAAUAAAAEABgAAAAIAAUAAAAEABgAAAAJAAUAAAAFABgAAAAJAAQAAAAFABcAAAAJAAMAAAAFABcAAAAJAAIAAAAFABcAAAAJAAEAAAAFABcAAAAJAAAAAAAFABcAAAAJAP//AAAFABcAAAAJAP7/AAAFABcAAAAJAPz/AAAFABcAAAAJAPv/AAAFABcAAAAJAPr/AAAFABYAAAAIAPr/AAAEABYAAAAHAPr/AAAEABYAAAAGAPr/AAAEABYAAAAFAPr/AAAEABYAAAAEAPr/AAAEABYAAAADAPr/AAAEABYAAAACAPr/AAAEABYAAAABAPr/AAAEABYAAAAAAPr/AAAEABYAAAD///r/AAAEABYAAAD+//r/AAAEABYAAAD9//r/AAAEABYAAAD8//r/AAAEABYAAAD7//r/AAAEABYAAAD6//r/AAAEABYAAAD3//r/AAAEABYAAAD4//r/AAAEABYAAAD5//r/AAAEABYAAAD2//r/AAAEABYAAAD3//z/AAAAABcAAAD3//v/AAAAABcAAAD4//v/AAABABcAAAD5//v/AAAAABcAAAD6//v/AAABABcAAAD7//v/AAAAABcAAAD8//v/AAABABcAAAD9//v/AAAAABcAAAD+//v/AAABABcAAAD///v/AAAAABcAAAAAAPv/AAABABcAAAABAPv/AAAAABcAAAACAPv/AAABABcAAAADAPv/AAAAABcAAAAEAPv/AAABABcAAAAFAPv/AAAAABcAAAAGAPv/AAABABcAAAAHAPv/AAAAABcAAAAIAPv/AAABABcAAAAIAPz/AAABABcAAAD0/+f/AAADABcAAAD0/+j/AAADABcAAAD0/+n/AAADABcAAAD0/+r/AAADABcAAAD0/+v/AAADABcAAAD0/+z/AAADABcAAAD0/+3/AAADABcAAAD0/+7/AAADABcAAAD0/+//AAADABcAAAD0//D/AAADABcAAAD0//H/AAADABcAAAD0//L/AAADABcAAAD0//P/AAADABcAAAD4/+f/AAAFABcAAAD4/+j/AAAFABcAAAD4/+n/AAAFABcAAAD4/+r/AAAFABcAAAD4/+v/AAAFABcAAAD4/+z/AAAFABcAAAD4/+3/AAAFABcAAAD4/+7/AAAFABcAAAD4/+//AAAFABcAAAD4//D/AAAFABcAAAD4//H/AAAFABcAAAD4//L/AAAFABcAAAD4//P/AAAFABcAAAD+/+j/AAADABcAAAD+/+n/AAADABcAAAD+/+r/AAADABcAAAD+/+v/AAADABcAAAD+/+z/AAADABcAAAD+/+3/AAADABcAAAD+/+7/AAADABcAAAD+/+//AAADABcAAAD+//D/AAADABcAAAD+//H/AAADABcAAAD+//L/AAADABcAAAABAOj/AAAFABcAAAABAOn/AAAFABcAAAABAOr/AAAFABcAAAABAOv/AAAFABcAAAABAOz/AAAFABcAAAABAO3/AAAFABcAAAABAO7/AAAFABcAAAABAO//AAAFABcAAAABAPD/AAAFABcAAAABAPH/AAAFABcAAAABAPL/AAAFABcAAAAKAOf/AAAFABcAAAAKAOj/AAAFABcAAAAKAOn/AAAFABcAAAAKAOr/AAAFABcAAAAKAOv/AAAFABcAAAAKAOz/AAAFABcAAAAKAO3/AAAFABcAAAAKAO7/AAAFABcAAAAKAO//AAAFABcAAAAKAPD/AAAFABcAAAAKAPH/AAAFABcAAAAKAPL/AAAFABcAAAAKAPP/AAAFABcAAAAHAOf/AAADABcAAAAHAOj/AAADABcAAAAHAOn/AAADABcAAAAHAOr/AAADABcAAAAHAOv/AAADABcAAAAHAOz/AAADABcAAAAHAO3/AAADABcAAAAHAO7/AAADABcAAAAHAO//AAADABcAAAAHAPD/AAADABcAAAAHAPH/AAADABcAAAAHAPL/AAADABcAAAAHAPP/AAADABcAAAA=")
 tile_set = SubResource("TileSet_s6u1d")
 
+[node name="Player" parent="." unique_id=1261763557 instance=ExtResource("4_sqt8m")]
+position = Vector2(0, 50)
+
 [node name="Chest" type="Area2D" parent="." unique_id=1644600778]
 position = Vector2(100, 0)
 script = ExtResource("8_xxvs5")
 chest_id = "bf8c3795-4e0e-8f9d-a351-ce0ca815b70e"
 loot = Array[ExtResource("9_5u6ji")]([SubResource("Resource_ov0la")])
 use_sfx = ExtResource("11_5u6ji")
-message_prompt = "OPEN"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Chest" unique_id=2090696888]
 sprite_frames = SubResource("SpriteFrames_fguc3")
@@ -635,9 +628,6 @@ animation = &"closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest" unique_id=674288634]
 shape = SubResource("RectangleShape2D_ov0la")
-
-[node name="Player" parent="." unique_id=1261763557 instance=ExtResource("4_sqt8m")]
-position = Vector2(0, 50)
 
 [node name="GraphicLayer2" type="Node2D" parent="." unique_id=1713926902]
 
@@ -650,13 +640,14 @@ tile_set = ExtResource("2_g4tr2")
 [node name="Rooms" type="Node2D" parent="." unique_id=1918993174]
 
 [node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("4_4oi1w")]
-size = Vector2(305, 150)
+position = Vector2(0, 10)
+size = Vector2(305, 120)
 wall_thickness = 20.0
 show_debug_rect = false
 
 [node name="Corridor 1" parent="Rooms" unique_id=1721985898 instance=ExtResource("4_4oi1w")]
 position = Vector2(-150, -300)
-size = Vector2(40, 300)
+size = Vector2(40, 150)
 wall_thickness = 20.0
 show_debug_rect = false
 
@@ -674,62 +665,61 @@ show_debug_rect = false
 
 [node name="Doors" type="Node2D" parent="." unique_id=1787965241]
 
-[node name="Door2" type="Node2D" parent="Doors" unique_id=559801305]
-script = ExtResource("11_vi7sx")
+[node name="Door2" parent="Doors" unique_id=849133815 instance=ExtResource("5_4oi1w")]
 
-[node name="PointA" type="Area2D" parent="Doors/Door2" unique_id=1634281121]
-position = Vector2(55, -22)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
+[node name="PointA" parent="Doors/Door2" index="0" unique_id=330268095]
+position = Vector2(-4, -31)
+show_debug_rect = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointA" unique_id=695397646]
+[node name="CollisionShape2D" parent="Doors/Door2/PointA" index="0" unique_id=1177554015]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_v3l6a")
+
+[node name="PointB" parent="Doors/Door2" index="1" unique_id=462719431]
+position = Vector2(1, -242)
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door2/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_px68n")
+
+[node name="Door1" parent="Doors" unique_id=1328313244 node_paths=PackedStringArray("room_a", "room_b") instance=ExtResource("5_4oi1w")]
+room_a = NodePath("../../Rooms/Room")
+room_b = NodePath("../../Rooms/Corridor 1")
+
+[node name="PointA" parent="Doors/Door1" index="0" unique_id=330268095]
+show_debug_rect = false
+
+[node name="CollisionShape2D" parent="Doors/Door1/PointA" index="0" unique_id=1177554015]
+position = Vector2(-72, -30)
 shape = SubResource("RectangleShape2D_vi7sx")
 
-[node name="PointB" type="Area2D" parent="Doors/Door2" unique_id=1532214875]
-position = Vector2(150, -244)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
+[node name="PointB" parent="Doors/Door1" index="1" unique_id=462719431]
+position = Vector2(-150, -241)
+show_debug_rect = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointB" unique_id=1872900881]
+[node name="CollisionShape2D" parent="Doors/Door1/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_yfkd8")
 
-[node name="Door1" type="Node2D" parent="Doors" unique_id=2069194942]
-script = ExtResource("11_vi7sx")
+[node name="Door3" parent="Doors" unique_id=313421834 instance=ExtResource("5_4oi1w")]
 
-[node name="PointA" type="Area2D" parent="Doors/Door1" unique_id=372896877]
-position = Vector2(-75, -23)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
+[node name="PointA" parent="Doors/Door3" index="0" unique_id=330268095]
+position = Vector2(64, -36)
+size = Vector2(25, 16)
+show_debug_rect = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointA" unique_id=213675636]
+[node name="CollisionShape2D" parent="Doors/Door3/PointA" index="0" unique_id=1177554015]
+position = Vector2(-9, 1)
 shape = SubResource("RectangleShape2D_nkjj1")
 
-[node name="PointB" type="Area2D" parent="Doors/Door1" unique_id=1926606883]
-position = Vector2(-149, -172)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
+[node name="PointB" parent="Doors/Door3" index="1" unique_id=462719431]
+position = Vector2(150, -247)
+show_debug_rect = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointB" unique_id=1039471717]
+[node name="CollisionShape2D" parent="Doors/Door3/PointB" index="0" unique_id=614549298]
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_22hvn")
-
-[node name="Door3" type="Node2D" parent="Doors" unique_id=2012018933]
-script = ExtResource("11_vi7sx")
-
-[node name="PointA" type="Area2D" parent="Doors/Door3" unique_id=233803301]
-position = Vector2(-6, -22)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointA" unique_id=1927403943]
-shape = SubResource("RectangleShape2D_ej8f0")
-
-[node name="PointB" type="Area2D" parent="Doors/Door3" unique_id=1897838368]
-position = Vector2(-1, -244)
-script = ExtResource("11_px68n")
-size = Vector2(16, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointB" unique_id=898118294]
-shape = SubResource("RectangleShape2D_sokw1")
 
 [node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
 position = Vector2(-135, 20)
@@ -746,15 +736,6 @@ sprite_frames = SubResource("SpriteFrames_ov0la")
 
 [node name="FromStart" type="Marker2D" parent="SpawnPoints" unique_id=17486622]
 
-[node name="SceneDoors" type="Node2D" parent="." unique_id=652375597]
-
-[node name="SceneDoor1" type="Area2D" parent="SceneDoors" unique_id=1125177279]
-position = Vector2(-150, -432)
-script = ExtResource("14_px68n")
-target_scene_path = "res://donjon/test/map_test.tscn"
-target_spawn_name = "FromPrison"
-show_debug_rect = false
-message_prompt = "ENTER"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneDoors/SceneDoor1" unique_id=1113975426]
-shape = SubResource("RectangleShape2D_fguc3")
+[editable path="Doors/Door2"]
+[editable path="Doors/Door1"]
+[editable path="Doors/Door3"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://6vscnody4jbm"]
+
+[ext_resource type="Script" uid="uid://cc5hkk0csawc3" path="res://MainScenes/loading_screen.gd" id="1_w5xja"]
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1183765006]
+script = ExtResource("1_w5xja")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1419068626]
+offset_right = 1500.0
+offset_bottom = 1500.0
+color = Color(1, 1, 1, 0)
