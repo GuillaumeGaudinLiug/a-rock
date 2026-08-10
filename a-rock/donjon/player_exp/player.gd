@@ -43,6 +43,8 @@ func update_animation(direction: Vector2) -> void:
 func _on_interactable_entered(area: Area2D) -> void:
 	if area is InteractableObject:
 		nearby_interactables.append(area)
+		MenuManager.show_message(area.message_prompt)
+
 
 
 func _on_interactable_exited(area: Area2D) -> void:

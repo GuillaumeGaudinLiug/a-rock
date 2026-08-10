@@ -6,11 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_sqt8m"]
 [ext_resource type="PackedScene" uid="uid://cg24qfuuww32f" path="res://donjon/common/door.tscn" id="5_4oi1w"]
 [ext_resource type="Script" uid="uid://c3l6wbjs566s7" path="res://donjon/prison/save_point.gd" id="6_2lfe6"]
-[ext_resource type="AudioStream" uid="uid://bns8we5nsrjn8" path="res://ressources/soundeffect/save_point.wav" id="7_bu0g3"]
 [ext_resource type="Script" uid="uid://baijy5httxwar" path="res://database/chests/chest.gd" id="8_xxvs5"]
 [ext_resource type="Script" uid="uid://7mxxayajin70" path="res://database/chests/loot_entry.gd" id="9_5u6ji"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="10_4m6bi"]
-[ext_resource type="AudioStream" uid="uid://bxuxfs8hrpis3" path="res://ressources/soundeffect/chess.wav" id="11_5u6ji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4tr2"]
 texture = ExtResource("2_s6u1d")
@@ -708,7 +706,6 @@ shape = SubResource("RectangleShape2D_vi7sx")
 [node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
 position = Vector2(-135, 20)
 script = ExtResource("6_2lfe6")
-use_sfx = ExtResource("7_bu0g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]
 shape = SubResource("RectangleShape2D_yfkd8")
@@ -721,7 +718,6 @@ position = Vector2(100, 0)
 script = ExtResource("8_xxvs5")
 chest_id = "bf8c3795-4e0e-8f9d-a351-ce0ca815b70e"
 loot = Array[ExtResource("9_5u6ji")]([SubResource("Resource_ov0la")])
-use_sfx = ExtResource("11_5u6ji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Chest" unique_id=2090696888]
 sprite_frames = SubResource("SpriteFrames_fguc3")

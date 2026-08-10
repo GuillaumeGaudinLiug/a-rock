@@ -69,7 +69,7 @@ func load_game(slot: int) -> bool:
 	GameData.xp_global = data["xp_global"]
 	GameData.current_scene_path = data["current_scene_path"]
 	GameData.story_flags = data["story_flags"]
-	GameData.chest_flags = data["chest_flags"]
+	GameData.chest_flags.assign(data["chest_flags"])
 	GameData.cycle_number = data["cycle_number"]
 
 	return true

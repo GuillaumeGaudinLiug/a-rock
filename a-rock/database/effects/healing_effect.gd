@@ -6,7 +6,7 @@ extends AbstractEffect
 @export var percentage: int = 10
 
 
-func execute(user: CharacterInstance, context: Dictionary) -> void:
+func _execute(user: CharacterInstance, context: Dictionary) -> void:
 	var target: CharacterInstance = context.get("target")
 	if target == null:
 		return

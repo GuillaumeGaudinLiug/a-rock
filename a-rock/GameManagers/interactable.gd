@@ -2,6 +2,7 @@
 class_name InteractableObject
 extends Area2D
 
+@export var message_prompt : String = "!!!"
 func _ready() -> void:
 	add_to_group("interactable")
 

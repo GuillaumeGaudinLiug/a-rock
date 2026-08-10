@@ -4,14 +4,15 @@
 [ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjon/common/door_point.gd" id="2_iytac"]
 [ext_resource type="AudioStream" uid="uid://0k2k7vouawm4" path="res://ressources/soundeffect/door.wav" id="3_dupkr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0cc4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dupkr"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sep1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0cc4"]
 size = Vector2(16, 16)
 
 [node name="Door" type="Node2D" unique_id=849133815]
 script = ExtResource("1_pvsrx")
+use_sfx = ExtResource("3_dupkr")
 
 [node name="PointA" type="Area2D" parent="." unique_id=330268095]
 script = ExtResource("2_iytac")
@@ -19,7 +20,7 @@ size = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointA" unique_id=1177554015]
 position = Vector2(3, -1.5)
-shape = SubResource("RectangleShape2D_b0cc4")
+shape = SubResource("RectangleShape2D_dupkr")
 
 [node name="PointB" type="Area2D" parent="." unique_id=462719431]
 script = ExtResource("2_iytac")
@@ -27,7 +28,4 @@ size = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointB" unique_id=614549298]
 position = Vector2(3, -1.5)
-shape = SubResource("RectangleShape2D_2sep1")
-
-[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=2058824901]
-stream = ExtResource("3_dupkr")
+shape = SubResource("RectangleShape2D_b0cc4")

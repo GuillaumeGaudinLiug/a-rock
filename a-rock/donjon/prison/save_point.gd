@@ -10,11 +10,11 @@ extends Area2D
 
 @export var save_slot: int = 0
 @export var show_debug_rect: bool = true
+@export var use_sfx: AudioStream
 
 var can_save: bool = true
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var sfx: AudioStreamPlayer = $SFX
 
 
 func _ready() -> void:
@@ -54,9 +54,8 @@ func _on_body_entered(body: Node2D) -> void:
 	SaveManager.save_game(save_slot)
 	MenuManager.show_message("Game Saved")
 	
-	if sfx != null:
-		sfx.play()
-
+	if use_sfx != null:
+		SfxManager.play(use_sfx)
 	print("Partie sauvegardée (slot %d)." % save_slot)
 
 	await get_tree().create_timer(0.5).timeout

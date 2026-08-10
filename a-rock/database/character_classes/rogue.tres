@@ -47,6 +47,7 @@ animations = [{
 
 [resource]
 script = ExtResource("3_m8n82")
+class_name_display = "Rogue("
 idle_sprite_frame = SubResource("SpriteFrames_lqjpe")
 base_determination = 8
 base_courage = 6

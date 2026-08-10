@@ -23,6 +23,7 @@ Database="*uid://g3ca4rpbxoeg"
 LvlConfig="*uid://bcpb0t44dp3nr"
 SaveManager="*uid://bn2ig60drxb8i"
 MenuManager="*uid://d2ut5fthcpv4u"
+SfxManager="*uid://62xkluntkbu6"
 
 [display]
 
