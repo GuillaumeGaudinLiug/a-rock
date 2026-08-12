@@ -7,6 +7,18 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_7dqax")
 
+[node name="PartySizeSelector" type="HBoxContainer" parent="." unique_id=560600242]
+layout_mode = 0
+offset_right = 377.0
+offset_bottom = 23.0
+
+[node name="PartySizeOptionButton" type="OptionButton" parent="PartySizeSelector" unique_id=1022410044]
+layout_mode = 2
+
+[node name="PartySizeLabel" type="Label" parent="PartySizeSelector" unique_id=549040626]
+layout_mode = 2
+text = "Select your personnality"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1922049699]
 propagate_maximum_size = false
 layout_mode = 0

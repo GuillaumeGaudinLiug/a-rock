@@ -3,7 +3,7 @@ class_name HealRawEffect
 extends AbstractEffect
 
 @export var amount: int = 20
-@export var percentage: int = 10
+@export_range(0.0, 1.0, 0.01) var percentage: float = 0.1
 
 
 func _execute(user: CharacterInstance, context: Dictionary) -> void:

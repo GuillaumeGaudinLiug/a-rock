@@ -26,6 +26,7 @@ MenuManager="*uid://d2ut5fthcpv4u"
 SfxManager="*uid://62xkluntkbu6"
 MusicManager="*uid://b6j7grj5qjn0j"
 TransitionManager="*uid://db1x6cgwbv5qw"
+CombatSetup="*uid://byqfj8w2i2uu2"
 
 [display]
 

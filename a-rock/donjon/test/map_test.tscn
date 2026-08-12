@@ -1,25 +1,27 @@
 [gd_scene format=4 uid="uid://cpictx3b5peek"]
 
 [ext_resource type="TileSet" uid="uid://cuajb1w58ra8i" path="res://donjon/test/castle.tres" id="1_7ffkg"]
+[ext_resource type="Script" uid="uid://dbs8ja6tflhed" path="res://donjon/common/exploration_scene.gd" id="1_b3qh8"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="2_1hd26"]
-[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_b5c0q"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgcr1"]
-size = Vector2(150, 150)
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="4_b5c0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3qh8"]
-size = Vector2(150, 10)
+size = Vector2(150, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su0rd"]
 size = Vector2(150, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_543hh"]
-size = Vector2(10, 150)
+size = Vector2(150, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ch3y4"]
 size = Vector2(10, 150)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwhuq"]
+size = Vector2(10, 150)
+
 [node name="MapTest" type="Node2D" unique_id=11238249]
+script = ExtResource("1_b3qh8")
 
 [node name="GraphicLayers" type="Node2D" parent="." unique_id=548533853]
 
@@ -46,23 +48,23 @@ size = Vector2(150, 150)
 show_debug_rect = false
 
 [node name="CollisionShape2D" parent="Rooms/Room1/Zone" parent_id_path=PackedInt32Array(1634010203, 1380694902) index="0" unique_id=862488573]
-shape = SubResource("RectangleShape2D_dgcr1")
+shape = SubResource("RectangleShape2D_b3qh8")
 
 [node name="WallTop" parent="Rooms/Room1/Walls" parent_id_path=PackedInt32Array(1634010203, 675097533) index="0" unique_id=1871280577]
 position = Vector2(0, -75)
-shape = SubResource("RectangleShape2D_b3qh8")
+shape = SubResource("RectangleShape2D_su0rd")
 
 [node name="WallBottom" parent="Rooms/Room1/Walls" parent_id_path=PackedInt32Array(1634010203, 675097533) index="1" unique_id=1260568104]
 position = Vector2(0, 75)
-shape = SubResource("RectangleShape2D_su0rd")
+shape = SubResource("RectangleShape2D_543hh")
 
 [node name="WallLeft" parent="Rooms/Room1/Walls" parent_id_path=PackedInt32Array(1634010203, 675097533) index="2" unique_id=1622712943]
 position = Vector2(-75, 0)
-shape = SubResource("RectangleShape2D_543hh")
+shape = SubResource("RectangleShape2D_ch3y4")
 
 [node name="WallRight" parent="Rooms/Room1/Walls" parent_id_path=PackedInt32Array(1634010203, 675097533) index="3" unique_id=1403481496]
 position = Vector2(75, 0)
-shape = SubResource("RectangleShape2D_ch3y4")
+shape = SubResource("RectangleShape2D_vwhuq")
 
 [node name="PlayerExpl" parent="." unique_id=1261763557 instance=ExtResource("4_b5c0q")]
 position = Vector2(71, 33)

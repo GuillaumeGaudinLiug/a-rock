@@ -2,12 +2,10 @@
 class_name EncounterTable
 extends Resource
 
-@export var entries: Array[EncounterEntry] = []
-@export_range(0.0, 1.0, 0.01) var encounter_chance_per_step: float = 0.05
-@export var min_steps_between_encounters: int = 3
+@export var entries: Array[EncounterEnemyGroup] = []
 
 
-func roll_group() -> EncounterEnnemyGroup:
+func roll_group() -> EncounterEnemyGroup:
 	if entries.is_empty():
 		return null
 

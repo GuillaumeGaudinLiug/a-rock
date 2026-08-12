@@ -4,10 +4,14 @@ extends Node2D
 @export var spawn_points: Node2D
 @export var encounter_table: EncounterTable
 @export_range(0.0, 1.0, 0.01) var encounter_chance_per_step: float = 0.05
-@export var min_steps_between_encounters: int = 3
+@export var min_steps_between_encounters: int = 4
 @export var music: AudioStream
 
-const STEP_DISTANCE := 16.0
+@export_group("Infos de combat")
+@export var combat_background: Texture2D
+@export var combat_music: AudioStream
+
+const STEP_DISTANCE := 32.0
 
 var player: Node2D
 var last_player_position: Vector2
@@ -16,6 +20,7 @@ var steps_since_last_encounter: int = 999
 
 
 func _ready() -> void:
+	MenuManager.show_message2(scene_name)
 	_handle_spawn()
 	MusicManager.play_music(music)
 
@@ -37,7 +42,7 @@ func _handle_spawn() -> void:
 	var p := get_tree().get_first_node_in_group("player")
 	if p != null:
 		p.global_position = spawn.global_position
-
+		
 	TransitionManager.pending_spawn_name = ""
 
 
@@ -68,7 +73,7 @@ func _on_step_taken() -> void:
 			_trigger_encounter(group)
 
 
-func _trigger_encounter(group: EncounterEnnemyGroup) -> void:
+func _trigger_encounter(group: EncounterEnemyGroup) -> void:
 	steps_since_last_encounter = 0
 	print("Rencontre déclenchée : ", group.group_name)
-	# TODO : brancher sur le vrai système de combat une fois construit
+	CombatSetup.start_encounter(group, combat_background, combat_music)

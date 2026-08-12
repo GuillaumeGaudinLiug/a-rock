@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cuvvmp2rghrg"]
+
+[ext_resource type="Script" uid="uid://dbs8ja6tflhed" path="res://donjon/common/exploration_scene.gd" id="1_gh65t"]
+[ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="1_yug1p"]
+[ext_resource type="Script" uid="uid://cxdy02s38nw5x" path="res://database/ennemies/scripts/encounter_group.gd" id="2_3lpfo"]
+[ext_resource type="Resource" uid="uid://17c47n2h5n62" path="res://database/ennemies/groups/zombieGroup.tres" id="3_nvuyh"]
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="3_tcptv"]
+[ext_resource type="Script" uid="uid://ly1j1cws1a2f" path="res://database/ennemies/scripts/encounter_table.gd" id="4_3dfkl"]
+
+[sub_resource type="Resource" id="Resource_tcptv"]
+script = ExtResource("4_3dfkl")
+entries = Array[ExtResource("2_3lpfo")]([ExtResource("3_nvuyh")])
+metadata/_custom_type_script = "uid://ly1j1cws1a2f"
+
+[node name="Subway" type="Node2D" unique_id=812026161 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_gh65t")
+scene_name = "Subway"
+spawn_points = NodePath("SpawnPoints/FromPrison")
+encounter_table = SubResource("Resource_tcptv")
+
+[node name="Rooms" type="Node2D" parent="." unique_id=1607488733]
+
+[node name="Room" parent="Rooms" unique_id=1634010203 instance=ExtResource("1_yug1p")]
+size = Vector2(305, 150)
+wall_thickness = 20.0
+show_debug_rect = false
+
+[node name="Player" parent="." unique_id=1261763557 instance=ExtResource("3_tcptv")]
+position = Vector2(0, 38)
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=502722239]
+
+[node name="FromPrison" type="Marker2D" parent="SpawnPoints" unique_id=1769031808]
+position = Vector2(50, 0)

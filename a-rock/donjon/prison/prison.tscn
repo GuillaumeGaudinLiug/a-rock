@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://dbs8ja6tflhed" path="res://donjon/common/exploration_scene.gd" id="1_4m6bi"]
 [ext_resource type="TileSet" uid="uid://v3yxx15h2fgs" path="res://donjon/prison/prison.tres" id="2_g4tr2"]
 [ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_s6u1d"]
-[ext_resource type="AudioStream" uid="uid://bgxrs3fvm12oc" path="res://ressources/music/Belurat.mp3" id="2_v3l6a"]
+[ext_resource type="Script" uid="uid://cxdy02s38nw5x" path="res://database/ennemies/scripts/encounter_group.gd" id="2_yfkd8"]
+[ext_resource type="Script" uid="uid://ly1j1cws1a2f" path="res://database/ennemies/scripts/encounter_table.gd" id="3_22hvn"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="4_4oi1w"]
-[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/player_exp/player_expl.tscn" id="4_sqt8m"]
+[ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="4_sqt8m"]
 [ext_resource type="Script" uid="uid://c3l6wbjs566s7" path="res://donjon/prison/save_point.gd" id="6_2lfe6"]
 [ext_resource type="AudioStream" uid="uid://bns8we5nsrjn8" path="res://ressources/soundeffect/save_point.wav" id="7_bu0g3"]
 [ext_resource type="Script" uid="uid://baijy5httxwar" path="res://database/chests/chest.gd" id="8_xxvs5"]
@@ -15,6 +16,10 @@
 [ext_resource type="Script" uid="uid://ccr0n3jb861bn" path="res://donjon/common/door_point.gd" id="11_px68n"]
 [ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjon/common/door.gd" id="11_vi7sx"]
 [ext_resource type="Script" uid="uid://csvw1bl87q4l8" path="res://donjon/common/scene_door.gd" id="14_px68n"]
+
+[sub_resource type="Resource" id="Resource_yfkd8"]
+script = ExtResource("3_22hvn")
+metadata/_custom_type_script = "uid://ly1j1cws1a2f"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi7sx"]
 texture = ExtResource("2_s6u1d")
@@ -570,9 +575,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0la"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7sx"]
-size = Vector2(16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfkd8"]
 size = Vector2(16, 16)
 
@@ -582,13 +584,16 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22hvn"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmu0"]
+size = Vector2(16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8f0"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sokw1"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmu0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry2ka"]
 size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu0g3"]
@@ -606,14 +611,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fguc3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud7sd"]
+size = Vector2(48, 48)
 
 [node name="Prison" type="Node2D" unique_id=1182097121 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_4m6bi")
 scene_name = "prison"
 spawn_points = NodePath("SpawnPoints/FromStart")
-encounter_chance_per_step = 0.0
-music = ExtResource("2_v3l6a")
+encounter_table = SubResource("Resource_yfkd8")
+encounter_chance_per_step = null
+min_steps_between_encounters = null
 
 [node name="GraphicLayer" type="Node2D" parent="." unique_id=1234169246]
 
@@ -681,17 +688,19 @@ script = ExtResource("11_vi7sx")
 position = Vector2(55, -22)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointA" unique_id=695397646]
-shape = SubResource("RectangleShape2D_vi7sx")
+shape = SubResource("RectangleShape2D_yfkd8")
 
 [node name="PointB" type="Area2D" parent="Doors/Door2" unique_id=1532214875]
 position = Vector2(150, -244)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointB" unique_id=1872900881]
-shape = SubResource("RectangleShape2D_yfkd8")
+shape = SubResource("RectangleShape2D_nkjj1")
 
 [node name="Door1" type="Node2D" parent="Doors" unique_id=2069194942]
 script = ExtResource("11_vi7sx")
@@ -700,17 +709,19 @@ script = ExtResource("11_vi7sx")
 position = Vector2(-75, -23)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointA" unique_id=213675636]
-shape = SubResource("RectangleShape2D_nkjj1")
+shape = SubResource("RectangleShape2D_22hvn")
 
 [node name="PointB" type="Area2D" parent="Doors/Door1" unique_id=1926606883]
 position = Vector2(-149, -172)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointB" unique_id=1039471717]
-shape = SubResource("RectangleShape2D_22hvn")
+shape = SubResource("RectangleShape2D_lgmu0")
 
 [node name="Door3" type="Node2D" parent="Doors" unique_id=2012018933]
 script = ExtResource("11_vi7sx")
@@ -719,6 +730,7 @@ script = ExtResource("11_vi7sx")
 position = Vector2(-6, -22)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointA" unique_id=1927403943]
 shape = SubResource("RectangleShape2D_ej8f0")
@@ -727,6 +739,7 @@ shape = SubResource("RectangleShape2D_ej8f0")
 position = Vector2(-1, -244)
 script = ExtResource("11_px68n")
 size = Vector2(16, 16)
+show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointB" unique_id=898118294]
 shape = SubResource("RectangleShape2D_sokw1")
@@ -737,7 +750,7 @@ script = ExtResource("6_2lfe6")
 use_sfx = ExtResource("7_bu0g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]
-shape = SubResource("RectangleShape2D_lgmu0")
+shape = SubResource("RectangleShape2D_ry2ka")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SavePoint" unique_id=1499129942]
 sprite_frames = SubResource("SpriteFrames_ov0la")
@@ -751,10 +764,10 @@ sprite_frames = SubResource("SpriteFrames_ov0la")
 [node name="SceneDoor1" type="Area2D" parent="SceneDoors" unique_id=1125177279]
 position = Vector2(-150, -432)
 script = ExtResource("14_px68n")
-target_scene_path = "res://donjon/test/map_test.tscn"
+target_scene_path = "res://donjon/workline/subway/subway.tscn"
 target_spawn_name = "FromPrison"
 show_debug_rect = false
 message_prompt = "ENTER"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneDoors/SceneDoor1" unique_id=1113975426]
-shape = SubResource("RectangleShape2D_fguc3")
+shape = SubResource("RectangleShape2D_ud7sd")

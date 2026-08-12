@@ -40,11 +40,10 @@ func _draw() -> void:
 func interact(player: Node) -> void:
 	TransitionManager.request_transition(target_scene_path, target_spawn_name)
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return
-	MenuManager.set_interact_prompt_visible(true, "OPEN")
+	MenuManager.set_interact_prompt_visible(true, "")
 
 
 func _on_body_exited(body: Node2D) -> void:

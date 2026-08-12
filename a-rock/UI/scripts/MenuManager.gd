@@ -6,6 +6,7 @@ var menu_instance: CanvasLayer
 
 @onready var interact_label: Label = $HudLayer/InteractLabel
 @onready var message_label: Label = $HudLayer/MessageLabel
+@onready var message_label2: Label = $HudLayer/MessageLabel2
 
 var message_queue: Array[Dictionary] = []
 var message_timer: float = 2.0
@@ -57,6 +58,8 @@ func set_interact_prompt_visible(is_visible: bool, text: String = "Interact") ->
 
 func show_message(text: String, duration: float = 2.0) -> void:
 	message_queue.append({ "text": text, "duration": duration })
+func show_message2(text: String) -> void:
+	message_label2.text = text
 
 
 func _show_next_message() -> void:

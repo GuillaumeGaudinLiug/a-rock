@@ -22,13 +22,25 @@ theme_override_font_sizes/font_size = 32
 
 [node name="MessageLabel" type="Label" parent="HudLayer" unique_id=2114632431]
 visible = false
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = -20.0
 offset_top = -45.0
-grow_horizontal = 0
+offset_right = 20.0
+grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
+
+[node name="MessageLabel2" type="Label" parent="HudLayer" unique_id=1131791529]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "
+"
