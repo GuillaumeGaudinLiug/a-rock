@@ -1,4 +1,3 @@
-# encounter_table.gd
 class_name EncounterTable
 extends Resource
 
@@ -13,11 +12,14 @@ func roll_group() -> EncounterEnemyGroup:
 	for entry in entries:
 		total_weight += entry.weight
 
+	if total_weight <= 0:
+		return null
+
 	var roll := randi() % total_weight
 	var cumulative := 0
 	for entry in entries:
 		cumulative += entry.weight
 		if roll < cumulative:
-			return entry.group
+			return entry
 
-	return entries[-1].group
+	return entries[-1]

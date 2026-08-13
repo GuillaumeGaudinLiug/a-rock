@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://1holg8d2qx7b"]
+
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/status_effect.gd" id="1_p0lw4"]
+[ext_resource type="Script" uid="uid://cfk3fhyyyl1q3" path="res://combats/stats_modifier.gd" id="2_0druh"]
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="3_cx3fa"]
+[ext_resource type="Script" uid="uid://cv2wrkrx0fmmb" path="res://database/effects/damage_percent.gd" id="4_0druh"]
+
+[sub_resource type="Resource" id="Resource_lgmu0"]
+script = ExtResource("4_0druh")
+damage_percent_sp = 0.0
+metadata/_custom_type_script = "uid://cv2wrkrx0fmmb"
+
+[resource]
+script = ExtResource("1_p0lw4")
+status_name = "Poison"
+visible_in_battle = true
+trigger = 3
+trigger_effects = Array[ExtResource("3_cx3fa")]([SubResource("Resource_lgmu0")])
+metadata/_custom_type_script = "uid://crvqrxeyh3pcb"

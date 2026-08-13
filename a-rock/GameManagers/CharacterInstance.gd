@@ -196,11 +196,11 @@ func try_level_up_class() -> bool:
 	resync_attributes()
 	return true
 
-
+# Utilise un skill si les conditions d'execution sont remplies
 func try_use_skill(skill: Skill, context: Dictionary) -> bool:
 	if not skill.is_usable_in(GameManager.current_state):
 		return false
-	if skill.effect == null:
+	if skill.effects.is_empty():
 		return false
 
 	var ep_cost := skill.get_ep_cost(self)
@@ -212,8 +212,15 @@ func try_use_skill(skill: Skill, context: Dictionary) -> bool:
 	current_ep -= ep_cost
 	current_sp -= sp_cost
 
-	skill.effect.execute(self, context)
+	context["user"] = self
+	for effect in skill.effects:
+		effect.execute(context)
 	return true
 
+# Appliquer un changeme,t de row
 func set_row(new_row: PartyRow) -> void:
 	row = new_row
+
+# Recuperer la valeur d'une stat par son nom
+func get_stat(stat_name: String) -> float:
+	return get(stat_name)

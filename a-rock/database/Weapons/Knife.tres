@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="1_bm3xy"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_1fpw7"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_vxgy0"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_vxgy0"]
+[ext_resource type="Resource" uid="uid://sph0e03hkpn2" path="res://database/skills/back_attack.tres" id="5_bfute"]
+[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="5_dkdil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkdil"]
 atlas = ExtResource("1_1fpw7")
@@ -47,9 +50,21 @@ metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 script = ExtResource("1_bm3xy")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
+[sub_resource type="Resource" id="Resource_irfkd"]
+script = ExtResource("2_1fpw7")
+level = 0
+skills = Array[ExtResource("4_vxgy0")]([ExtResource("5_dkdil")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
+[sub_resource type="Resource" id="Resource_yfkd8"]
+script = ExtResource("2_1fpw7")
+skills = Array[ExtResource("4_vxgy0")]([ExtResource("5_bfute")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
 [resource]
 script = ExtResource("3_vxgy0")
 weapon_name = "Knife"
 icon = SubResource("AtlasTexture_dkdil")
 level_bonuses = Array[ExtResource("1_bm3xy")]([SubResource("Resource_vxgy0"), SubResource("Resource_bfute"), SubResource("Resource_dkdil"), SubResource("Resource_w1s0b"), SubResource("Resource_mcjps"), SubResource("Resource_6ku65")])
+level_unlocks = Array[ExtResource("2_1fpw7")]([SubResource("Resource_irfkd"), SubResource("Resource_yfkd8")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

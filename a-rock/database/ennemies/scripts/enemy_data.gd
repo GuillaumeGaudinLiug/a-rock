@@ -4,6 +4,9 @@ extends Resource
 
 @export var enemy_name: String = ""
 @export var combat_sprite_frames: SpriteFrames
+# Ressource de l'IA des comportement en combat
+@export var behavior: EnemyBehavior
+@export var innate_statuses: Array[StatusEffect] = []
 
 @export_group("Statistiques")
 @export var determination: int = 10

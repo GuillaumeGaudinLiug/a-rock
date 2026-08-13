@@ -99,12 +99,14 @@ func _on_item_clicked(item: InventoryItem, button: Button) -> void:
 	else:
 		character_tabs.hide()
 
-
+# En selectionnant la cible: applique l'effet
 func _on_target_clicked(character: CharacterInstance) -> void:
 	if selected_item == null or selected_item.effect == null:
 		return
 
-	selected_item.effect.execute(character, { "target": character })
+	var item_name := selected_item.item_name
+
+	selected_item.effect.execute({ "user": character, "target": character })
 	character.resync_attributes()
 
 	GameData.remove_item(selected_item)
@@ -112,4 +114,4 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 	_populate_item_list()
 	character_tabs.hide()
 	selected_item = null
-	description_label.text = "%s utilisé sur %s." % [selected_item.item_name if selected_item else "Objet", character.character_name]
+	description_label.text = "%s utilisé sur %s." % [item_name, character.character_name]

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://dl0enp4mrjtrw"]
+
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_pylth"]
+[ext_resource type="Script" uid="uid://cftwp1gawb1bj" path="res://database/effects/base_damage_effect.gd" id="2_tc258"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_vj84j"]
+[ext_resource type="Script" uid="uid://crs3j186chy5k" path="res://database/effects/apply_statuts_effects.gd" id="3_hprbm"]
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/status_effect.gd" id="4_32uca"]
+[ext_resource type="Script" uid="uid://cfk3fhyyyl1q3" path="res://combats/stats_modifier.gd" id="5_y1hon"]
+
+[sub_resource type="Resource" id="Resource_tc258"]
+script = ExtResource("2_tc258")
+metadata/_custom_type_script = "uid://cftwp1gawb1bj"
+
+[sub_resource type="Resource" id="Resource_ej8f0"]
+script = ExtResource("4_32uca")
+metadata/_custom_type_script = "uid://crvqrxeyh3pcb"
+
+[sub_resource type="Resource" id="Resource_lgmu0"]
+script = ExtResource("3_hprbm")
+status = SubResource("Resource_ej8f0")
+metadata/_custom_type_script = "uid://crs3j186chy5k"
+
+[resource]
+script = ExtResource("2_vj84j")
+skill_name = "Toxic attack"
+description = "Attack and toxic"
+effects = Array[ExtResource("1_pylth")]([SubResource("Resource_tc258"), SubResource("Resource_lgmu0")])
+ep_cost_percent = 0.05
+sp_cost = 1
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

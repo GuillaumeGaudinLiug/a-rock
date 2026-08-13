@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://csu4do2saep1y"]
+
+[ext_resource type="Script" uid="uid://cftwp1gawb1bj" path="res://database/effects/base_damage_effect.gd" id="1_n8lvl"]
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_sskk1"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_jjxt8"]
+
+[sub_resource type="Resource" id="Resource_i35ut"]
+script = ExtResource("1_n8lvl")
+can_miss = true
+metadata/_custom_type_script = "uid://cftwp1gawb1bj"
+
+[resource]
+script = ExtResource("2_jjxt8")
+skill_name = "Attack"
+description = "Basic attack"
+effects = Array[ExtResource("1_sskk1")]([SubResource("Resource_i35ut")])
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

@@ -7,7 +7,7 @@ extends Resource
 @export var icon: Texture2D
 
 @export_flags("Exploration", "Combat", "Menu") var usable_contexts: int = 2
-@export var effect: AbstractEffect
+@export var effects: Array[AbstractEffect] = []
 
 @export_group("Coût")
 @export var ep_cost: int = 0

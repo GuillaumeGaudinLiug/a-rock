@@ -6,10 +6,11 @@ extends AbstractEffect
 @export_range(0.0, 1.0, 0.01) var percentage: float = 0.1
 
 
-func _execute(user: CharacterInstance, context: Dictionary) -> void:
-	var target: CharacterInstance = context.get("target")
+func _execute(context: Dictionary) -> void:
+	var target = context.get("target")
 	if target == null:
 		return
+	
 	target.current_ep = min(
 		target.current_ep + amount + target.max_ep * percentage/100, target.max_ep
 		)

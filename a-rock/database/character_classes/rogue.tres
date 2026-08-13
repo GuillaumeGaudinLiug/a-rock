@@ -5,6 +5,8 @@
 [ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="2_lqjpe"]
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_m8n82"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_d4www"]
+[ext_resource type="Resource" uid="uid://dl0enp4mrjtrw" path="res://database/skills/toxic_attack.tres" id="6_g86rf"]
 
 [sub_resource type="Resource" id="Resource_d4www"]
 script = ExtResource("1_52wkc")
@@ -45,9 +47,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_lgmu0"]
+script = ExtResource("2_6v4x3")
+skills = Array[ExtResource("5_d4www")]([ExtResource("6_g86rf")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
 [resource]
 script = ExtResource("3_m8n82")
-class_name_display = "Rogue("
+class_name_display = "Avoidant"
 idle_sprite_frame = SubResource("SpriteFrames_lqjpe")
 base_determination = 8
 base_courage = 6
@@ -57,4 +64,5 @@ base_max_ep = 110
 base_max_sp = 15
 default_weapon = ExtResource("2_lqjpe")
 class_levels = Array[ExtResource("1_52wkc")]([SubResource("Resource_d4www"), SubResource("Resource_g86rf"), SubResource("Resource_1fpw7"), SubResource("Resource_vxgy0"), SubResource("Resource_bfute"), SubResource("Resource_dkdil")])
+level_unlocks = Array[ExtResource("2_6v4x3")]([SubResource("Resource_lgmu0")])
 metadata/_custom_type_script = "uid://c3m2paatdugg7"
