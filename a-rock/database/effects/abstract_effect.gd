@@ -22,7 +22,7 @@ func _resolve_hit(context: Dictionary) -> bool:
 	#if user != null and target != null:
 		
 	# TODO: formula
-	return randf() < 0
+	return randf() > 0
 
 func _on_miss(context: Dictionary) -> void:
 	var user = context.get("user")

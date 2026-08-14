@@ -30,7 +30,7 @@ func pop_state() -> void:
 
 
 func _apply_pause(state: GameState) -> void:
-	get_tree().paused = (state == GameState.MENU)
+	get_tree().paused = (state == GameState.MENU  or state == GameState.COMBAT)
 
 
 func is_state(state: GameState) -> bool:

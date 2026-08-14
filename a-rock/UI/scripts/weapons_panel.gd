@@ -122,7 +122,7 @@ func _update_preview() -> void:
 
 func _on_equip_pressed() -> void:
 	if not selected_character.weapon_levels.has(selected_weapon):
-		selected_character.weapon_levels[selected_weapon] = 1
+		selected_character.weapon_levels[selected_weapon] = 0
 	selected_character.equipped_weapon = selected_weapon
 	selected_character.resync_attributes()
 	_update_preview()

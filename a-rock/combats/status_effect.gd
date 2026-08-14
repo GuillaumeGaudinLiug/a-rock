@@ -20,11 +20,11 @@ enum TriggerType { NONE, ON_BATTLE_START, ON_BATTLE_END, ON_TURN_START, ON_TURN_
 # ajouts dans status_effect.gd
 @export_group("Application (si non permanent)")
 @export_range(0.0, 1.0, 0.01) var base_apply_chance: float = 0.7
-@export var apply_chance_stat: String = "passion"   # côté attaquant : augmente la chance
-@export var resist_chance_stat: String = "spirit"    # côté cible : diminue la chance
+var apply_chance_stat: String = "passion"   # côté attaquant : augmente la chance
+var resist_chance_stat: String = "spirit"    # côté cible : diminue la chance
 @export_range(0.0, 0.1, 0.001) var chance_stat_influence: float = 0.02
 
-@export var min_duration_turns: int = 2
-@export var max_duration_turns: int = 4
-@export var duration_stat: String = "passion"        # côté attaquant : influence la durée tirée
+@export var min_duration_turns: int = 1
+@export var max_duration_turns: int = 5
+var duration_stat: String = "passion"        # côté attaquant : influence la durée tirée
 @export_range(0.0, 0.1, 0.001) var duration_stat_influence: float = 0.05

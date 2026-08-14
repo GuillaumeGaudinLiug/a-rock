@@ -6,6 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_i35ut"]
 script = ExtResource("1_n8lvl")
+amount = 15
+att_determination_multiplier = 2.0
 can_miss = true
 metadata/_custom_type_script = "uid://cftwp1gawb1bj"
 
@@ -13,5 +15,6 @@ metadata/_custom_type_script = "uid://cftwp1gawb1bj"
 script = ExtResource("2_jjxt8")
 skill_name = "Attack"
 description = "Basic attack"
+usable_contexts = 7
 effects = Array[ExtResource("1_sskk1")]([SubResource("Resource_i35ut")])
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

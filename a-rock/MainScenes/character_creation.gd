@@ -111,5 +111,7 @@ func _create_character_instance(character_class: CharacterClass, character_name:
 	instance.weapon_levels = { instance.equipped_weapon: 1 }
 
 	instance.resync_attributes()
-
+	instance.current_ep = instance.max_ep
+	instance.current_sp = instance.max_sp
+	
 	return instance

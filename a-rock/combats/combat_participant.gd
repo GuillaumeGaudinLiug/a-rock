@@ -86,6 +86,7 @@ func apply_status(status: StatusEffect, duration_turns: int = -1) -> void:
 
 	for instance in active_statuses:
 		if instance.status == status:
+			instance.remaining_turns += status.duration_turns
 			# TODO: appliquer de nouveaux tours sur le status en cours
 			return
 

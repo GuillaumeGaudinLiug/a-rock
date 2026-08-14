@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_y1q07"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="3_niwv0"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="4_hjm1i"]
-[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_niwv0"]
-[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="5_hjm1i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkvni"]
 atlas = ExtResource("1_74223")
@@ -44,16 +42,9 @@ metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 script = ExtResource("2_y1q07")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
-[sub_resource type="Resource" id="Resource_w1s0b"]
-script = ExtResource("3_niwv0")
-level = 0
-skills = Array[ExtResource("4_niwv0")]([ExtResource("5_hjm1i")])
-metadata/_custom_type_script = "uid://b5pn45pkmw8js"
-
 [resource]
 script = ExtResource("4_hjm1i")
 weapon_name = "Book"
 icon = SubResource("AtlasTexture_bkvni")
 level_bonuses = Array[ExtResource("2_y1q07")]([SubResource("Resource_enalh"), SubResource("Resource_e3dx3"), SubResource("Resource_hxi15"), SubResource("Resource_5psba"), SubResource("Resource_ikxex"), SubResource("Resource_10ybm")])
-level_unlocks = Array[ExtResource("3_niwv0")]([SubResource("Resource_w1s0b")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

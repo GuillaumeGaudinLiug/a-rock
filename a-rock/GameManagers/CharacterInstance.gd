@@ -31,8 +31,6 @@ var available_skills: Array[Skill] = []  # calculé, jamais sauvegardé
 
 var row: PartyRow = PartyRow.FRONT
 
-var status: Array[String] # TODO : statuts effect
-
 
 
 func _init() -> void:

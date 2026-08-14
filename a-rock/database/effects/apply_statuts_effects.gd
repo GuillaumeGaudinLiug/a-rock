@@ -23,9 +23,9 @@ func _resolve_apply_chance(actor, target) -> bool:
 	var target_value: float = target.get_stat(status.resist_chance_stat)
 	
 	# TODO: vrai calcul de la chance d'application du statut
-	var chance = 1.0
+	var chance = max (1.0, 1.0)
 	#var chance: float = status.base_apply_chance + (actor_value - target_value) * status.chance_stat_influence
-	chance = clamp(chance, 0.05, 0.95)
+	chance = clamp(chance, 0.05, 0.1)
 
 	return randf() < chance
 
