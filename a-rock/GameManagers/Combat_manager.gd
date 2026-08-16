@@ -1,5 +1,9 @@
 extends Node
 
+const COMBAT_SCENE := preload("res://combats/CombatScene.tscn")
+
+var combat_instance: Node2D
+
 var pending_group: EncounterEnemyGroup
 var pending_background: Texture2D
 var pending_music: AudioStream
@@ -7,23 +11,29 @@ var pending_music: AudioStream
 var xp_multiplier: float = 1.0
 var loot_multiplier: float = 1.0
 
-# Préparation des combats en chargeant les Group d'ennemies, les characterInstance ET tous les status effect
+
 func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: AudioStream) -> void:
 	pending_group = group
 	pending_background = background
 	pending_music = music
 	xp_multiplier = 1.0
 	loot_multiplier = 1.0
-	print("Combat préparé : ", group.group_name, " (", group.members.size(), " ennemis)")
+
 	# TODO : construire les CombatParticipant, puis pour chacun des joueurs :
 	# participant.trigger_statuses(StatusEffect.TriggerType.ON_BATTLE_START, { "user": participant })
-	CombatManager.start_combat()
+
+	combat_instance = COMBAT_SCENE.instantiate()
+	combat_instance.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(combat_instance)
+
+	GameManager.push_state(GameManager.GameState.COMBAT)
+
 
 func resolve_victory(defeated_enemies: Array[EnemyData]) -> void:
+	var total_xp := 0
 	# TODO : construire les CombatParticipant, puis pour chacun des joueurs :
 	# participant.trigger_statuses(StatusEffect.TriggerType.ON_BATTLE_END, { "user": participant })
 
-	var total_xp := 0
 	for enemy in defeated_enemies:
 		total_xp += enemy.xp_value
 	total_xp = int(total_xp * xp_multiplier)
@@ -54,6 +64,12 @@ func _end_combat() -> void:
 	for character in GameData.party:
 		character.resync_attributes()
 
+	if combat_instance != null:
+		combat_instance.queue_free()
+		combat_instance = null
+
 	pending_group = null
 	pending_background = null
 	pending_music = null
+
+	GameManager.pop_state()

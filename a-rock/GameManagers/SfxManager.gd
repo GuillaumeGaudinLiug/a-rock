@@ -15,8 +15,8 @@ func _ready() -> void:
 
 
 func play(stream: AudioStream) -> void:
-	print("SOund to play : " + stream.resource_name)
 	if stream == null:
+		print("SOund to play : " + stream.resource_name)
 		return
 
 	var player := players[next_index]

@@ -38,6 +38,7 @@ offset_bottom = 476.0
 theme_override_constants/separation = 20
 
 [node name="MainPanel" type="VBoxContainer" parent="Root" unique_id=116313652]
+visible = false
 layout_mode = 0
 offset_left = 422.0
 offset_top = 66.0
@@ -82,7 +83,6 @@ layout_mode = 2
 text = "Quit Game"
 
 [node name="WeaponsPanel" type="Control" parent="Root" unique_id=1198815411]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -122,10 +122,10 @@ text = "Equip"
 
 [node name="LevelUpButton" type="Button" parent="Root/WeaponsPanel" unique_id=1178831726]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 457.0
-offset_right = 280.0
-offset_bottom = 511.0
+offset_left = 31.0
+offset_top = 436.0
+offset_right = 266.0
+offset_bottom = 490.0
 text = "Improve Weapon"
 
 [node name="CostLabel" type="Label" parent="Root/WeaponsPanel" unique_id=1205148074]
@@ -139,11 +139,19 @@ text = "
 
 [node name="BackButton" type="Button" parent="Root/WeaponsPanel" unique_id=1907393030]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 526.0
-offset_right = 254.0
-offset_bottom = 560.0
+offset_left = 19.0
+offset_top = 538.0
+offset_right = 223.0
+offset_bottom = 572.0
 text = "Back"
+
+[node name="MaterialIcon" type="TextureRect" parent="Root/WeaponsPanel" unique_id=1142305551]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 503.00003
+offset_right = 312.0
+offset_bottom = 522.3334
+scale = Vector2(3, 3)
 
 [node name="InventoryPanel" type="Control" parent="Root" unique_id=1723155307]
 visible = false
@@ -338,6 +346,7 @@ offset_bottom = 568.0
 text = "Back"
 
 [node name="SkillsPanel" type="Control" parent="Root" unique_id=1194252359]
+visible = false
 anchors_preset = 0
 offset_top = 4.0
 offset_right = 40.0

@@ -11,10 +11,9 @@
 [ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="8_58gu6"]
 [ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="9_3owpq"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="10_3h6to"]
-[ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="12_7t8ra"]
 
 [node name="Database" type="Node" unique_id=595269518]
 script = ExtResource("1_npldw")
 all_classes = Array[ExtResource("2_4fl0v")]([ExtResource("3_12we1"), ExtResource("4_12we1"), ExtResource("5_3h6to")])
 all_weapons = Array[ExtResource("2_yk66w")]([ExtResource("3_daujv"), ExtResource("4_4fl0v"), ExtResource("8_58gu6")])
-all_items = Array[ExtResource("9_3owpq")]([ExtResource("10_3h6to"), ExtResource("12_7t8ra")])
+all_items = Array[ExtResource("9_3owpq")]([ExtResource("10_3h6to"), null])

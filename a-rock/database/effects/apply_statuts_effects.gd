@@ -4,18 +4,22 @@ extends AbstractEffect
 @export var status: StatusEffect
 
 
-func _execute(context: Dictionary) -> void:
+func _execute(context: Dictionary, result: EffectResult) -> void:
 	var actor = context.get("actor")
 	var target = context.get("target")
+	
 	if actor == null or target == null or status == null:
-		return
+		return 
 
 	if not _resolve_apply_chance(actor, target):
 		print("%s résiste à %s" % [target.display_name, status.status_name])
+		result.hit = false
 		return
 
 	var duration := _roll_duration(actor)
 	target.apply_status(status, duration)
+	result.hit = true	
+	return 
 
 
 func _resolve_apply_chance(actor, target) -> bool:

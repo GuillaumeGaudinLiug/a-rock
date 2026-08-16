@@ -15,29 +15,34 @@ var skill: Skill
 var item: InventoryItem
 
 
-func execute() -> void:
+func execute() -> Array[EffectResult]:
+	var all_results: Array[EffectResult] = []
+
 	if type == ActionType.CHANGE_ROW:
 		_execute_change_row()
-		return
+		return all_results
 
 	if effects.is_empty():
 		push_warning("CombatAction (%s) sans effects assignés." % ActionType.keys()[type])
-		return
+		return all_results
 	# Applications des effets sur les cibles
 	for target in targets:
 		for effect in effects:
-			var hit := effect.execute({ "user": user, "target": target })
-			if not hit:
+			var result : EffectResult = effect.execute({ "user": user, "target": target })
+			if not result.hit:
 				break  # les effets suivants ne s'appliquent pas à CETTE cible
+			all_results.append(result)
 		# TODO: Application des status de contre de la cible
 		target.trigger_statuses(StatusEffect.TriggerType.ON_HIT_TAKEN, { "user": target, "target": user })
 
-
+	# Appliquer les consomation des skils ou de consomable
 	match type:
 		ActionType.SKILL:
 			_consume_skill_cost()
 		ActionType.ITEM:
 			_consume_item()
+			
+	return all_results
 
 
 func _consume_skill_cost() -> void:

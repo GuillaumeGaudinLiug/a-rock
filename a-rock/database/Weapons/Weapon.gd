@@ -26,6 +26,13 @@ func get_xp_required(weapon_level: int) -> int:
 		push_warning("Weapon '%s': pas de coût XP défini pour le niveau %d." % [weapon_name, weapon_level])
 		return -1
 	return level_bonuses[index].xp_required
+
+
+func get_level_entry(weapon_level: int) -> WeaponLevelStats:
+	var index := weapon_level - 1
+	if index < 0 or index >= level_bonuses.size():
+		return null
+	return level_bonuses[index]
 	
 	
 func get_skills_by_level(weapon_level: int) -> Array[Skill]:

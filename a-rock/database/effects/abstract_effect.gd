@@ -3,17 +3,24 @@ extends Resource
 
 @export var use_sfx: AudioStream
 @export var can_miss: bool = false
+@export var miss_sfx: AudioStream
 
 
-func execute(context: Dictionary) -> bool:
+func execute(context: Dictionary) -> EffectResult:
+	var result := EffectResult.new()
+	result.effect_name = get_class()
+
 	if can_miss and not _resolve_hit(context):
+		if miss_sfx != null:
+			SfxManager.play(miss_sfx)
+		result.hit = false
+		result.value_label = "Raté !"
 		_on_miss(context)
-		return false
-	# Lancer le bruit de l'effet uniquement si la resource possédent le son
-	if use_sfx != null:
-		SfxManager.play(use_sfx)
-	_execute(context)
-	return true
+		return result
+
+	if use_sfx != null:	SfxManager.play(use_sfx)
+	_execute(context, result)
+	return result
 
 # Formule pour le calcul de miss
 func _resolve_hit(context: Dictionary) -> bool:
@@ -31,6 +38,7 @@ func _on_miss(context: Dictionary) -> void:
 		print("%s rate son action sur %s" % [user.display_name, target.display_name])
 		# TODO: lancement d'animation de miss + sound
 		#SfxManager.play(miss_sfx)
+		
  
-func _execute(_context: Dictionary) -> void:
+func _execute(context: Dictionary, result: EffectResult) -> void:
 	push_warning("_execute() non implémenté pour : %s" % get_class())

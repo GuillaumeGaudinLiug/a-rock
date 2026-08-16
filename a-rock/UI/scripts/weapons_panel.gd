@@ -7,9 +7,11 @@ const CHARACTER_TAB_SCENE := preload("res://UI/scenes/CharacterTabButton.tscn")
 @onready var weapon_list_container: VBoxContainer = $WeaponListContainer
 @onready var stats_preview: VBoxContainer = $StatsPreview
 @onready var cost_label: Label = $CostLabel
+
 @onready var equip_button: Button = $EquipButton
 @onready var level_up_button: Button = $LevelUpButton
 @onready var back_button: Button = $BackButton
+@onready var material_icon: TextureRect = $MaterialIcon  # ajuste le chemin selon ta structure
 
 var selected_character: CharacterInstance
 var selected_weapon: Weapon
@@ -85,40 +87,56 @@ func _on_weapon_selected(weapon: Weapon, button: Button) -> void:
 
 	_update_preview()
 
-
+# Affiche les détails d'une arme selectionnée
 func _update_preview() -> void:
 	for child in stats_preview.get_children():
-		child.queue_free()
+		child.free()
 
 	var current_level: int = selected_character.weapon_levels.get(selected_weapon, 0)
 	var next_level := current_level + 1
 	var is_max := current_level >= selected_weapon.max_level
 
+	material_icon.hide()
+
+	# Max level
 	if is_max:
 		cost_label.text = "Niveau maximum atteint."
 		level_up_button.disabled = true
 	else:
-		var cost := selected_weapon.get_xp_required(next_level)
-		if cost < 0:
+		# Non définition
+		var entry := selected_weapon.get_level_entry(next_level)
+		if entry == null:
 			cost_label.text = "Coût non défini pour ce niveau."
 			level_up_button.disabled = true
+		# Verification d'xp et de requiredMaterial
 		else:
-			cost_label.text = "Passage au niveau %d : %d XP (vous avez %d XP)" % [next_level, cost, GameData.xp_global]
-			level_up_button.disabled = GameData.xp_global < cost
+			var has_enough_xp := GameData.xp_global >= entry.xp_required
+			var has_enough_material := true
 
-		for stat_name in ["determination", "courage", "passion", "spirit", "adaptability", "max_ep", "max_sp"]:
-			var before := selected_weapon.get_stat_bonus(stat_name, current_level)
-			var after := selected_weapon.get_stat_bonus(stat_name, next_level)
-			var label := Label.new()
-			if before != after:
-				label.text = "%s : %d → %d (+%d)" % [stat_name.capitalize(), before, after, after - before]
-			else:
-				label.text = "%s : %d (inchangé)" % [stat_name.capitalize(), before]
-			stats_preview.add_child(label)
+			var text := "Passage au niveau %d : %d XP (vous avez %d XP)" % [next_level, entry.xp_required, GameData.xp_global]
+
+			if entry.required_material != null:
+				var owned := GameData.get_item_count(entry.required_material)
+				has_enough_material = owned >= entry.required_material_quantity
+				text += "\nRequiert : %s x%d (possédé : %d)" % [entry.required_material.item_name, entry.required_material_quantity, owned]
+				material_icon.texture = entry.required_material.icon
+				material_icon.show()
+
+			cost_label.text = text
+			level_up_button.disabled = not (has_enough_xp and has_enough_material)
+
+			for stat_name in ["determination", "courage", "passion", "spirit", "adaptability", "max_ep", "max_sp"]:
+				var before := selected_weapon.get_stat_bonus(stat_name, current_level)
+				var after := selected_weapon.get_stat_bonus(stat_name, next_level)
+				var label := Label.new()
+				if before != after:
+					label.text = "%s : %d → %d (+%d)" % [stat_name.capitalize(), before, after, after - before]
+				else:
+					label.text = "%s : %d (inchangé)" % [stat_name.capitalize(), before]
+				stats_preview.add_child(label)
 
 	equip_button.disabled = (selected_character.equipped_weapon == selected_weapon)
 	equip_button.text = "Équipé" if equip_button.disabled else "Équiper"
-
 
 func _on_equip_pressed() -> void:
 	if not selected_character.weapon_levels.has(selected_weapon):

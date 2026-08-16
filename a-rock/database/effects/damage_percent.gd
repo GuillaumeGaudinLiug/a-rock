@@ -7,7 +7,7 @@ extends AbstractEffect
 @export_range(0.0, 1.0, 0.01) var damage_percent_sp: float = 0.1
 
 
-func _execute(context: Dictionary) -> void:
+func _execute(context: Dictionary, result: EffectResult) -> void:
 	var target = context.get("target")
 	if target == null:
 		return
@@ -18,4 +18,6 @@ func _execute(context: Dictionary) -> void:
 
 	target.current_ep = max(0, target.current_ep - damage_ep)
 	target.current_sp = max (0, target.current_sp - damage_sp)
+	result.value = damage_ep
+	result.value2 = damage_percent_sp
 	print("%s subit %d ep / %d sp  dégâts (statut damage percent)" % [target.display_name, damage_ep, damage_sp])

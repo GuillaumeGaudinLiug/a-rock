@@ -76,4 +76,4 @@ func _on_step_taken() -> void:
 func _trigger_encounter(group: EncounterEnemyGroup) -> void:
 	steps_since_last_encounter = 0
 	print("Rencontre déclenchée : ", group.group_name)
-	CombatSetup.start_encounter(group, combat_background, combat_music)
+	CombatManager.start_encounter(group, combat_background, combat_music)

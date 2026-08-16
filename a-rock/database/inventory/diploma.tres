@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://41cpn2l7tnms"]
+
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_4q1ui"]
+[ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="1_84duc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lspg4"]
+atlas = ExtResource("1_4q1ui")
+region = Rect2(559.7603, 639.19257, 16.777222, 17.09375)
+
+[resource]
+script = ExtResource("1_84duc")
+item_name = "Diploma"
+description = "Allow Weapon upgrade"
+icon = SubResource("AtlasTexture_lspg4")
+category = 1
+metadata/_custom_type_script = "uid://bsuvjr7ywgfp"

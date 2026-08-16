@@ -134,31 +134,42 @@ static func from_dict(data: Dictionary) -> CharacterInstance:
 	
 	return instance
 
-
-# ajouts dans lvlup.gd
-
+# Essayer de levelup Weapon
 func try_level_up_weapon(weapon: Weapon) -> bool:
 	if weapon == null:
 		return false
 
-	var current_level: int = weapon_levels.get(weapon, 1)
+	var current_level: int = weapon_levels.get(weapon, 0)
 	if current_level >= weapon.max_level:
 		push_warning("Weapon '%s' déjà au niveau maximum." % weapon.weapon_name)
 		return false
 
+	# Trouver le WeaponLevelEntry pour le prochain 
 	var next_level := current_level + 1
-	var cost := weapon.get_xp_required(next_level)
-
+	var entry := weapon.get_level_entry(next_level)
+	if entry == null:
+		return false
+		
+	# Cout en XP
+	var cost := entry.xp_required
 	if cost < 0 or GameData.xp_global < cost:
 		return false
+		
+	# Cout en material
+	if entry.required_material != null:
+		if GameData.get_item_count(entry.required_material) < entry.required_material_quantity:
+			return false
 
 	GameData.xp_global -= cost
+	if entry.required_material != null:
+		GameData.remove_item(entry.required_material, entry.required_material_quantity)
+	
+	# Augmentation du level + resynchro des attributs
 	weapon_levels[weapon] = next_level
-
 	resync_attributes()
 	return true
 
-
+# Essayer d'appliquer un levelup: sur la stat choisie ET sur les EP/SP 
 func try_level_up_stat(stat_name: String) -> bool:
 	if stat_name not in LvlConfig.INVESTABLE_STATS:
 		push_warning("Stat '%s' non investissable." % stat_name)

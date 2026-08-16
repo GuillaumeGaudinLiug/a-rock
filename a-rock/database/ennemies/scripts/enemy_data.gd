@@ -20,4 +20,4 @@ extends Resource
 
 @export_group("Récompenses")
 @export var xp_value: int = 10
-@export var loot_table: LootDropEntry
+@export var loot_table: Array[LootDropEntry] = []

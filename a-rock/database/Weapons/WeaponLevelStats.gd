@@ -2,6 +2,8 @@
 class_name WeaponLevelStats
 extends ProgressionLevelEntry
 
+@export var required_material: InventoryItem
+@export var required_material_quantity: int = 1
 @export var determination: int = 0
 @export var courage: int = 0
 @export var passion: int = 0

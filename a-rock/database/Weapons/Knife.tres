@@ -14,6 +14,7 @@ region = Rect2(20.19051, 18.657837, 11.730217, 13.884743)
 
 [sub_resource type="Resource" id="Resource_vxgy0"]
 script = ExtResource("1_bm3xy")
+required_material_quantity = 0
 determination = 2
 courage = 1
 spirit = 1

@@ -95,6 +95,7 @@ func _on_confirm_pressed() -> void:
 	GameManager.goto_scene("res://donjon/prison/prison.tscn")
 
 
+# Creation des premiere CHaracter Instance
 func _create_character_instance(character_class: CharacterClass, character_name: String) -> CharacterInstance:
 	var instance := CharacterInstance.new()
 	instance.character_name = character_name

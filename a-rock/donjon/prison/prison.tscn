@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="4_sqt8m"]
 [ext_resource type="Script" uid="uid://c3l6wbjs566s7" path="res://donjon/prison/save_point.gd" id="6_2lfe6"]
 [ext_resource type="AudioStream" uid="uid://bns8we5nsrjn8" path="res://ressources/soundeffect/save_point.wav" id="7_bu0g3"]
+[ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="8_nkjj1"]
 [ext_resource type="Script" uid="uid://baijy5httxwar" path="res://database/chests/chest.gd" id="8_xxvs5"]
 [ext_resource type="Script" uid="uid://7mxxayajin70" path="res://database/chests/loot_entry.gd" id="9_5u6ji"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="10_4m6bi"]
@@ -520,6 +521,11 @@ script = ExtResource("9_5u6ji")
 item = ExtResource("10_4m6bi")
 metadata/_custom_type_script = "uid://7mxxayajin70"
 
+[sub_resource type="Resource" id="Resource_lspg4"]
+script = ExtResource("9_5u6ji")
+item = ExtResource("8_nkjj1")
+metadata/_custom_type_script = "uid://7mxxayajin70"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3l6a"]
 atlas = ExtResource("2_s6u1d")
 region = Rect2(32, 256, 16, 16)
@@ -632,7 +638,7 @@ tile_set = SubResource("TileSet_s6u1d")
 position = Vector2(100, 0)
 script = ExtResource("8_xxvs5")
 chest_id = "bf8c3795-4e0e-8f9d-a351-ce0ca815b70e"
-loot = Array[ExtResource("9_5u6ji")]([SubResource("Resource_ov0la")])
+loot = Array[ExtResource("9_5u6ji")]([SubResource("Resource_ov0la"), SubResource("Resource_lspg4")])
 use_sfx = ExtResource("11_5u6ji")
 message_prompt = "OPEN"
 

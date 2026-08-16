@@ -106,7 +106,7 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 
 	var item_name := selected_item.item_name
 
-	selected_item.effect.execute({ "user": character, "target": character })
+	var result :EffectResult = selected_item.effect.execute({ "user": character, "target": character })
 	character.resync_attributes()
 
 	GameData.remove_item(selected_item)
@@ -114,4 +114,4 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 	_populate_item_list()
 	character_tabs.hide()
 	selected_item = null
-	description_label.text = "%s utilisé sur %s." % [item_name, character.character_name]
+	description_label.text = " %s : %d healed" % [character.character_name, result.value]

@@ -12,10 +12,11 @@ extends AbstractEffect
 @export_range(0.0, 5.0, 0.01) var def_backrow_multiplier = 1.2
 @export_range(0.0, 5.0, 0.01) var att_backrow_multiplier = 0.8
 
-func _execute(context: Dictionary) -> void:
+func _execute(context: Dictionary,result : EffectResult) -> void:
 	var user = context.get("user")
 
 	var target = context.get("target")
+	
 	if target == null:
 		return
 	# TODO: formule à revoir
@@ -28,3 +29,9 @@ func _execute(context: Dictionary) -> void:
 
 	var formula = max(1, int((att - def) * multiplier))
 	target.current_ep -= formula
+	
+	result.hit = true
+	result.value = formula
+	
+	print("Damage result: " + str(result.value))
+	return 

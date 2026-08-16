@@ -94,6 +94,7 @@ func apply_status(status: StatusEffect, duration_turns: int = -1) -> void:
 	new_instance.remaining_turns = actual_duration
 	active_statuses.append(new_instance)
 
+# Applique les effets des statuts en cours (par type de trigger)
 func trigger_statuses(trigger: StatusEffect.TriggerType, context: Dictionary) -> void:
 	for instance in active_statuses.duplicate():
 		if instance.status.trigger == trigger:
