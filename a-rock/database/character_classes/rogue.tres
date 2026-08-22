@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://kab6i8vmtdd8"]
 
 [ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_52wkc"]
+[ext_resource type="Resource" uid="uid://cj78y0vp3obus" path="res://database/character_classes/animations_sets/rogue.tres" id="1_d4www"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_6v4x3"]
 [ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="2_lqjpe"]
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
@@ -45,6 +46,7 @@ metadata/_custom_type_script = "uid://b5pn45pkmw8js"
 script = ExtResource("3_m8n82")
 class_name_display = "Avoidant"
 idle_sprite_frame = SubResource("SpriteFrames_lqjpe")
+animation_set = ExtResource("1_d4www")
 base_determination = 8
 base_courage = 6
 base_spirit = 6

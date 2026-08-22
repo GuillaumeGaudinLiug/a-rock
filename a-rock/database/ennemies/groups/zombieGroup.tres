@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EncounterEnemyGroup" format=3 uid="uid://17c47n2h5n62"]
 
 [ext_resource type="Script" uid="uid://cff1xmr4ywbgi" path="res://database/ennemies/scripts/encounter_member.gd" id="1_8krda"]
-[ext_resource type="Resource" uid="uid://deyt2i32j2ati" path="res://database/ennemies/subway_zombie.tres" id="2_evvmy"]
+[ext_resource type="Resource" uid="uid://deyt2i32j2ati" path="res://database/ennemies/data/subway_zombie.tres" id="2_evvmy"]
 [ext_resource type="Script" uid="uid://cxdy02s38nw5x" path="res://database/ennemies/scripts/encounter_group.gd" id="3_keu3r"]
 
 [sub_resource type="Resource" id="Resource_3h8vp"]

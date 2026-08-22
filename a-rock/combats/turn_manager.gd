@@ -2,7 +2,7 @@
 class_name TurnManager
 extends RefCounted
 
-const GAUGE_THRESHOLD := 500.0
+const GAUGE_THRESHOLD := 200.0
 
 var participants: Array[CombatParticipant] = []
 
@@ -17,12 +17,17 @@ func get_next_actor() -> CombatParticipant:
 	var alive := participants.filter(func(p): return p.is_alive())
 	if alive.is_empty():
 		return null
-
-	while true:
+		
+	var loop_turn : bool = true
+	var return_participant
+	while loop_turn:
 		for p in alive:
 			var roll_factor := 1.0 + randf_range(-0.5, 0.5)
 			p.gauge += p.adaptability * roll_factor
 
 			if p.gauge >= GAUGE_THRESHOLD:
 				p.gauge -= GAUGE_THRESHOLD
-				return p
+				return_participant = p
+				loop_turn = false
+	
+	return return_participant

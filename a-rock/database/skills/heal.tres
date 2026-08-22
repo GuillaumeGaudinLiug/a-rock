@@ -19,4 +19,5 @@ usable_contexts = 7
 effects = Array[ExtResource("1_r2bf6")]([SubResource("Resource_yfkd8")])
 sp_cost = 2
 sp_cost_percent = 0.05
+target_scope = 1
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

@@ -13,5 +13,5 @@ func fade_to_black(duration: float = 1.0) -> void:
 
 func fade_from_black(duration: float = 1.0) -> void:
 	var tween := create_tween()
-	tween.tween_property(background, "modulate:a", 0.0, duration)
+	tween.tween_property(background, "modulate:a", 1.0, duration)
 	await tween.finished

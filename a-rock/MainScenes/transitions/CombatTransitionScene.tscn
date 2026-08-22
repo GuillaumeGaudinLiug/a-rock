@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dkb4wmyef3jtw"]
+
+[ext_resource type="Script" uid="uid://cacsr3r64uc5j" path="res://MainScenes/transitions/combat_transition_scene.gd" id="1_4ckk2"]
+[ext_resource type="AudioStream" uid="uid://88mrhebs00ts" path="res://ressources/soundeffect/combat_start.wav" id="2_aivrx"]
+
+[node name="CombatTransitionScene" type="CanvasLayer" unique_id=1283132709]
+script = ExtResource("1_4ckk2")
+encounter_sfx = ExtResource("2_aivrx")
+
+[node name="Flash" type="ColorRect" parent="." unique_id=934327560]
+offset_right = 2560.0
+offset_bottom = 1717.0
+
+[node name="Black" type="ColorRect" parent="." unique_id=280182373]
+offset_right = 2122.0
+offset_bottom = 1538.0
+color = Color(0, 0, 0, 1)

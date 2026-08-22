@@ -22,6 +22,11 @@ func execute() -> Array[EffectResult]:
 		_execute_change_row()
 		return all_results
 
+	if type == ActionType.DEFEND:
+		# TODO: execute defend
+		_execute_change_row()
+		return all_results
+		
 	if effects.is_empty():
 		push_warning("CombatAction (%s) sans effects assignés." % ActionType.keys()[type])
 		return all_results

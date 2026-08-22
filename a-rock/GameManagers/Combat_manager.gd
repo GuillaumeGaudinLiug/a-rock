@@ -1,6 +1,7 @@
 extends Node
 
 const COMBAT_SCENE := preload("res://combats/CombatScene.tscn")
+const COMBAT_TRANSITION_SCENE := preload("res://MainScenes/transitions/CombatTransitionScene.tscn")
 
 var combat_instance: Node2D
 
@@ -22,11 +23,24 @@ func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: A
 	# TODO : construire les CombatParticipant, puis pour chacun des joueurs :
 	# participant.trigger_statuses(StatusEffect.TriggerType.ON_BATTLE_START, { "user": participant })
 
+	GameManager.push_state(GameManager.GameState.COMBAT)
+	# Lancement de la transition
+	var transition: CanvasLayer = COMBAT_TRANSITION_SCENE.instantiate()
+	transition.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(transition)
+
+	await transition.play_intro()
+	
+	# Instancier la scene en combat entre les await
 	combat_instance = COMBAT_SCENE.instantiate()
 	combat_instance.process_mode = Node.PROCESS_MODE_ALWAYS
-	add_child(combat_instance)
+	get_tree().root.add_child(combat_instance)
+	get_tree().root.move_child(combat_instance, get_tree().root.get_child_count() - 1)
 
-	GameManager.push_state(GameManager.GameState.COMBAT)
+	await transition.play_outro()
+	transition.queue_free()
+	# Lanc
+
 
 
 func resolve_victory(defeated_enemies: Array[EnemyData]) -> void:
@@ -67,6 +81,10 @@ func _end_combat() -> void:
 	if combat_instance != null:
 		combat_instance.queue_free()
 		combat_instance = null
+
+	var exploration_camera := get_tree().get_first_node_in_group("main_camera")
+	if exploration_camera != null:
+		exploration_camera.make_current()
 
 	pending_group = null
 	pending_background = null

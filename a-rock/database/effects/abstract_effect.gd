@@ -14,6 +14,8 @@ func execute(context: Dictionary) -> EffectResult:
 		if miss_sfx != null:
 			SfxManager.play(miss_sfx)
 		result.hit = false
+		result.kind = EffectResult.Kind.MISS
+
 		result.value_label = "Raté !"
 		_on_miss(context)
 		return result

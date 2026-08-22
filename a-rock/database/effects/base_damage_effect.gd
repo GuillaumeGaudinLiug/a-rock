@@ -28,10 +28,10 @@ func _execute(context: Dictionary,result : EffectResult) -> void:
 	var multiplier := 1.0 + randf_range(-variance, variance)
 
 	var formula = max(1, int((att - def) * multiplier))
-	target.current_ep -= formula
+	target.current_ep = max(target.current_ep - formula, 0) 
 	
 	result.hit = true
 	result.value = formula
-	
+	result.kind = EffectResult.Kind.DAMAGE
 	print("Damage result: " + str(result.value))
 	return 

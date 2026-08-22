@@ -23,6 +23,7 @@ var source_character: CharacterInstance   # rempli si is_player
 var source_enemy: EnemyData               # rempli si !is_player
 var behavior: EnemyBehavior                # rempli si !is_player
 
+var world_position: Vector2 = Vector2.ZERO
 
 static func from_character(character: CharacterInstance) -> CombatParticipant:
 	var p := CombatParticipant.new()
@@ -63,7 +64,7 @@ static func from_enemy(member: EncounterMember) -> CombatParticipant:
 
 
 func is_alive() -> bool:
-	return current_ep > 0 or current_sp > 0
+	return current_ep > 0 and current_sp > 0
 
 # Recuperer la valeur d'une stats en appliquant les divers status
 func get_stat(stat_name: String) -> float:
@@ -83,11 +84,11 @@ func get_stat(stat_name: String) -> float:
 # Appliquer un statuts ou augmente la durée d'un statut en cours
 func apply_status(status: StatusEffect, duration_turns: int = -1) -> void:
 	var actual_duration := duration_turns if duration_turns >= 0 else status.duration_turns
-
+			
+	# appliquer de nouveaux tours sur le status en cours
 	for instance in active_statuses:
 		if instance.status == status:
 			instance.remaining_turns += status.duration_turns
-			# TODO: appliquer de nouveaux tours sur le status en cours
 			return
 
 	var new_instance := StatusInstance.new(status)
@@ -108,3 +109,16 @@ func tick_turn_end() -> void:
 			instance.remaining_turns -= 1
 			if instance.remaining_turns <= 0:
 				active_statuses.erase(instance)
+
+
+# Recuperer l'animationSet en fonction de la source
+func get_animation_set() -> CombatAnimationSet:
+	if is_player:
+		return source_character.character_class.combat_animations
+	return source_enemy.combat_animations
+
+
+func get_idle_frames() -> SpriteFrames:
+	if is_player:
+		return source_character.character_class.idle_sprite_frame
+	return source_enemy.idle_sprite_frame

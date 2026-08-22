@@ -14,9 +14,13 @@ func _execute(context: Dictionary, result: EffectResult) -> void:
 	if not _resolve_apply_chance(actor, target):
 		print("%s résiste à %s" % [target.display_name, status.status_name])
 		result.hit = false
+		result.kind = EffectResult.Kind.STATUS_RESISTED
+		result.status = status
 		return
 
 	var duration := _roll_duration(actor)
+	result.kind = EffectResult.Kind.STATUS_APPLIED
+	result.status = status
 	target.apply_status(status, duration)
 	result.hit = true	
 	return 

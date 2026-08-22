@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="CombatAnimationSet" format=3 uid="uid://f8u132vy7cao"]
+
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_mc4em"]
+[ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="2_mc4em"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a4ov"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(60, 30, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e3qm"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(90, 30, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a574y"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(150, 30, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sth8h"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(120, 30, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fmue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a4ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e3qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a574y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sth8h")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_mc4em")
+combat = SubResource("SpriteFrames_0fmue")
+metadata/_custom_type_script = "uid://dktbxvpu6u11y"

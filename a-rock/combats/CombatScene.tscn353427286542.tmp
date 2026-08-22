@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://3q8x8p6poc5o"]
+
+[ext_resource type="Script" uid="uid://bm6esv6ntw4df" path="res://combats/combat_scene.gd" id="1_ys6n8"]
+[ext_resource type="PackedScene" uid="uid://cgakje7jxgkxg" path="res://combats/ActionMenu.tscn" id="2_6wk8l"]
+
+[node name="CombatScene" type="Node2D" unique_id=667740998]
+script = ExtResource("1_ys6n8")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1819496018]
+
+[node name="EnemySprites" type="Node2D" parent="." unique_id=1196702216]
+
+[node name="PlayerSprites" type="Node2D" parent="." unique_id=522776771]
+
+[node name="PopupLayer" type="Node2D" parent="." unique_id=1851584490]
+
+[node name="BottomUI" type="CanvasLayer" parent="." unique_id=1169331906]
+
+[node name="EnemyNamesList" type="VBoxContainer" parent="BottomUI" unique_id=97042038]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+offset_right = 208.0
+grow_vertical = 0
+
+[node name="ActionMenu" parent="BottomUI" unique_id=1309334554 instance=ExtResource("2_6wk8l")]
+
+[node name="CombatCamera" type="Camera2D" parent="." unique_id=1488651866]
+position = Vector2(117, 71)
+zoom = Vector2(3, 3)

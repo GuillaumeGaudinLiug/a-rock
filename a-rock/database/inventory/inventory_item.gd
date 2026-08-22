@@ -15,6 +15,10 @@ enum ItemCategory { CONSUMABLE, MATERIAL, KEY }
 @export var stackable: bool = true
 @export var max_stack: int = 20
 
+@export_group("Ciblage en combat")
+@export var target_scope: TargetScope.Type = TargetScope.Type.SINGLE_ALLY
+
+
 func is_usable_in(state: GameManager.GameState) -> bool:
 	if category != ItemCategory.CONSUMABLE:
 		return false

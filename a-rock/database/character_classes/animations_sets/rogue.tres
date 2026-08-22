@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CombatAnimationSet" format=3 uid="uid://cj78y0vp3obus"]
+
+[ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="1_h3rrv"]
+
+[resource]
+script = ExtResource("1_h3rrv")
+metadata/_custom_type_script = "uid://dktbxvpu6u11y"

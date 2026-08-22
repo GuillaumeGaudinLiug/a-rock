@@ -13,7 +13,7 @@ func _execute(context: Dictionary, result : EffectResult) -> void:
 	
 	var healing_amount :int = amount + target.max_ep * percentage
 	result.value = healing_amount
-	
+	result.kind = EffectResult.Kind.HEAL
 	target.current_ep = min(
 		target.current_ep + healing_amount, target.max_ep
 		)

@@ -16,8 +16,8 @@ func _ready() -> void:
 
 func play(stream: AudioStream) -> void:
 	if stream == null:
-		print("SOund to play : " + stream.resource_name)
 		return
+	print("Sound to play : " + stream.resource_name)
 
 	var player := players[next_index]
 	next_index = (next_index + 1) % players.size()

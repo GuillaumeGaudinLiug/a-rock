@@ -1,6 +1,7 @@
 extends Node
 
 const MENU_SCENE := preload("res://UI/scenes/ExplorationMenu.tscn")
+@export var menu_sfx: AudioStream
 
 var menu_instance: CanvasLayer
 
@@ -43,7 +44,10 @@ func _unhandled_input(event: InputEvent) -> void:
 func open_menu() -> void:
 	menu_instance.show()
 	menu_instance.refresh()
+
 	GameManager.push_state(GameManager.GameState.MENU)
+	SfxManager.play(menu_sfx)
+
 
 
 func close_menu() -> void:

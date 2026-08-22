@@ -3,8 +3,8 @@ class_name CharacterClass
 extends Resource
 
 @export var class_name_display: String = ""
-@export var combat_sprite_frames: SpriteFrames  # animations utilisées en combat
 @export var idle_sprite_frame: SpriteFrames  # animations utilisées en combat
+@export var combat_animations : CombatAnimationSet
 
 @export_group("Statistiques de base")
 @export var base_determination: int = 5

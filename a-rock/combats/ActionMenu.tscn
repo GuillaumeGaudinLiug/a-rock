@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cgakje7jxgkxg"]
+
+[ext_resource type="Script" uid="uid://buwfmdpj2e0ww" path="res://combats/action_menu.gd" id="1_0fmue"]
+
+[node name="ActionMenu" type="Control" unique_id=1309334554]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0fmue")
+
+[node name="SkillListContainer" type="VBoxContainer" parent="." unique_id=785396235]
+layout_mode = 0
+offset_top = -226.0
+offset_right = 135.0
+offset_bottom = 40.0
+
+[node name="ItemListContainer" type="VBoxContainer" parent="." unique_id=1945869879]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CategoryTabs" type="HBoxContainer" parent="." unique_id=396611943]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -3.0
+offset_right = 188.0
+offset_bottom = 37.0
+
+[node name="SkillsTabButton" type="Button" parent="CategoryTabs" unique_id=1484165401]
+custom_minimum_size = Vector2(30, 0)
+custom_maximum_size = Vector2(85, -1)
+layout_mode = 2
+text = "SKills"
+
+[node name="ItemsTabButton" type="Button" parent="CategoryTabs" unique_id=317098082]
+custom_minimum_size = Vector2(30, 0)
+custom_maximum_size = Vector2(85, -1)
+layout_mode = 2
+text = "Items"
+
+[node name="DefendTabButton" type="Button" parent="CategoryTabs" unique_id=275501425]
+layout_mode = 2
+text = "Defend"
+
+[node name="RowTabButton" type="Button" parent="CategoryTabs" unique_id=235957632]
+layout_mode = 2
+text = "Row"

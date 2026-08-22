@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cu2m4xnc27kmx"]
+
+[ext_resource type="Script" uid="uid://d0xcbhhfj005j" path="res://combats/elements/combat_target_view.gd" id="1_2pvfi"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_u8ad6"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="3_8py7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_320xt"]
+size = Vector2(52, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6m34"]
+atlas = ExtResource("2_u8ad6")
+region = Rect2(99.4347, 239.6693, 10.010948, 14.145905)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ad6"]
+atlas = ExtResource("3_8py7k")
+region = Rect2(611.938, 632.9124, 10.949585, 16.419006)
+
+[node name="CombatTargetView" type="Node2D" unique_id=195743575]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_2pvfi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327913756]
+light_mask = 2
+visibility_layer = 2
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=2094892728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1425148011]
+position = Vector2(19, 14)
+shape = SubResource("RectangleShape2D_320xt")
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=332596651]
+visible = false
+texture = SubResource("AtlasTexture_y6m34")
+
+[node name="StatusIcons" type="HBoxContainer" parent="." unique_id=212264503]
+offset_left = 6.0
+offset_top = 19.0
+offset_right = 46.0
+offset_bottom = 46.0
+theme_override_constants/separation = 4
+
+[node name="StatBars" type="VBoxContainer" parent="." unique_id=308573001]
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 108.0
+
+[node name="EpBar" type="ProgressBar" parent="StatBars" unique_id=1560634754]
+visible = false
+layout_mode = 2
+
+[node name="SpBar" type="ProgressBar" parent="StatBars" unique_id=250144131]
+visible = false
+layout_mode = 2
+
+[node name="ActiveTurnIndicator" type="Sprite2D" parent="." unique_id=1939004473]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-26.750002, 8.802084)
+scale = Vector2(1.7499998, 1.2747395)
+texture = SubResource("AtlasTexture_u8ad6")

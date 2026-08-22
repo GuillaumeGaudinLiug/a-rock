@@ -3,11 +3,12 @@ class_name EnemyData
 extends Resource
 
 @export var enemy_name: String = ""
-@export var combat_sprite_frames: SpriteFrames
+@export var idle_sprite_frame: SpriteFrames
 # Ressource de l'IA des comportement en combat
 @export var behavior: EnemyBehavior
 @export var innate_statuses: Array[StatusEffect] = []
 @export var statuses_immune: Array[StatusEffect] = []
+@export var combat_animations: CombatAnimationSet
 
 @export_group("Statistiques")
 @export var determination: int = 1

@@ -1,6 +1,6 @@
 extends Node
 
-const LOADING_SCREEN_SCENE := preload("res://MainScenes/LoadingScreen.tscn")
+const LOADING_SCREEN_SCENE := preload("res://MainScenes/transitions/LoadingScreen.tscn")
 
 var pending_spawn_name: String = ""
 

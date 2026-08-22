@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://crpnvj66pqk8w"]
+
+[ext_resource type="Script" uid="uid://cpew7swwg5iyn" path="res://combats/elements/damage_popup.gd" id="1_117nj"]
+
+[node name="DamagePopup" type="Node2D" unique_id=2107362254]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_117nj")
+
+[node name="Label" type="Label" parent="." unique_id=115204327]
+light_mask = 4
+visibility_layer = 4
+offset_left = 51.0
+offset_right = 122.0
+offset_bottom = 23.0
+
+[node name="IconRect" type="TextureRect" parent="." unique_id=1813912658]
+light_mask = 4
+visibility_layer = 4
+offset_right = 40.0
+offset_bottom = 40.0
