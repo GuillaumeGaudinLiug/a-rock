@@ -23,7 +23,7 @@ func get_next_actor() -> CombatParticipant:
 	while loop_turn:
 		for p in alive:
 			var roll_factor := 1.0 + randf_range(-0.5, 0.5)
-			p.gauge += p.adaptability * roll_factor
+			p.gauge += p.adaptability/2 * roll_factor
 
 			if p.gauge >= GAUGE_THRESHOLD:
 				p.gauge -= GAUGE_THRESHOLD

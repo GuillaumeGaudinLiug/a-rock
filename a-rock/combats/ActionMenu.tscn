@@ -18,38 +18,46 @@ script = ExtResource("1_0fmue")
 
 [node name="SkillListContainer" type="VBoxContainer" parent="." unique_id=785396235]
 layout_mode = 0
-offset_top = -226.0
-offset_right = 135.0
-offset_bottom = 40.0
+offset_left = 288.0
+offset_top = -375.0
+offset_right = 573.0
+offset_bottom = -71.0
 
 [node name="ItemListContainer" type="VBoxContainer" parent="." unique_id=1945869879]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 301.0
+offset_top = -386.0
+offset_right = 592.0
+offset_bottom = -70.0
 
 [node name="CategoryTabs" type="HBoxContainer" parent="." unique_id=396611943]
 layout_mode = 0
-offset_left = 73.0
-offset_top = -3.0
-offset_right = 188.0
+offset_left = 181.0
+offset_top = -38.0
+offset_right = 592.0
 offset_bottom = 37.0
+theme_override_constants/separation = 25
 
 [node name="SkillsTabButton" type="Button" parent="CategoryTabs" unique_id=1484165401]
-custom_minimum_size = Vector2(30, 0)
-custom_maximum_size = Vector2(85, -1)
+custom_minimum_size = Vector2(80, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 text = "SKills"
 
 [node name="ItemsTabButton" type="Button" parent="CategoryTabs" unique_id=317098082]
-custom_minimum_size = Vector2(30, 0)
-custom_maximum_size = Vector2(85, -1)
+custom_minimum_size = Vector2(80, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 text = "Items"
 
 [node name="DefendTabButton" type="Button" parent="CategoryTabs" unique_id=275501425]
+custom_minimum_size = Vector2(80, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 text = "Defend"
 
 [node name="RowTabButton" type="Button" parent="CategoryTabs" unique_id=235957632]
+custom_minimum_size = Vector2(80, 0)
+custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 text = "Row"

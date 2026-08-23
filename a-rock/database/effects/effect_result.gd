@@ -11,3 +11,4 @@ var kind: Kind = Kind.INFO
 
 var value_label: String = ""      # texte prêt à afficher, ex: "-42", "+20 EP", "Poison infligé"
 var effect_name: String = ""      # pour distinguer plusieurs effets d'une même action dans les logs/UI
+var status : StatusEffect

@@ -35,24 +35,25 @@ visible = false
 texture = SubResource("AtlasTexture_y6m34")
 
 [node name="StatusIcons" type="HBoxContainer" parent="." unique_id=212264503]
-offset_left = 6.0
-offset_top = 19.0
-offset_right = 46.0
-offset_bottom = 46.0
+offset_left = -5.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = -20.0
 theme_override_constants/separation = 4
 
 [node name="StatBars" type="VBoxContainer" parent="." unique_id=308573001]
-offset_top = 50.0
-offset_right = 100.0
-offset_bottom = 108.0
+offset_left = 65.0
+offset_top = -15.0
+offset_right = 130.0
+offset_bottom = 43.0
 
 [node name="EpBar" type="ProgressBar" parent="StatBars" unique_id=1560634754]
-visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 
 [node name="SpBar" type="ProgressBar" parent="StatBars" unique_id=250144131]
-visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 
 [node name="ActiveTurnIndicator" type="Sprite2D" parent="." unique_id=1939004473]
 light_mask = 2

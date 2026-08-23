@@ -4,7 +4,7 @@ extends Node2D
 @export var  ENEMY_BACK_X := -50.0
 @export var  PLAYER_FRONT_X := 100.0
 @export var  PLAYER_BACK_X := 120.0
-@export var  ROW_SPACING_Y := 35.0
+@export var  ROW_SPACING_Y := 50.0
 @export var  OFFSET_Y := 0.0
 
 
@@ -188,6 +188,8 @@ func _show_results(action: CombatAction, results: Array[EffectResult]) -> void:
 		var target := action.targets[target_index]
 		_show_damage_popup(target, result)
 		_refresh_participant_view(target)
+		# Petit temps entre les popup
+		await get_tree().create_timer(0.25).timeout
 
 # Deplacer le CombatTargetView sur la row
 func _reposition_participant(p: CombatParticipant) -> void:
@@ -264,18 +266,35 @@ func _refresh_participant_view(p: CombatParticipant) -> void:
 		view.refresh_stat_bars()
 
 
+# Affichage du cas particuliers de la mort
 func _refresh_dead_views() -> void:
 	for p in all_participants:
 		if not p.is_alive():
 			var view: CombatTargetView = view_by_participant.get(p)
-			if view != null:
+			if view == null:
+				continue
+
+			if view.visible == false:
+				continue  # déjà traité (ennemi déjà masqué), rien à refaire
+
+			view.set_defeated()
+
+			if p.is_player:
 				var frames := p.get_animation_set().get_frames(CombatAnimationSet.State.KO)
-				view.sprite.sprite_frames = frames
-				if frames != null and frames.has_animation("default"):
-					view.sprite.play("default")
+				if frames != null:
+					view.sprite.sprite_frames = frames
+					if frames.has_animation("default"):
+						view.sprite.play("default")
+# Conserver les pertes d'ep et sp à la fin du combat
+func _sync_participants_to_characters() -> void:
+	for p in player_participants:
+		if p.source_character != null:
+			p.source_character.current_ep = min(p.current_ep, p.max_ep)
+			p.source_character.current_sp = min(p.current_sp, p.max_sp)
 
-
+# Declaration de victoire
 func _on_victory() -> void:
+	_sync_participants_to_characters()
 	var defeated: Array[EnemyData] = []
 	for p in enemy_participants:
 		defeated.append(p.source_enemy)
@@ -284,3 +303,4 @@ func _on_victory() -> void:
 
 func _on_defeat() -> void:
 	CombatManager.resolve_defeat()
+	

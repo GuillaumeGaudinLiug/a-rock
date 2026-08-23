@@ -69,3 +69,21 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 
 func set_active_turn(is_active: bool) -> void:
 	active_turn_indicator.visible = is_active
+
+func set_defeated() -> void:
+	set_targetable(false)
+	set_active_turn(false)
+
+	for child in status_icons.get_children():
+		child.free()
+
+	if participant.is_player:
+		# Reste visible, juste grisé pour indiquer l'état KO
+		sprite.modulate = Color(0.681, 0.681, 0.681, 1.0)
+	else:
+		# Disparaît complètement de l'écran
+		stat_bars.visible = false
+		var tween := create_tween()
+		tween.tween_property(sprite, "modulate", Color(0.341, 0.0, 0.0, 1.0), 0.4)
+		tween.tween_property(sprite, "modulate:a", 0.0, 0.4)
+		tween.tween_callback(func(): visible = false)

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d03ngiw7x5xlj" path="res://combats/behaviour/ennemies_behavior.gd" id="1_mdmo5"]
 [ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="2_ev5r8"]
 [ext_resource type="Script" uid="uid://q4sdesfj265h" path="res://database/ennemies/scripts/loot_entry.gd" id="3_r4qsg"]
+[ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="6_xg2gs"]
 
 [sub_resource type="Resource" id="Resource_bw1tu"]
 script = ExtResource("1_mdmo5")
@@ -30,6 +31,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_117nj"]
+script = ExtResource("3_r4qsg")
+item = ExtResource("6_xg2gs")
+metadata/_custom_type_script = "uid://q4sdesfj265h"
+
 [resource]
 script = ExtResource("1_k1vtg")
 enemy_name = "Subway Zombie"
@@ -41,4 +47,6 @@ passion = 2
 spirit = 5
 adaptability = 3
 max_ep = 30
+xp_value = 20
+loot_table = Array[ExtResource("3_r4qsg")]([SubResource("Resource_117nj")])
 metadata/_custom_type_script = "uid://bn3756s33afkc"

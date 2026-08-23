@@ -32,6 +32,7 @@ func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: A
 	await transition.play_intro()
 	
 	# Instancier la scene en combat entre les await
+	# La scene de combat en bas de l'arborescence pour la priorité d'affichage
 	combat_instance = COMBAT_SCENE.instantiate()
 	combat_instance.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().root.add_child(combat_instance)
@@ -39,7 +40,6 @@ func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: A
 
 	await transition.play_outro()
 	transition.queue_free()
-	# Lanc
 
 
 
