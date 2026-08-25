@@ -118,6 +118,8 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 
 	var skill_name := selected_skill.skill_name
 
+	EffectSignalBus.effect_applied.connect(_on_menu_effect_feedback, CONNECT_ONE_SHOT)
+
 	if selected_caster.try_use_skill(selected_skill, { "target": character }):
 		description_label.text = "%s utilisé sur %s." % [skill_name, character.character_name]
 	else:
@@ -126,3 +128,7 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 	target_tabs.hide()
 	selected_skill = null
 	_populate_skill_list()
+
+# TODO: feeback
+func _on_menu_effect_feedback(target, result: EffectResult) -> void:
+	print(result.value_label)  # à remplacer plus tard par une vraie animation/son sur ce menu

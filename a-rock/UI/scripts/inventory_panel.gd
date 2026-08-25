@@ -100,18 +100,26 @@ func _on_item_clicked(item: InventoryItem, button: Button) -> void:
 		character_tabs.hide()
 
 # En selectionnant la cible: applique l'effet
+
 func _on_target_clicked(character: CharacterInstance) -> void:
-	if selected_item == null or selected_item.effect == null:
+	if selected_item == null or selected_item.effects.is_empty():
 		return
 
 	var item_name := selected_item.item_name
 
-	var result :EffectResult = selected_item.effect.execute({ "user": character, "target": character })
-	character.resync_attributes()
+	EffectSignalBus.effect_applied.connect(_on_menu_effect_feedback, CONNECT_ONE_SHOT)
 
+	for effect in selected_item.effects:
+		effect.execute({ "user": character, "target": character })
+
+	character.resync_attributes()
 	GameData.remove_item(selected_item)
 
 	_populate_item_list()
 	character_tabs.hide()
 	selected_item = null
-	description_label.text = " %s : %d healed" % [character.character_name, result.value]
+	description_label.text = "%s utilisé sur %s." % [item_name, character.character_name]
+
+# TODO: handle feedback des items
+func _on_menu_effect_feedback(target, result: EffectResult) -> void:
+	print(result.value_label)  # remp

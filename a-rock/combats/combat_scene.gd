@@ -4,7 +4,7 @@ extends Node2D
 @export var  ENEMY_BACK_X := -50.0
 @export var  PLAYER_FRONT_X := 100.0
 @export var  PLAYER_BACK_X := 120.0
-@export var  ROW_SPACING_Y := 50.0
+@export var  ROW_SPACING_Y := 55.0
 @export var  OFFSET_Y := 0.0
 
 
@@ -34,6 +34,8 @@ func _ready() -> void:
 	combat_camera.position = Vector2(60, 50)  # ajuste le Y selon le nombre de lignes (ROW_SPACING_Y * nb participants / 2)
 	combat_camera.zoom = Vector2(3, 3) 
 	combat_camera.make_current()
+	#Ouverture du bus de signal des effets pour alimenter les damagePopup
+	EffectSignalBus.effect_applied.connect(_on_effect_applied)
 
 	background.texture = CombatManager.pending_background
 	MusicManager.play_music(CombatManager.pending_music)
@@ -64,19 +66,32 @@ func _build_participants() -> void:
 
 
 func _layout_and_spawn_views() -> void:
-	for i in enemy_participants.size():
-		var p := enemy_participants[i]
-		var x := ENEMY_BACK_X if p.row == CharacterInstance.PartyRow.BACK else ENEMY_FRONT_X
-		p.world_position = Vector2(x, OFFSET_Y + i * ROW_SPACING_Y)
+	_layout_enemies()
+	_layout_players()
+
+func _layout_enemies() -> void:
+	var front_row: Array[CombatParticipant] = enemy_participants.filter(func(p): return p.row == CharacterInstance.PartyRow.FRONT)
+	var back_row: Array[CombatParticipant] = enemy_participants.filter(func(p): return p.row == CharacterInstance.PartyRow.BACK)
+
+	for i in front_row.size():
+		var p := front_row[i]
+		p.world_position = Vector2(ENEMY_FRONT_X, 0 + i * ROW_SPACING_Y)
 		_spawn_view(p, enemy_sprites)
 
+	for i in back_row.size():
+		var p := back_row[i]
+		p.world_position = Vector2(ENEMY_BACK_X, 0 + i * ROW_SPACING_Y)
+		_spawn_view(p, enemy_sprites)
+
+func _layout_players() -> void:
 	for i in player_participants.size():
 		var p := player_participants[i]
 		var x := PLAYER_BACK_X if p.row == CharacterInstance.PartyRow.BACK else PLAYER_FRONT_X
-		p.world_position = Vector2(x, OFFSET_Y + i * ROW_SPACING_Y)
+		p.world_position = Vector2(x, 0 + i * ROW_SPACING_Y)
 		_spawn_view(p, player_sprites)
-
-
+	
+	
+		
 func _spawn_view(p: CombatParticipant, parent: Node2D) -> void:
 	var view: CombatTargetView = TARGET_VIEW_SCENE.instantiate()
 	view.position = p.world_position
@@ -120,6 +135,7 @@ func _run_combat_loop() -> void:
 		actor.trigger_statuses(StatusEffect.TriggerType.ON_TURN_START, { "actor": actor, "target": actor })
 		_refresh_participant_view(actor)
 
+		# VErifier que le participant est alive après les effets de debut de combat
 		if not actor.is_alive():
 			continue
 
@@ -131,13 +147,12 @@ func _run_combat_loop() -> void:
 
 		if action != null:
 			_play_action_animation(actor, action)
-			var results := action.execute()
-			_show_results(action, results)
+			action.execute()
 			# EN cas de changement de row
 			if action.type == CombatAction.ActionType.CHANGE_ROW:
 				_reposition_participant(actor)
 
-			await get_tree().create_timer(0.4).timeout
+			await get_tree().create_timer(0.6).timeout
 
 		actor.trigger_statuses(StatusEffect.TriggerType.ON_TURN_END, { "actor": actor, "target": actor })
 		actor.tick_turn_end()
@@ -161,7 +176,7 @@ func _get_player_action(actor: CombatParticipant) -> CombatAction:
 	action_menu.hide()
 	return action
 
-
+# Trouve l'animation du skill
 func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> void:
 	var view: CombatTargetView = view_by_participant.get(actor)
 	if view == null:
@@ -181,29 +196,17 @@ func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> v
 		view.sprite.play("default")
 
 
-func _show_results(action: CombatAction, results: Array[EffectResult]) -> void:
-	for i in results.size():
-		var result := results[i]
-		var target_index := i % action.targets.size()
-		var target := action.targets[target_index]
-		_show_damage_popup(target, result)
-		_refresh_participant_view(target)
-		# Petit temps entre les popup
-		await get_tree().create_timer(0.25).timeout
-
 # Deplacer le CombatTargetView sur la row
 func _reposition_participant(p: CombatParticipant) -> void:
-	var is_enemy := p in enemy_participants
-	var list := enemy_participants if is_enemy else player_participants
-	var index := list.find(p)
-
-	var x: float
-	if is_enemy:
-		x = ENEMY_BACK_X if p.row == CharacterInstance.PartyRow.BACK else ENEMY_FRONT_X
+	if p in enemy_participants:
+		var same_row := enemy_participants.filter(func(other): return other.row == p.row)
+		var index := same_row.find(p)
+		var x := ENEMY_BACK_X if p.row == CharacterInstance.PartyRow.BACK else ENEMY_FRONT_X
+		p.world_position = Vector2(x, 35 + index * ROW_SPACING_Y)
 	else:
-		x = PLAYER_BACK_X if p.row == CharacterInstance.PartyRow.BACK else PLAYER_FRONT_X
-
-	p.world_position = Vector2(x, OFFSET_Y + index * ROW_SPACING_Y)
+		var index := player_participants.find(p)
+		var x := PLAYER_BACK_X if p.row == CharacterInstance.PartyRow.BACK else PLAYER_FRONT_X
+		p.world_position = Vector2(x, 0 + index * ROW_SPACING_Y)
 
 	var view: CombatTargetView = view_by_participant.get(p)
 	if view != null:
@@ -304,3 +307,14 @@ func _on_victory() -> void:
 func _on_defeat() -> void:
 	CombatManager.resolve_defeat()
 	
+
+
+func _exit_tree() -> void:
+	if EffectSignalBus.effect_applied.is_connected(_on_effect_applied):
+		EffectSignalBus.effect_applied.disconnect(_on_effect_applied)
+
+
+func _on_effect_applied(target, result: EffectResult) -> void:
+	if target is CombatParticipant and view_by_participant.has(target):
+		_show_damage_popup(target, result)
+		_refresh_participant_view(target)

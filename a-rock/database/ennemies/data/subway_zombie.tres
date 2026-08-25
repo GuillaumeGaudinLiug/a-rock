@@ -34,6 +34,7 @@ animations = [{
 [sub_resource type="Resource" id="Resource_117nj"]
 script = ExtResource("3_r4qsg")
 item = ExtResource("6_xg2gs")
+drop_chance = 0.1
 metadata/_custom_type_script = "uid://q4sdesfj265h"
 
 [resource]

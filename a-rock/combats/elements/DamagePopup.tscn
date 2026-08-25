@@ -13,6 +13,7 @@ visibility_layer = 4
 offset_left = 51.0
 offset_right = 122.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 
 [node name="IconRect" type="TextureRect" parent="." unique_id=1813912658]
 light_mask = 4

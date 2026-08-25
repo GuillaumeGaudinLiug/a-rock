@@ -1,6 +1,8 @@
 class_name AbstractEffect
 extends Resource
 
+#signal effect_applied(target, result: EffectResult)
+
 @export var use_sfx: AudioStream
 @export var can_miss: bool = false
 @export var miss_sfx: AudioStream
@@ -18,10 +20,16 @@ func execute(context: Dictionary) -> EffectResult:
 
 		result.value_label = "Raté !"
 		_on_miss(context)
+		EffectSignalBus.effect_applied.emit(context.get("target"), result)
+
 		return result
 
 	if use_sfx != null:	SfxManager.play(use_sfx)
 	_execute(context, result)
+	# Envoi d'un signal
+	#effect_applied.emit(context.get("target"), result)
+	EffectSignalBus.effect_applied.emit(context.get("target"), result)
+
 	return result
 
 # Formule pour le calcul de miss
