@@ -22,9 +22,8 @@ enum TriggerType { NONE, ON_BATTLE_START, ON_BATTLE_END, ON_TURN_START, ON_TURN_
 @export_range(0.0, 1.0, 0.01) var base_apply_chance: float = 0.7
 var apply_chance_stat: String = "passion"   # côté attaquant : augmente la chance
 var resist_chance_stat: String = "spirit"    # côté cible : diminue la chance
-@export_range(0.0, 0.1, 0.001) var chance_stat_influence: float = 0.02
 
 @export var min_duration_turns: int = 1
 @export var max_duration_turns: int = 5
 var duration_stat: String = "passion"        # côté attaquant : influence la durée tirée
-@export_range(0.0, 0.1, 0.001) var duration_stat_influence: float = 0.05
+@export_range(0.0, 0.1, 0.001) var duration_stat_influence: float = 0.005

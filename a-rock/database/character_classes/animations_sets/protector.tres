@@ -39,7 +39,52 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc4em"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(270, 30, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b74ey"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(60, 30, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwidp"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mc4em")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_b74ey")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mc4em")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_b74ey")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sufy1"]
+atlas = ExtResource("1_mc4em")
+region = Rect2(300, 30, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsevi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sufy1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("2_mc4em")
 combat = SubResource("SpriteFrames_0fmue")
+damage = SubResource("SpriteFrames_gwidp")
+ko = SubResource("SpriteFrames_lsevi")
 metadata/_custom_type_script = "uid://dktbxvpu6u11y"

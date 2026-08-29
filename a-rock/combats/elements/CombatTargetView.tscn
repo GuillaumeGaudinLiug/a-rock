@@ -48,12 +48,22 @@ offset_bottom = 59.0
 scale = Vector2(0.3, 0.3)
 
 [node name="EpBar" type="ProgressBar" parent="StatBars" unique_id=1560634754]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+show_percentage = false
+
+[node name="EpLabel" type="Label" parent="StatBars" unique_id=1163710617]
+layout_mode = 2
 
 [node name="SpBar" type="ProgressBar" parent="StatBars" unique_id=250144131]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+show_percentage = false
+
+[node name="SpLabel" type="Label" parent="StatBars" unique_id=1478331302]
+layout_mode = 2
 
 [node name="EnemyStatsBar" type="VBoxContainer" parent="." unique_id=1838063038]
 visible = false
@@ -66,10 +76,12 @@ scale = Vector2(0.3, 0.3)
 [node name="EnemyEpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=1372549521]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+show_percentage = false
 
 [node name="EnemySpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=81102817]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+show_percentage = false
 
 [node name="ActiveTurnIndicator" type="Sprite2D" parent="." unique_id=1939004473]
 light_mask = 2

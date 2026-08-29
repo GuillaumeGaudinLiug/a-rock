@@ -24,7 +24,7 @@ func get_next_actor() -> CombatParticipant:
 		for p in alive:
 			# Calcul de la jaude d'action des participants
 			var roll_factor := 1.0 + randf_range(-0.5, 0.5)
-			p.gauge += 1 + (p.adaptability/3 * roll_factor)
+			p.gauge += (2 + p.adaptability/3 ) * roll_factor
 
 			if p.gauge >= GAUGE_THRESHOLD:
 				p.gauge -= GAUGE_THRESHOLD

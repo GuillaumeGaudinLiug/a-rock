@@ -39,6 +39,7 @@ enemy_name = "Subway Zombie"
 idle_sprite_frame = SubResource("SpriteFrames_ys6n8")
 behavior = ExtResource("1_dahpm")
 combat_animations = SubResource("Resource_lqjpe")
+determination = 7
 courage = 5
 passion = 2
 spirit = 5

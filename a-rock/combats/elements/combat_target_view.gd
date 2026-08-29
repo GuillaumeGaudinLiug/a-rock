@@ -10,6 +10,8 @@ signal target_clicked(participant: CombatParticipant)
 @onready var stat_bars: VBoxContainer = $StatBars
 @onready var ep_bar: ProgressBar = $StatBars/EpBar
 @onready var sp_bar: ProgressBar = $StatBars/SpBar
+@onready var ep_label: Label = $StatBars/EpLabel
+@onready var sp_label: Label = $StatBars/SpLabel
 @onready var enemy_stat_bars: VBoxContainer = $EnemyStatsBar
 @onready var enemy_ep_bar: ProgressBar = $EnemyStatsBar/EnemyEpBar
 @onready var enemy_sp_bar: ProgressBar = $EnemyStatsBar/EnemySpBar
@@ -26,17 +28,24 @@ func _ready() -> void:
 
 func setup(p: CombatParticipant) -> void:
 	participant = p
-
+	
+	#Stat visible 
 	stat_bars.visible = p.is_player
-	# TODO: enemy bars visible with passive skill
+	# enemy bars visible with passive skill
+	enemy_stat_bars.visible = CombatManager.reveal_enemy_stats
 	if p.is_player:
 		ep_bar.max_value = p.max_ep
 		sp_bar.max_value = p.max_sp
-		refresh_stat_bars()
+		ep_label.text = "%d / %d" % [p.current_ep, p.max_ep]
+		sp_label.text = "%d / %d" % [p.current_sp, p.max_sp]
+
 	if not p.is_player:
 		enemy_ep_bar.max_value = p.max_ep
 		enemy_sp_bar.max_value = p.max_sp
-		refresh_stat_bars()
+		#enemy_ep_bar.text = "%d / %d" % [p.current_ep, p.max_ep]
+		#enemy_sp_bar.text = "%d / %d" % [p.current_sp, p.max_sp]
+
+	refresh_stat_bars()
 	refresh_status_icons()
 
 
@@ -52,6 +61,8 @@ func refresh_stat_bars() -> void:
 	sp_bar.value = participant.current_sp
 	enemy_ep_bar.value = participant.current_ep
 	enemy_sp_bar.value = participant.current_sp
+	ep_label.text = "%d / %d" % [participant.current_ep, participant.max_ep]
+	sp_label.text = "%d / %d" % [participant.current_sp, participant.max_sp]
 
 
 func refresh_status_icons() -> void:

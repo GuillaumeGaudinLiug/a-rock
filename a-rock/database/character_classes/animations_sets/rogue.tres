@@ -22,17 +22,45 @@ region = Rect2(150, 150, 16, 24)
 [sub_resource type="SpriteFrames" id="SpriteFrames_8py7k"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_llxlb")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_nypdh")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_3u5ng")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_35byv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwgt8"]
+atlas = ExtResource("1_43jrc")
+region = Rect2(270, 150, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n46wi"]
+atlas = ExtResource("1_43jrc")
+region = Rect2(60, 150, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2m17"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mwgt8")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_n46wi")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mwgt8")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_n46wi")
 }],
 "loop": 1,
 "name": &"default",
@@ -57,5 +85,6 @@ animations = [{
 [resource]
 script = ExtResource("1_h3rrv")
 combat = SubResource("SpriteFrames_8py7k")
+damage = SubResource("SpriteFrames_m2m17")
 ko = SubResource("SpriteFrames_6wk8l")
 metadata/_custom_type_script = "uid://dktbxvpu6u11y"

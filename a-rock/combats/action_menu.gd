@@ -54,7 +54,8 @@ func _show_skills() -> void:
 	for skill in current_actor.source_character.available_skills:
 		if not skill.is_usable_in(GameManager.GameState.COMBAT):
 			continue
-
+		if skill.is_passive:
+			continue
 		var ep_cost := skill.get_ep_cost(current_actor.source_character)
 		var sp_cost := skill.get_sp_cost(current_actor.source_character)
 

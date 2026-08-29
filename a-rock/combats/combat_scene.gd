@@ -4,13 +4,16 @@ extends Node2D
 @export var  ENEMY_BACK_X := -50.0
 @export var  PLAYER_FRONT_X := 100.0
 @export var  PLAYER_BACK_X := 120.0
-@export var  ROW_SPACING_Y := 55.0
+@export var  PLAYER_ROW_SPACING_Y := 55.0
+@export var  ENEMY_ROW_SPACING_Y := 80.0
 @export var  OFFSET_Y := 0.0
 
 
 const DAMAGE_POPUP_SCENE := preload("res://combats/elements/DamagePopup.tscn")
 const TARGET_VIEW_SCENE := preload("res://combats/elements/CombatTargetView.tscn")
 
+var popup_queue: Array[Dictionary] = []
+var is_processing_popups := false
 
 @onready var background: Sprite2D = $Background
 @onready var enemy_sprites: Node2D = $EnemySprites
@@ -42,6 +45,8 @@ func _ready() -> void:
 
 	_build_participants()
 	turn_manager.setup(all_participants)
+
+	_apply_passive_skills()
 
 	for p in player_participants:
 		p.trigger_statuses(StatusEffect.TriggerType.ON_BATTLE_START, { "actor": p, "target": p })
@@ -75,19 +80,19 @@ func _layout_enemies() -> void:
 
 	for i in front_row.size():
 		var p := front_row[i]
-		p.world_position = Vector2(ENEMY_FRONT_X, 0 + i * ROW_SPACING_Y)
+		p.world_position = Vector2(ENEMY_FRONT_X, 0 + i * ENEMY_ROW_SPACING_Y)
 		_spawn_view(p, enemy_sprites)
 
 	for i in back_row.size():
 		var p := back_row[i]
-		p.world_position = Vector2(ENEMY_BACK_X, 0 + i * ROW_SPACING_Y)
+		p.world_position = Vector2(ENEMY_BACK_X, 0 + i * ENEMY_ROW_SPACING_Y)
 		_spawn_view(p, enemy_sprites)
 
 func _layout_players() -> void:
 	for i in player_participants.size():
 		var p := player_participants[i]
 		var x := PLAYER_BACK_X if p.row == CharacterInstance.PartyRow.BACK else PLAYER_FRONT_X
-		p.world_position = Vector2(x, 0 + i * ROW_SPACING_Y)
+		p.world_position = Vector2(x, 0 + i * PLAYER_ROW_SPACING_Y)
 		_spawn_view(p, player_sprites)
 	
 	
@@ -197,18 +202,43 @@ func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> v
 	if frames != null and frames.has_animation("default"):
 		view.sprite.play("default")
 
+# Damage animation
+func _play_damage_animation(p: CombatParticipant) -> void:
+	if not p.is_alive() or not p.is_player:
+		return  # un participant déjà KO garde son animation KO, pas de "damage" par-dessus
 
+	var view: CombatTargetView = view_by_participant.get(p)
+	if view == null:
+		return
+
+	var frames := p.get_animation_set().get_frames(CombatAnimationSet.State.DAMAGE)
+	if frames == null:
+		return
+
+	view.sprite.sprite_frames = frames
+	if frames.has_animation("default"):
+		view.sprite.play("default")
+
+	await get_tree().create_timer(0.5).timeout
+
+	if p.is_alive():
+		var idle_frames := p.get_idle_frames()
+		view.sprite.sprite_frames = idle_frames
+		if idle_frames != null and idle_frames.has_animation("default"):
+			view.sprite.play("default")
+			
+			
 # Deplacer le CombatTargetView sur la row
 func _reposition_participant(p: CombatParticipant) -> void:
 	if p in enemy_participants:
 		var same_row := enemy_participants.filter(func(other): return other.row == p.row)
 		var index := same_row.find(p)
 		var x := ENEMY_BACK_X if p.row == CharacterInstance.PartyRow.BACK else ENEMY_FRONT_X
-		p.world_position = Vector2(x, 35 + index * ROW_SPACING_Y)
+		p.world_position = Vector2(x, 35 + index * ENEMY_ROW_SPACING_Y)
 	else:
 		var index := player_participants.find(p)
 		var x := PLAYER_BACK_X if p.row == CharacterInstance.PartyRow.BACK else PLAYER_FRONT_X
-		p.world_position = Vector2(x, 0 + index * ROW_SPACING_Y)
+		p.world_position = Vector2(x, 0 + index * PLAYER_ROW_SPACING_Y)
 
 	var view: CombatTargetView = view_by_participant.get(p)
 	if view != null:
@@ -320,5 +350,31 @@ func _exit_tree() -> void:
 
 func _on_effect_applied(target, result: EffectResult) -> void:
 	if target is CombatParticipant and view_by_participant.has(target):
-		_show_damage_popup(target, result)
-		_refresh_participant_view(target)
+		popup_queue.append({ "target": target, "result": result })
+		if not is_processing_popups:
+			_process_popup_queue()
+
+		if result.hit and result.kind == EffectResult.Kind.DAMAGE:
+			_play_damage_animation(target)
+			
+			
+func _apply_passive_skills() -> void:
+	for p in player_participants:
+		for skill in p.source_character.available_skills:
+			if not skill.is_passive:
+				continue
+			for effect in skill.effects:
+				effect.execute({ "actor": p, "target": p })
+
+
+
+func _process_popup_queue() -> void:
+	is_processing_popups = true
+
+	while not popup_queue.is_empty():
+		var entry: Dictionary = popup_queue.pop_front()
+		_show_damage_popup(entry["target"], entry["result"])
+		_refresh_participant_view(entry["target"])
+		await get_tree().create_timer(0.3).timeout
+
+	is_processing_popups = false

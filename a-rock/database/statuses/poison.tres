@@ -24,4 +24,5 @@ visible_in_battle = true
 icon = SubResource("AtlasTexture_hx5mj")
 trigger = 3
 trigger_effects = Array[ExtResource("3_cx3fa")]([SubResource("Resource_lgmu0")])
+base_apply_chance = 0.5
 metadata/_custom_type_script = "uid://crvqrxeyh3pcb"

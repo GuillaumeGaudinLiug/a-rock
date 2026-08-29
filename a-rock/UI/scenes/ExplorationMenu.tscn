@@ -27,7 +27,7 @@ layout_mode = 0
 offset_top = -3.0
 offset_right = 664.0
 offset_bottom = 595.0
-color = Color(0.99999124, 0.38747475, 0.4202969, 1)
+color = Color(1, 1, 1, 0.5411765)
 
 [node name="PartyList" type="VBoxContainer" parent="Root" unique_id=1158816883]
 layout_mode = 0
@@ -46,29 +46,29 @@ offset_right = 622.0
 offset_bottom = 566.0
 theme_override_constants/separation = 40
 
-[node name="WeaponsButton" type="Button" parent="Root/MainPanel" unique_id=1924074720]
-custom_minimum_size = Vector2(100, 50)
-custom_maximum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Weapons"
-
 [node name="LevelStatsButton" type="Button" parent="Root/MainPanel" unique_id=1136232098]
 custom_minimum_size = Vector2(100, 50)
 custom_maximum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Status"
 
-[node name="InventoryButton" type="Button" parent="Root/MainPanel" unique_id=948895077]
-custom_minimum_size = Vector2(100, 50)
-custom_maximum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Inventory"
-
 [node name="SkillsButton" type="Button" parent="Root/MainPanel" unique_id=356780568]
 custom_minimum_size = Vector2(100, 50)
 custom_maximum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Skills"
+
+[node name="WeaponsButton" type="Button" parent="Root/MainPanel" unique_id=1924074720]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Weapons"
+
+[node name="InventoryButton" type="Button" parent="Root/MainPanel" unique_id=948895077]
+custom_minimum_size = Vector2(100, 50)
+custom_maximum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Inventory"
 
 [node name="ReturnToPrisonButton" type="Button" parent="Root/MainPanel" unique_id=1066625246]
 custom_minimum_size = Vector2(100, 50)
@@ -198,7 +198,7 @@ offset_left = 240.0
 offset_top = 345.0
 offset_right = 632.0
 offset_bottom = 460.0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 120
 
 [node name="BackButton" type="Button" parent="Root/InventoryPanel" unique_id=244132913]
 layout_mode = 0
@@ -359,7 +359,7 @@ offset_left = 113.0
 offset_top = 4.0
 offset_right = 459.0
 offset_bottom = 110.0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 120
 
 [node name="SkillListContainer" type="VBoxContainer" parent="Root/SkillsPanel" unique_id=1606779285]
 layout_mode = 0
@@ -382,7 +382,7 @@ offset_left = 300.0
 offset_top = 392.0
 offset_right = 623.0
 offset_bottom = 524.0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 120
 
 [node name="BackButton" type="Button" parent="Root/SkillsPanel" unique_id=1047777561]
 layout_mode = 0

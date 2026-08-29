@@ -31,12 +31,13 @@ func _execute(context: Dictionary, result: EffectResult) -> void:
 func _resolve_apply_chance(actor, target) -> bool:
 	var actor_value: float = actor.get_stat(status.apply_chance_stat)
 	var target_value: float = target.get_stat(status.resist_chance_stat)
-	
-	# TODO: vrai calcul de la chance d'application du statut
-	var chance = max (1.0, 1.0)
-	#var chance: float = status.base_apply_chance + (actor_value - target_value) * status.chance_stat_influence
-	#chance = clamp(chance, 0.05, 0.1)
-	var applied = randf() < chance
+
+	var ratio: float = actor_value / max(target_value, 0.01)
+	var log2_ratio: float = log(ratio) / log(2.0)
+	var modifier: float = clamp(log2_ratio * 0.5, -0.5, 0.5)
+
+	var chance: float = clamp(status.base_apply_chance + modifier, 0.02, 0.98)
+
 	return randf() < chance
 
 

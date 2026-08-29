@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="1_bm3xy"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_1fpw7"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_vxgy0"]
+[ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="3_w1s0b"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_vxgy0"]
 [ext_resource type="Resource" uid="uid://sph0e03hkpn2" path="res://database/skills/back_attack.tres" id="5_bfute"]
 [ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="5_dkdil"]
@@ -15,28 +16,28 @@ region = Rect2(20.19051, 18.657837, 11.730217, 13.884743)
 [sub_resource type="Resource" id="Resource_vxgy0"]
 script = ExtResource("1_bm3xy")
 required_material_quantity = 0
-determination = 2
-courage = 1
-spirit = 1
-adaptability = 3
-max_ep = 5
-max_sp = 2
+determination = 1
+passion = 1
+adaptability = 2
+max_ep = 1
+max_sp = 1
 xp_required = 100
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_bfute"]
 script = ExtResource("1_bm3xy")
-determination = 3
-courage = 1
-spirit = 1
-adaptability = 5
-max_ep = 5
-max_sp = 2
-xp_required = 500
+required_material = ExtResource("3_w1s0b")
+determination = 1
+passion = 1
+adaptability = 2
+max_ep = 1
+max_sp = 1
+xp_required = 200
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_dkdil"]
 script = ExtResource("1_bm3xy")
+xp_required = 400
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
 [sub_resource type="Resource" id="Resource_w1s0b"]

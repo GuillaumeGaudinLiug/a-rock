@@ -15,6 +15,5 @@ metadata/_custom_type_script = "uid://cftwp1gawb1bj"
 script = ExtResource("2_jjxt8")
 skill_name = "Attack"
 description = "Basic attack"
-usable_contexts = 7
 effects = Array[ExtResource("1_sskk1")]([SubResource("Resource_i35ut")])
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

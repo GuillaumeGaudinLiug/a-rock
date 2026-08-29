@@ -3,6 +3,7 @@ class_name Skill
 extends Resource
 
 @export var skill_name: String = ""
+@export var is_passive: bool = false
 @export var description: String = ""
 @export var icon: Texture2D
 

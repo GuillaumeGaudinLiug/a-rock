@@ -65,27 +65,26 @@ func _populate_skill_list() -> void:
 	skill_buttons.clear()
 
 	for skill in selected_caster.available_skills:
-		if not skill.is_usable_in(GameManager.GameState.EXPLORATION):
-			continue
+		var button := Button.new()
 
 		var ep_cost := skill.get_ep_cost(selected_caster)
 		var sp_cost := skill.get_sp_cost(selected_caster)
 
-		var button := Button.new()
 		button.text = "%s — EP:%d SP:%d" % [skill.skill_name, ep_cost, sp_cost]
 		button.icon = skill.icon
-		button.toggle_mode = true
-		button.custom_minimum_size = Vector2(0, 40)
-		button.disabled = (selected_caster.current_ep < ep_cost) or (selected_caster.current_sp < sp_cost)
+
+		var usable_here := skill.is_usable_in(GameManager.GameState.EXPLORATION) and not skill.is_passive
+		var has_resources := (selected_caster.current_ep >= ep_cost) and (selected_caster.current_sp >= sp_cost)
+
+		button.disabled = not (usable_here and has_resources)
 
 		skill_list_container.add_child(button)
 		skill_buttons.append(button)
+
 		button.pressed.connect(_on_skill_clicked.bind(skill, button))
+		button.mouse_entered.connect(_on_skill_hovered.bind(skill))
 
-	if skill_buttons.is_empty():
-		description_label.text = "Aucune compétence disponible en exploration."
-
-
+# Selection d'un skill
 func _on_skill_clicked(skill: Skill, button: Button) -> void:
 	selected_skill = skill
 	description_label.text = skill.description
@@ -132,3 +131,7 @@ func _on_target_clicked(character: CharacterInstance) -> void:
 # TODO: feeback
 func _on_menu_effect_feedback(target, result: EffectResult) -> void:
 	print(result.value_label)  # à remplacer plus tard par une vraie animation/son sur ce menu
+
+
+func _on_skill_hovered(skill: Skill) -> void:
+	description_label.text = skill.description

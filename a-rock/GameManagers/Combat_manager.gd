@@ -12,6 +12,8 @@ var pending_music: AudioStream
 var xp_multiplier: float = 1.0
 var loot_multiplier: float = 1.0
 
+var reveal_enemy_stats: bool = false
+
 
 func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: AudioStream) -> void:
 	pending_group = group
@@ -19,7 +21,7 @@ func start_encounter(group: EncounterEnemyGroup, background: Texture2D, music: A
 	pending_music = music
 	xp_multiplier = 1.0
 	loot_multiplier = 1.0
-
+	reveal_enemy_stats = false
 	# TODO : construire les CombatParticipant, puis pour chacun des joueurs :
 	# participant.trigger_statuses(StatusEffect.TriggerType.ON_BATTLE_START, { "user": participant })
 
