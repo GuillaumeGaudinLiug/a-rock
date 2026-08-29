@@ -2,7 +2,7 @@
 class_name EffectResult
 extends RefCounted
 
-enum Kind { DAMAGE, HEAL, STATUS_APPLIED, STATUS_RESISTED, MISS, INFO }
+enum Kind { DAMAGE, DAMAGE_SP, HEAL, STATUS_APPLIED, STATUS_RESISTED, MISS, INFO }
 
 var hit: bool = true
 var value: float = 0.0            # dégâts infligés, soin appliqué, etc. (signe positif = gain, négatif = perte, à convention définir)

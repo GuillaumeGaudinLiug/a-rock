@@ -7,6 +7,7 @@ var is_player: bool
 
 var row: CharacterInstance.PartyRow
 var active_statuses: Array[StatusInstance] = []
+var turn_count: int = 0
 
 var determination: int
 var courage: int

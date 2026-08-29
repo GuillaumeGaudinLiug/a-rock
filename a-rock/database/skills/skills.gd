@@ -24,11 +24,19 @@ extends Resource
 
 
 func get_ep_cost(character: CharacterInstance) -> int:
-	return ep_cost + int(character.max_ep * ep_cost_percent)
+	# Definir un cout minimal de 1 
+	var min_cost = 0
+	if (ep_cost != 0 or ep_cost_percent != 0.0):
+		min_cost = 1
+	return max(min_cost , ep_cost + int(character.max_ep * ep_cost_percent))
 
 
 func get_sp_cost(character: CharacterInstance) -> int:
-	return sp_cost + int(character.max_sp * sp_cost_percent)
+		# Definir un cout minimal de 1 
+	var min_cost = 0
+	if (sp_cost != 0 or sp_cost_percent != 0.0):
+		min_cost = 1
+	return max( min_cost, sp_cost + int(character.max_sp * sp_cost_percent))
 
 
 func is_usable_in(state: GameManager.GameState) -> bool:

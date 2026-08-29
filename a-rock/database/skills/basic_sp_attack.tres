@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://vujlctwaeedj"]
+
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_h8lmh"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_j8ycn"]
+[ext_resource type="Script" uid="uid://bqgpntqpy7cn2" path="res://database/effects/sp_damage.gd" id="2_l54eq"]
+
+[sub_resource type="Resource" id="Resource_l54eq"]
+script = ExtResource("2_l54eq")
+metadata/_custom_type_script = "uid://bqgpntqpy7cn2"
+
+[resource]
+script = ExtResource("2_j8ycn")
+skill_name = "Preach"
+description = "Sp damage"
+effects = Array[ExtResource("1_h8lmh")]([SubResource("Resource_l54eq")])
+sp_cost = 1
+sp_cost_percent = 0.02
+default_animation_state = 3
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

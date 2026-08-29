@@ -146,13 +146,15 @@ func _run_combat_loop() -> void:
 			action = actor.behavior.choose_action(actor, enemy_participants, player_participants)
 
 		if action != null:
+			# Numéro de tour
+			actor.turn_count += 1
 			_play_action_animation(actor, action)
 			action.execute()
 			# EN cas de changement de row
 			if action.type == CombatAction.ActionType.CHANGE_ROW:
 				_reposition_participant(actor)
 
-			await get_tree().create_timer(0.6).timeout
+			await get_tree().create_timer(1).timeout
 
 		actor.trigger_statuses(StatusEffect.TriggerType.ON_TURN_END, { "actor": actor, "target": actor })
 		actor.tick_turn_end()
@@ -189,7 +191,7 @@ func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> v
 		if frames != null and frames.has_animation("default"):
 			view.sprite.play("default")
 		return
-	# TODO: Lancement de l'animation de combat par defaut
+	# Lancement de l'animation de combat par defaut
 	var frames := actor.get_animation_set().get_frames(CombatAnimationSet.State.COMBAT)
 	view.sprite.sprite_frames = frames
 	if frames != null and frames.has_animation("default"):
@@ -225,6 +227,8 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 	match result.kind:
 		EffectResult.Kind.DAMAGE:
 			color = Color.RED
+		EffectResult.Kind.DAMAGE:
+			color = Color.DARK_TURQUOISE
 		EffectResult.Kind.HEAL:
 			color = Color.GREEN
 		EffectResult.Kind.STATUS_APPLIED:
@@ -242,7 +246,7 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 	popup.play()
 
 	var view: CombatTargetView = view_by_participant.get(target)
-	if view != null and result.hit and result.kind == EffectResult.Kind.DAMAGE:
+	if view != null and result.hit and (result.kind == EffectResult.Kind.DAMAGE or result.kind == EffectResult.Kind.DAMAGE_SP):
 		_flash_hit(view.sprite)
 
 

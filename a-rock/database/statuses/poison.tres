@@ -12,6 +12,8 @@ region = Rect2(575.92664, 15.727528, 16.345581, 16.447151)
 
 [sub_resource type="Resource" id="Resource_lgmu0"]
 script = ExtResource("4_0druh")
+base_damage_ep = 25
+damage_percent_ep = 0.01
 damage_percent_sp = 0.0
 metadata/_custom_type_script = "uid://cv2wrkrx0fmmb"
 

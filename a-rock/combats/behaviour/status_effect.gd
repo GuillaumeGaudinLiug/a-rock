@@ -14,7 +14,7 @@ enum TriggerType { NONE, ON_BATTLE_START, ON_BATTLE_END, ON_TURN_START, ON_TURN_
 @export var stat_modifiers: Array[StatModifier] = []       # buffs/debuffs continus (ex: -20% Courage)
 @export var trigger: TriggerType = TriggerType.NONE        # déclenche trigger_effects à ce moment précis
 @export var trigger_effects: Array[AbstractEffect] = []    # ex: poison -> dégâts à ON_TURN_START
-
+@export var is_cancellable: bool = true
 
 
 # ajouts dans status_effect.gd

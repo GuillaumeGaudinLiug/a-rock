@@ -20,6 +20,6 @@ script = ExtResource("2_vj84j")
 skill_name = "Toxic attack"
 description = "Attack and toxic"
 effects = Array[ExtResource("1_pylth")]([SubResource("Resource_tc258"), SubResource("Resource_lgmu0")])
-ep_cost_percent = 0.02
+ep_cost_percent = 0.03
 sp_cost_percent = 0.02
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

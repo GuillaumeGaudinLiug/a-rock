@@ -10,7 +10,9 @@ signal target_clicked(participant: CombatParticipant)
 @onready var stat_bars: VBoxContainer = $StatBars
 @onready var ep_bar: ProgressBar = $StatBars/EpBar
 @onready var sp_bar: ProgressBar = $StatBars/SpBar
-
+@onready var enemy_stat_bars: VBoxContainer = $EnemyStatsBar
+@onready var enemy_ep_bar: ProgressBar = $EnemyStatsBar/EnemyEpBar
+@onready var enemy_sp_bar: ProgressBar = $EnemyStatsBar/EnemySpBar
 @onready var active_turn_indicator: Sprite2D = $ActiveTurnIndicator
 
 var participant: CombatParticipant
@@ -26,11 +28,15 @@ func setup(p: CombatParticipant) -> void:
 	participant = p
 
 	stat_bars.visible = p.is_player
+	# TODO: enemy bars visible with passive skill
 	if p.is_player:
 		ep_bar.max_value = p.max_ep
 		sp_bar.max_value = p.max_sp
 		refresh_stat_bars()
-
+	if not p.is_player:
+		enemy_ep_bar.max_value = p.max_ep
+		enemy_sp_bar.max_value = p.max_sp
+		refresh_stat_bars()
 	refresh_status_icons()
 
 
@@ -44,6 +50,8 @@ func refresh_stat_bars() -> void:
 		return
 	ep_bar.value = participant.current_ep
 	sp_bar.value = participant.current_sp
+	enemy_ep_bar.value = participant.current_ep
+	enemy_sp_bar.value = participant.current_sp
 
 
 func refresh_status_icons() -> void:

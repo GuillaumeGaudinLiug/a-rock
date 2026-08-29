@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyBehavior" format=3 uid="uid://dscovi1tnj65s"]
+
+[ext_resource type="Script" uid="uid://d03ngiw7x5xlj" path="res://database/ennemies/scripts/enemies_behavior.gd" id="1_liwba"]
+[ext_resource type="Script" uid="uid://dfgvddg7ejyvy" path="res://database/ennemies/scripts/enemy_turn_pattern.gd" id="2_g5kgl"]
+[ext_resource type="Script" uid="uid://bbyaxerq05o5a" path="res://database/ennemies/scripts/enemy_action_option.gd" id="3_dv344"]
+[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="4_qku8m"]
+
+[sub_resource type="Resource" id="Resource_ccj11"]
+script = ExtResource("3_dv344")
+skill = ExtResource("4_qku8m")
+metadata/_custom_type_script = "uid://bbyaxerq05o5a"
+
+[sub_resource type="Resource" id="Resource_xxlvq"]
+script = ExtResource("2_g5kgl")
+options = Array[ExtResource("3_dv344")]([SubResource("Resource_ccj11")])
+metadata/_custom_type_script = "uid://dfgvddg7ejyvy"
+
+[resource]
+script = ExtResource("1_liwba")
+turn_patterns = Array[ExtResource("2_g5kgl")]([SubResource("Resource_xxlvq")])
+double_turn = true
+metadata/_custom_type_script = "uid://d03ngiw7x5xlj"

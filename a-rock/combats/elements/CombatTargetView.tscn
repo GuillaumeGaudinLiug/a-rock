@@ -55,6 +55,22 @@ theme_override_font_sizes/font_size = 12
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 
+[node name="EnemyStatsBar" type="VBoxContainer" parent="." unique_id=1838063038]
+visible = false
+offset_left = -72.0
+offset_top = -7.0
+offset_right = 34.666656
+offset_bottom = 39.0
+scale = Vector2(0.3, 0.3)
+
+[node name="EnemyEpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=1372549521]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+
+[node name="EnemySpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=81102817]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+
 [node name="ActiveTurnIndicator" type="Sprite2D" parent="." unique_id=1939004473]
 light_mask = 2
 visibility_layer = 2

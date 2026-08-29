@@ -39,7 +39,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsevi"]
+atlas = ExtResource("1_lsevi")
+region = Rect2(180, 390, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phwbs"]
+atlas = ExtResource("1_lsevi")
+region = Rect2(210, 390, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs57"]
+atlas = ExtResource("1_lsevi")
+region = Rect2(240, 390, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vueki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsevi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phwbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsevi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phwbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs57")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_ssjlk")
 combat = SubResource("SpriteFrames_sufy1")
+spell = SubResource("SpriteFrames_vueki")
 metadata/_custom_type_script = "uid://dktbxvpu6u11y"
