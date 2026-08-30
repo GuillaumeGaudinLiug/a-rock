@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://bjl272j1gayko"]
+
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_e7iag"]
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="2_ev80m"]
+[ext_resource type="Script" uid="uid://cfk3fhyyyl1q3" path="res://combats/behaviour/stats_modifier.gd" id="3_fnelk"]
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="4_0sf4d"]
+[ext_resource type="Script" uid="uid://cv2wrkrx0fmmb" path="res://database/effects/damage_percent.gd" id="5_swa6p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx5mj"]
+atlas = ExtResource("1_e7iag")
+region = Rect2(575.92664, 15.727528, 16.345581, 16.447151)
+
+[sub_resource type="Resource" id="Resource_lgmu0"]
+script = ExtResource("5_swa6p")
+base_damage_ep = 0
+damage_percent_ep = 0.0
+base_damage_sp = 2
+metadata/_custom_type_script = "uid://cv2wrkrx0fmmb"
+
+[resource]
+script = ExtResource("2_ev80m")
+status_name = "Poison"
+visible_in_battle = true
+icon = SubResource("AtlasTexture_hx5mj")
+trigger = 3
+trigger_effects = Array[ExtResource("4_0sf4d")]([SubResource("Resource_lgmu0")])
+base_apply_chance = 0.5
+metadata/_custom_type_script = "uid://crvqrxeyh3pcb"

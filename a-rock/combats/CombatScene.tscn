@@ -11,7 +11,8 @@ ENEMY_FRONT_X = null
 ENEMY_BACK_X = null
 PLAYER_FRONT_X = null
 PLAYER_BACK_X = null
-ROW_SPACING_Y = null
+PLAYER_ROW_SPACING_Y = null
+ENEMY_ROW_SPACING_Y = null
 OFFSET_Y = null
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1819496018]
@@ -24,6 +25,10 @@ scale = Vector2(2, 2)
 [node name="PlayerSprites" type="Node2D" parent="." unique_id=522776771]
 light_mask = 2
 visibility_layer = 2
+
+[node name="VfxLayer" type="Node2D" parent="." unique_id=226717878]
+light_mask = 4
+visibility_layer = 4
 
 [node name="PopupLayer" type="Node2D" parent="." unique_id=1851584490]
 light_mask = 2

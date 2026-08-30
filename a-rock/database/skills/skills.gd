@@ -23,6 +23,8 @@ extends Resource
 @export_group("Ciblage en combat")
 @export var target_scope: TargetScope.Type = TargetScope.Type.SINGLE_ENEMY
 
+@export_group("Effet visuel")
+@export var target_vfx: SpriteFrames
 
 func get_ep_cost(character: CharacterInstance) -> int:
 	# Definir un cout minimal de 1 

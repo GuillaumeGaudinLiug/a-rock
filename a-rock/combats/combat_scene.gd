@@ -1,4 +1,4 @@
-extends Node2D
+extends CombatSceneAnimator
 
 @export var ENEMY_FRONT_X := 0.0
 @export var  ENEMY_BACK_X := -50.0
@@ -26,8 +26,6 @@ var turn_manager := TurnManager.new()
 var all_participants: Array[CombatParticipant] = []
 var enemy_participants: Array[CombatParticipant] = []
 var player_participants: Array[CombatParticipant] = []
-
-var view_by_participant: Dictionary = {}  # CombatParticipant -> CombatTargetView
 
 
 @onready var combat_camera: Camera2D = $CombatCamera
@@ -155,6 +153,18 @@ func _run_combat_loop() -> void:
 			actor.turn_count += 1
 			_play_action_animation(actor, action)
 			action.execute()
+			
+			var vfx_frames: SpriteFrames = null
+			if action.type == CombatAction.ActionType.SKILL and action.skill != null:
+				vfx_frames = action.skill.target_vfx
+			elif action.type == CombatAction.ActionType.ITEM and action.item != null:
+				vfx_frames = action.item.target_vfx
+
+			if vfx_frames != null:
+				for target in action.targets:
+					_play_impact_vfx(target, vfx_frames)
+			
+			
 			# EN cas de changement de row
 			if action.type == CombatAction.ActionType.CHANGE_ROW:
 				_reposition_participant(actor)
@@ -183,51 +193,7 @@ func _get_player_action(actor: CombatParticipant) -> CombatAction:
 	action_menu.hide()
 	return action
 
-# Trouve l'animation du skill
-func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> void:
-	var view: CombatTargetView = view_by_participant.get(actor)
-	if view == null:
-		return
 	
-	# Lancer le frame specific du skill
-	if action.type == CombatAction.ActionType.SKILL and action.skill != null:
-		var frames := action.skill.get_animation_frames(actor.get_animation_set())
-		view.sprite.sprite_frames = frames
-		if frames != null and frames.has_animation("default"):
-			view.sprite.play("default")
-		return
-	# Lancement de l'animation de combat par defaut
-	var frames := actor.get_animation_set().get_frames(CombatAnimationSet.State.COMBAT)
-	view.sprite.sprite_frames = frames
-	if frames != null and frames.has_animation("default"):
-		view.sprite.play("default")
-
-# Damage animation
-func _play_damage_animation(p: CombatParticipant) -> void:
-	if not p.is_alive() or not p.is_player:
-		return  # un participant déjà KO garde son animation KO, pas de "damage" par-dessus
-
-	var view: CombatTargetView = view_by_participant.get(p)
-	if view == null:
-		return
-
-	var frames := p.get_animation_set().get_frames(CombatAnimationSet.State.DAMAGE)
-	if frames == null:
-		return
-
-	view.sprite.sprite_frames = frames
-	if frames.has_animation("default"):
-		view.sprite.play("default")
-
-	await get_tree().create_timer(0.5).timeout
-
-	if p.is_alive():
-		var idle_frames := p.get_idle_frames()
-		view.sprite.sprite_frames = idle_frames
-		if idle_frames != null and idle_frames.has_animation("default"):
-			view.sprite.play("default")
-			
-			
 # Deplacer le CombatTargetView sur la row
 func _reposition_participant(p: CombatParticipant) -> void:
 	if p in enemy_participants:
@@ -257,7 +223,7 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 	match result.kind:
 		EffectResult.Kind.DAMAGE:
 			color = Color.RED
-		EffectResult.Kind.DAMAGE:
+		EffectResult.Kind.DAMAGE_SP:
 			color = Color.DARK_TURQUOISE
 		EffectResult.Kind.HEAL:
 			color = Color.GREEN
@@ -280,21 +246,6 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 		_flash_hit(view.sprite)
 
 
-func _flash_hit(sprite: AnimatedSprite2D) -> void:
-	var tween := create_tween()
-	tween.tween_property(sprite, "modulate", Color.RED, 0.05)
-	tween.tween_property(sprite, "modulate", Color.WHITE, 0.15)
-
-# Retour à l'animation idle
-func _reset_to_idle(p: CombatParticipant) -> void:
-	var view: CombatTargetView = view_by_participant.get(p)
-	if view == null or not p.is_alive():
-		return  # un participant KO garde son animation KO, pas l'idle
-
-	var frames := p.get_idle_frames()
-	view.sprite.sprite_frames = frames
-	if frames != null and frames.has_animation("default"):
-		view.sprite.play("default")
 
 func _refresh_participant_view(p: CombatParticipant) -> void:
 	var view: CombatTargetView = view_by_participant.get(p)
@@ -372,9 +323,11 @@ func _process_popup_queue() -> void:
 	is_processing_popups = true
 
 	while not popup_queue.is_empty():
+		# Delai avant d'afficher la popup afin que l'animation se lance avant que les résultats apparaissent
+		await get_tree().create_timer(0.4).timeout
 		var entry: Dictionary = popup_queue.pop_front()
 		_show_damage_popup(entry["target"], entry["result"])
 		_refresh_participant_view(entry["target"])
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.1).timeout
 
 	is_processing_popups = false

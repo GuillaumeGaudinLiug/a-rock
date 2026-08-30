@@ -10,7 +10,7 @@ enum ItemCategory { CONSUMABLE, MATERIAL, KEY }
 @export var category: ItemCategory = ItemCategory.CONSUMABLE
 
 @export_flags("Exploration", "Combat") var usable_contexts: int = 1  # pertinent seulement si CONSUMABLE
-@export var effect: AbstractEffect  # pertinent seulement si CONSUMABLE
+@export var effects: Array[AbstractEffect] = []
 
 @export var stackable: bool = true
 @export var max_stack: int = 20
@@ -18,6 +18,8 @@ enum ItemCategory { CONSUMABLE, MATERIAL, KEY }
 @export_group("Ciblage en combat")
 @export var target_scope: TargetScope.Type = TargetScope.Type.SINGLE_ALLY
 
+@export_group("Effet visuel")
+@export var target_vfx: SpriteFrames
 
 func is_usable_in(state: GameManager.GameState) -> bool:
 	if category != ItemCategory.CONSUMABLE:

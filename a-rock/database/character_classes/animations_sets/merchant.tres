@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="CombatAnimationSet" format=3 uid="uid://qsv3r2jhry4g"]
+
+[ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="1_05vbe"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_hk7sv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lkc"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(180, 270, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6wr8"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(210, 270, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w20s6"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(150, 270, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk61y"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(240, 270, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lspg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6wr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w20s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk61y")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vot0"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(270, 270, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb55o"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(60, 270, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywsy4"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1vot0")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_lb55o")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1vot0")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_lb55o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uynns"]
+atlas = ExtResource("1_hk7sv")
+region = Rect2(300, 270, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6rh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uynns")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_05vbe")
+combat = SubResource("SpriteFrames_lspg4")
+damage = SubResource("SpriteFrames_ywsy4")
+ko = SubResource("SpriteFrames_h6rh3")
+metadata/_custom_type_script = "uid://dktbxvpu6u11y"

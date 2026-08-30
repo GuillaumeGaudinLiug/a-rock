@@ -8,13 +8,15 @@
 [ext_resource type="Resource" uid="uid://ceqfnem3vguuw" path="res://database/Weapons/Rod.tres" id="4_4fl0v"]
 [ext_resource type="Resource" uid="uid://drfwctiuhlhxo" path="res://database/character_classes/shaman.tres" id="4_12we1"]
 [ext_resource type="Resource" uid="uid://kab6i8vmtdd8" path="res://database/character_classes/rogue.tres" id="5_3h6to"]
+[ext_resource type="Resource" uid="uid://cknetbhcmd406" path="res://database/character_classes/merchant.tres" id="6_mifks"]
 [ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="8_58gu6"]
 [ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="9_3owpq"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="10_3h6to"]
+[ext_resource type="Resource" uid="uid://cpsg6u62e0t23" path="res://database/Weapons/Voice.tres" id="11_y3vdy"]
 [ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="12_7t8ra"]
 
 [node name="Database" type="Node" unique_id=595269518]
 script = ExtResource("1_npldw")
-all_classes = Array[ExtResource("2_4fl0v")]([ExtResource("3_12we1"), ExtResource("4_12we1"), ExtResource("5_3h6to")])
-all_weapons = Array[ExtResource("2_yk66w")]([ExtResource("3_daujv"), ExtResource("4_4fl0v"), ExtResource("8_58gu6")])
+all_classes = Array[ExtResource("2_4fl0v")]([ExtResource("3_12we1"), ExtResource("4_12we1"), ExtResource("5_3h6to"), ExtResource("6_mifks")])
+all_weapons = Array[ExtResource("2_yk66w")]([ExtResource("3_daujv"), ExtResource("4_4fl0v"), ExtResource("8_58gu6"), ExtResource("11_y3vdy")])
 all_items = Array[ExtResource("9_3owpq")]([ExtResource("10_3h6to"), ExtResource("12_7t8ra")])

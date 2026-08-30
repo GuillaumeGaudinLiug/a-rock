@@ -90,7 +90,7 @@ func _on_item_clicked(item: InventoryItem, button: Button) -> void:
 	for b in item_buttons:
 		b.button_pressed = (b == button)
 
-	var usable := item.is_usable_in(GameManager.GameState.EXPLORATION) and item.effect != null
+	var usable := item.is_usable_in(GameManager.GameState.EXPLORATION) and item.effects != null
 
 	if usable:
 		character_tabs.show()

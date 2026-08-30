@@ -42,8 +42,6 @@ func setup(p: CombatParticipant) -> void:
 	if not p.is_player:
 		enemy_ep_bar.max_value = p.max_ep
 		enemy_sp_bar.max_value = p.max_sp
-		#enemy_ep_bar.text = "%d / %d" % [p.current_ep, p.max_ep]
-		#enemy_sp_bar.text = "%d / %d" % [p.current_sp, p.max_sp]
 
 	refresh_stat_bars()
 	refresh_status_icons()

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://cknetbhcmd406"]
+
+[ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_5u5s2"]
+[ext_resource type="Resource" uid="uid://qsv3r2jhry4g" path="res://database/character_classes/animations_sets/merchant.tres" id="2_0du7k"]
+[ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_7yqeg"]
+[ext_resource type="Resource" uid="uid://cpsg6u62e0t23" path="res://database/Weapons/Voice.tres" id="2_bdjan"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_ygbvh"]
+[ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_ygbvh"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_ibi0u"]
+[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="5_ny3m2"]
+[ext_resource type="Resource" uid="uid://dldqj155jemu7" path="res://database/skills/xp_multiplier.tres" id="6_ny3m2"]
+
+[sub_resource type="Resource" id="Resource_hk7sv"]
+script = ExtResource("1_5u5s2")
+xp_required = 100
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_h3lkc"]
+script = ExtResource("1_5u5s2")
+xp_required = 1000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="Resource" id="Resource_l6wr8"]
+script = ExtResource("1_5u5s2")
+xp_required = 5000
+metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibi0u"]
+atlas = ExtResource("2_ygbvh")
+region = Rect2(0, 270, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibi0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibi0u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_ny3m2"]
+script = ExtResource("2_7yqeg")
+skills = Array[ExtResource("4_ibi0u")]([ExtResource("5_ny3m2"), ExtResource("6_ny3m2")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
+[sub_resource type="Resource" id="Resource_bdjan"]
+script = ExtResource("2_7yqeg")
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
+[sub_resource type="Resource" id="Resource_0du7k"]
+script = ExtResource("2_7yqeg")
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
+[resource]
+script = ExtResource("3_ygbvh")
+class_name_display = "Merchant"
+idle_sprite_frame = SubResource("SpriteFrames_ibi0u")
+combat_animations = ExtResource("2_0du7k")
+base_max_ep = 40
+default_weapon = ExtResource("2_bdjan")
+class_levels = Array[ExtResource("1_5u5s2")]([SubResource("Resource_hk7sv"), SubResource("Resource_h3lkc"), SubResource("Resource_l6wr8")])
+level_unlocks = Array[ExtResource("2_7yqeg")]([SubResource("Resource_ny3m2"), SubResource("Resource_bdjan"), SubResource("Resource_0du7k")])
+metadata/_custom_type_script = "uid://c3m2paatdugg7"

@@ -111,7 +111,7 @@ func _on_item_chosen(item: InventoryItem) -> void:
 		action.type = CombatAction.ActionType.ITEM
 		action.user = current_actor
 		action.targets = targets
-		action.effects.append(item.effect)
+		action.effects.append_array(item.effects)
 		action.item = item
 		action_confirmed.emit(action)
 	)
@@ -134,6 +134,8 @@ func _on_row_pressed() -> void:
 
 
 func _begin_targeting(scope: TargetScope.Type, on_targets_chosen: Callable) -> void:
+	_clear_targeting()  # sécurité : nettoie toute connexion résiduelle d'un choix précédent
+
 	var valid_targets := TargetScope.get_valid_targets(scope, current_actor, allies, enemies)
 
 	if TargetScope.is_multi_target(scope) or scope == TargetScope.Type.SELF:
