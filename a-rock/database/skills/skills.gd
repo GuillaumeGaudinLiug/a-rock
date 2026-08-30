@@ -24,7 +24,8 @@ extends Resource
 @export var target_scope: TargetScope.Type = TargetScope.Type.SINGLE_ENEMY
 
 @export_group("Effet visuel")
-@export var target_vfx: SpriteFrames
+@export var vfx_sequence: Array[VfxStep] = []
+
 
 func get_ep_cost(character: CharacterInstance) -> int:
 	# Definir un cout minimal de 1 

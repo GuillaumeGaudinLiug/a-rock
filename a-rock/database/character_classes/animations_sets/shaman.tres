@@ -34,7 +34,7 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_wo12x")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]

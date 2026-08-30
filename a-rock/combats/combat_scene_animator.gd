@@ -23,6 +23,7 @@ func _play_action_animation(actor: CombatParticipant, action: CombatAction) -> v
 	view.sprite.sprite_frames = frames
 	if frames != null and frames.has_animation("default"):
 		view.sprite.play("default")
+	return
 
 
 # Damage animation
@@ -51,18 +52,23 @@ func _play_damage_animation(p: CombatParticipant) -> void:
 			view.sprite.play("default")
 
 
-# Play target impact sprite
-func _play_impact_vfx(target: CombatParticipant, frames: SpriteFrames) -> void:
-	var vfx := AnimatedSprite2D.new()
-	vfx.sprite_frames = frames
-	vfx.position = target.world_position
-	vfx_layer.add_child(vfx)
-	if frames.has_animation("default"):
-		vfx.play("default")
-		await vfx.animation_finished
-	else:
-		await get_tree().create_timer(0.5).timeout
-	vfx.queue_free()
+func play_skill_vfx(actor: CombatParticipant, targets: Array[CombatParticipant], sequence: Array[VfxStep]) -> void:
+	print("Enter play skill vfx")
+	if sequence.is_empty():
+		return
+
+	var caster_view: CombatTargetView = view_by_participant.get(actor)
+
+	for target in targets:
+		var target_view: CombatTargetView = view_by_participant.get(target)
+		var context := {
+			"caster_view": caster_view,
+			"target_view": target_view,
+			"vfx_parent": self,  # CombatScene elle-même, garantie d'être la bonne scène
+		}
+		for step in sequence:
+			print("Step: " + step.get_class())
+			step.play(context)
 
 
 func _flash_hit(sprite: AnimatedSprite2D) -> void:

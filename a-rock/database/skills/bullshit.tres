@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_dvs8x"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_a7y0p"]
 [ext_resource type="Script" uid="uid://cftwp1gawb1bj" path="res://database/effects/base_damage_effect.gd" id="2_vtpq5"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="4_hohs5"]
+[ext_resource type="Script" uid="uid://dsiq7qjv2ob8b" path="res://combats/vfxCombatScripts/vfx_particule_converge.gd" id="5_a21gq"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="6_ik3gi"]
 
 [sub_resource type="Resource" id="Resource_o40o0"]
 script = ExtResource("2_vtpq5")
@@ -10,6 +13,34 @@ att_determination_multiplier = 1.0
 att_passion_multiplier = 1.0
 def_courage_multiplier = 0
 metadata/_custom_type_script = "uid://cftwp1gawb1bj"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehelk"]
+atlas = ExtResource("6_ik3gi")
+region = Rect2(720, 720, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olno5"]
+atlas = ExtResource("6_ik3gi")
+region = Rect2(736, 720, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej8f0"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ehelk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_olno5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_lgmu0"]
+script = ExtResource("5_a21gq")
+sprite_frames = SubResource("SpriteFrames_ej8f0")
+particle_count = 8
+metadata/_custom_type_script = "uid://dsiq7qjv2ob8b"
 
 [resource]
 script = ExtResource("2_a7y0p")
@@ -22,4 +53,5 @@ sp_cost = 1
 sp_cost_percent = 0.05
 default_animation_state = 3
 target_scope = 3
+vfx_sequence = Array[ExtResource("4_hohs5")]([SubResource("Resource_lgmu0")])
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

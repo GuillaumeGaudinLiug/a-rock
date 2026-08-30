@@ -151,19 +151,17 @@ func _run_combat_loop() -> void:
 		if action != null:
 			# Numéro de tour
 			actor.turn_count += 1
+			# Petite temps de pause pendant qu'une animation est lancée: ne pas lancer
+			# la damagePopup 
 			_play_action_animation(actor, action)
-			action.execute()
-			
-			var vfx_frames: SpriteFrames = null
-			if action.type == CombatAction.ActionType.SKILL and action.skill != null:
-				vfx_frames = action.skill.target_vfx
-			elif action.type == CombatAction.ActionType.ITEM and action.item != null:
-				vfx_frames = action.item.target_vfx
 
-			if vfx_frames != null:
-				for target in action.targets:
-					_play_impact_vfx(target, vfx_frames)
-			
+
+			# le temps de l'animation
+			if action.type == CombatAction.ActionType.SKILL and action.skill != null:
+				await play_skill_vfx(actor, action.targets, action.skill.vfx_sequence)
+
+ 			# Execute les effects du skill lancé 
+			action.execute()
 			
 			# EN cas de changement de row
 			if action.type == CombatAction.ActionType.CHANGE_ROW:
@@ -324,10 +322,9 @@ func _process_popup_queue() -> void:
 
 	while not popup_queue.is_empty():
 		# Delai avant d'afficher la popup afin que l'animation se lance avant que les résultats apparaissent
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 		var entry: Dictionary = popup_queue.pop_front()
 		_show_damage_popup(entry["target"], entry["result"])
 		_refresh_participant_view(entry["target"])
-		await get_tree().create_timer(0.1).timeout
 
 	is_processing_popups = false
