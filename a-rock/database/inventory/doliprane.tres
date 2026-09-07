@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="1_a5bwe"]
 [ext_resource type="Script" uid="uid://copqmwidbebvd" path="res://database/effects/healing_effect.gd" id="1_ukxu0"]
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_xxlvq"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="2_xxlvq"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="2_xxlvq"]
 
 [sub_resource type="Resource" id="Resource_22hvn"]
 script = ExtResource("1_ukxu0")

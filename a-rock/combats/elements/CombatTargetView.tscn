@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cu2m4xnc27kmx"]
 
 [ext_resource type="Script" uid="uid://d0xcbhhfj005j" path="res://combats/elements/combat_target_view.gd" id="1_2pvfi"]
-[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_u8ad6"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="3_8py7k"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_u8ad6"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="3_8py7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_320xt"]
 size = Vector2(27, 38)

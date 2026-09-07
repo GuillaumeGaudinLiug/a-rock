@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://41cpn2l7tnms"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_4q1ui"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_4q1ui"]
 [ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="1_84duc"]
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_g1fmj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lspg4"]
 atlas = ExtResource("1_4q1ui")

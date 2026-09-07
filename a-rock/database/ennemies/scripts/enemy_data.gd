@@ -22,3 +22,5 @@ extends Resource
 @export_group("Récompenses")
 @export var xp_value: int = 10
 @export var loot_table: Array[LootDropEntry] = []
+
+@export var is_boss : bool =false

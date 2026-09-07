@@ -5,8 +5,9 @@ extends CombatSceneAnimator
 @export var  PLAYER_FRONT_X := 100.0
 @export var  PLAYER_BACK_X := 120.0
 @export var  PLAYER_ROW_SPACING_Y := 55.0
-@export var  ENEMY_ROW_SPACING_Y := 80.0
-@export var  OFFSET_Y := 0.0
+@export var  ENEMY_ROW_SPACING_Y := 90.0
+@export var  OFFSET_Y := 25
+@export var BOSS_y := 120
 
 
 const DAMAGE_POPUP_SCENE := preload("res://combats/elements/DamagePopup.tscn")
@@ -75,15 +76,23 @@ func _layout_and_spawn_views() -> void:
 func _layout_enemies() -> void:
 	var front_row: Array[CombatParticipant] = enemy_participants.filter(func(p): return p.row == CharacterInstance.PartyRow.FRONT)
 	var back_row: Array[CombatParticipant] = enemy_participants.filter(func(p): return p.row == CharacterInstance.PartyRow.BACK)
+	# Position Y diffrente/centréé si BOSS
 
+			
 	for i in front_row.size():
 		var p := front_row[i]
-		p.world_position = Vector2(ENEMY_FRONT_X, 0 + i * ENEMY_ROW_SPACING_Y)
+		var Y_POSITION : float = OFFSET_Y + i * ENEMY_ROW_SPACING_Y
+		if p.is_boss:
+			Y_POSITION = BOSS_y
+		p.world_position = Vector2(ENEMY_FRONT_X, Y_POSITION)
 		_spawn_view(p, enemy_sprites)
 
 	for i in back_row.size():
 		var p := back_row[i]
-		p.world_position = Vector2(ENEMY_BACK_X, 0 + i * ENEMY_ROW_SPACING_Y)
+		var Y_POSITION : float = OFFSET_Y + i * ENEMY_ROW_SPACING_Y
+		if p.is_boss:
+			Y_POSITION = BOSS_y
+		p.world_position = Vector2(ENEMY_BACK_X, Y_POSITION)
 		_spawn_view(p, enemy_sprites)
 
 func _layout_players() -> void:

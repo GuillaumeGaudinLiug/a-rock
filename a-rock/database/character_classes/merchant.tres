@@ -4,10 +4,9 @@
 [ext_resource type="Resource" uid="uid://qsv3r2jhry4g" path="res://database/character_classes/animations_sets/merchant.tres" id="2_0du7k"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_7yqeg"]
 [ext_resource type="Resource" uid="uid://cpsg6u62e0t23" path="res://database/Weapons/Voice.tres" id="2_bdjan"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_ygbvh"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_ygbvh"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_ygbvh"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_ibi0u"]
-[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="5_ny3m2"]
 [ext_resource type="Resource" uid="uid://dldqj155jemu7" path="res://database/skills/xp_multiplier.tres" id="6_ny3m2"]
 
 [sub_resource type="Resource" id="Resource_hk7sv"]
@@ -42,7 +41,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_ny3m2"]
 script = ExtResource("2_7yqeg")
-skills = Array[ExtResource("4_ibi0u")]([ExtResource("5_ny3m2"), ExtResource("6_ny3m2")])
+skills = Array[ExtResource("4_ibi0u")]([ExtResource("6_ny3m2")])
 metadata/_custom_type_script = "uid://b5pn45pkmw8js"
 
 [sub_resource type="Resource" id="Resource_bdjan"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnyoac27uri5c"
-path="res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-f74a24cb5cba559e1a3f211cf11f9af1.ctex"
+uid="uid://dmmrlkne6jy2d"
+path="res://.godot/imported/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png-0b982021f4e17fb2c1e7b7841b5cac56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png-f74a24cb5cba559e1a3f211cf11f9af1.ctex"]
+source_file="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png-0b982021f4e17fb2c1e7b7841b5cac56.ctex"]
 
 [params]
 

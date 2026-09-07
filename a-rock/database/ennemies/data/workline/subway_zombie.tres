@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dscovi1tnj65s" path="res://database/ennemies/data/workline/subway_zombie_behaviour.tres" id="1_dahpm"]
 [ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="2_0v3m8"]
-[ext_resource type="Texture2D" uid="uid://dmmrlkne6jy2d" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png" id="3_ijna5"]
+[ext_resource type="Texture2D" uid="uid://dmmrlkne6jy2d" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png" id="3_ijna5"]
 [ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="4_65asn"]
 [ext_resource type="Script" uid="uid://q4sdesfj265h" path="res://database/ennemies/scripts/loot_entry.gd" id="5_6ka2e"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="6_ycsrt"]

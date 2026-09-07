@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cj78y0vp3obus" path="res://database/character_classes/animations_sets/rogue.tres" id="1_d4www"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_6v4x3"]
 [ext_resource type="Resource" uid="uid://bjo6sajjeogfk" path="res://database/Weapons/Knife.tres" id="2_lqjpe"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_m8n82"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_d4www"]
 [ext_resource type="Resource" uid="uid://dl0enp4mrjtrw" path="res://database/skills/toxic_attack.tres" id="7_g86rf"]

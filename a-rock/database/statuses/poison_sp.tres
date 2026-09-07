@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://bjl272j1gayko"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_e7iag"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_e7iag"]
 [ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="2_ev80m"]
 [ext_resource type="Script" uid="uid://cfk3fhyyyl1q3" path="res://combats/behaviour/stats_modifier.gd" id="3_fnelk"]
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="4_0sf4d"]

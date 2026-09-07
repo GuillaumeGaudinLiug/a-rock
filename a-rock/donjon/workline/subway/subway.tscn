@@ -6,8 +6,8 @@
 [ext_resource type="Resource" uid="uid://17c47n2h5n62" path="res://database/ennemies/groups/zombieGroup.tres" id="3_nvuyh"]
 [ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="3_tcptv"]
 [ext_resource type="Script" uid="uid://ly1j1cws1a2f" path="res://database/ennemies/scripts/encounter_table.gd" id="4_3dfkl"]
-[ext_resource type="Texture2D" uid="uid://ciuqrcqebj5cs" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Miscellaneous - Battle Backgrounds.png" id="5_3dfkl"]
-[ext_resource type="Texture2D" uid="uid://e5jribcsj0bd" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle.png" id="5_nvuyh"]
+[ext_resource type="Texture2D" uid="uid://ciuqrcqebj5cs" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Miscellaneous - Battle Backgrounds.png" id="5_3dfkl"]
+[ext_resource type="Texture2D" uid="uid://e5jribcsj0bd" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle.png" id="5_nvuyh"]
 
 [sub_resource type="Resource" id="Resource_tcptv"]
 script = ExtResource("4_3dfkl")

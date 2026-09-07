@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_lmgd2"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_bw1tu"]
 [ext_resource type="Script" uid="uid://cftwp1gawb1bj" path="res://database/effects/base_damage_effect.gd" id="2_k1qai"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="4_k1qai"]
 
 [sub_resource type="Resource" id="Resource_k1qai"]
 script = ExtResource("2_k1qai")

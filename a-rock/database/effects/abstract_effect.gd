@@ -38,7 +38,12 @@ func _resolve_hit(context: Dictionary) -> bool:
 	var target = context.get("target")
 	#if user != null and target != null:
 		
-	# TODO: formula
+	# Formule d'esquive
+	var ratio: float = user.adaptability / max(target.adaptability, 0.01)
+	var log2_ratio: float = log(ratio) / log(2.0)
+	var modifier: float = clamp(log2_ratio * 0.1, -0.1, 0.1)
+
+	var chance: float = clamp(0.9 + modifier, 0.01, 0.99)
 	return randf() > 0
 
 func _on_miss(context: Dictionary) -> void:
@@ -46,7 +51,7 @@ func _on_miss(context: Dictionary) -> void:
 	var target = context.get("target")
 	if user != null and target != null:
 		print("%s rate son action sur %s" % [user.display_name, target.display_name])
-		# TODO: lancement d'animation de miss + sound
+		# TODO: lancement miss  sound
 		#SfxManager.play(miss_sfx)
 		
  

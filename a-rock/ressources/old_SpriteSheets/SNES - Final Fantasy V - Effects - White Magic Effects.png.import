@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmmrlkne6jy2d"
-path="res://.godot/imported/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png-c2c0a2567b6344f24ad65d3923bac4ee.ctex"
+uid="uid://chu22fk61hanf"
+path="res://.godot/imported/SNES - Final Fantasy V - Effects - White Magic Effects.png-e5d28f2f3d24edbda7a0a046028e58b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png-c2c0a2567b6344f24ad65d3923bac4ee.ctex"]
+source_file="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - White Magic Effects.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy V - Effects - White Magic Effects.png-e5d28f2f3d24edbda7a0a046028e58b3.ctex"]
 
 [params]
 

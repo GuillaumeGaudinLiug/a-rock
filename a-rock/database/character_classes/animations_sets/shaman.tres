@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CombatAnimationSet" format=3 uid="uid://cibhy7ynjyt7a"]
 
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_lsevi"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_lsevi"]
 [ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="1_ssjlk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwidp"]

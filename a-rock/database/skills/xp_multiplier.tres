@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_ffqtl"]
 [ext_resource type="Script" uid="uid://uxcu65rybq2s" path="res://database/effects/xp_bonus.gd" id="2_c6b7t"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_lj7wi"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="4_c6b7t"]
 
 [sub_resource type="Resource" id="Resource_2h6hn"]
 script = ExtResource("2_c6b7t")

@@ -2,12 +2,11 @@
 
 [ext_resource type="Resource" uid="uid://cibhy7ynjyt7a" path="res://database/character_classes/animations_sets/shaman.tres" id="1_55k37"]
 [ext_resource type="Script" uid="uid://ci3ugbqxtir1c" path="res://database/ProgressionLevelEntry.gd" id="1_nh5cd"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_fe8iw"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_fe8iw"]
 [ext_resource type="Resource" uid="uid://ceqfnem3vguuw" path="res://database/Weapons/Rod.tres" id="3_55k37"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="4_2k2r2"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="4_ivgvp"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_55k37"]
-[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="6_ivgvp"]
 [ext_resource type="Resource" uid="uid://cswrvd8ocdfxs" path="res://database/skills/heal.tres" id="6_ogt8n"]
 
 [sub_resource type="Resource" id="Resource_i4r2f"]
@@ -40,12 +39,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_niwv0"]
-script = ExtResource("4_ivgvp")
-level = 0
-skills = Array[ExtResource("5_55k37")]([ExtResource("6_ivgvp")])
-metadata/_custom_type_script = "uid://b5pn45pkmw8js"
-
 [sub_resource type="Resource" id="Resource_2my44"]
 script = ExtResource("4_ivgvp")
 skills = Array[ExtResource("5_55k37")]([ExtResource("6_ogt8n")])
@@ -64,5 +57,5 @@ base_max_ep = 35
 base_max_sp = 25
 default_weapon = ExtResource("3_55k37")
 class_levels = Array[ExtResource("1_nh5cd")]([SubResource("Resource_i4r2f"), SubResource("Resource_kgywf"), SubResource("Resource_lqjpe")])
-level_unlocks = Array[ExtResource("4_ivgvp")]([SubResource("Resource_niwv0"), SubResource("Resource_2my44")])
+level_unlocks = Array[ExtResource("4_ivgvp")]([SubResource("Resource_2my44")])
 metadata/_custom_type_script = "uid://c3m2paatdugg7"

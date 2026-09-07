@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dliccs0ptxvek"
-path="res://.godot/imported/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png-2decfabf3f4fb86dfdb1741cd4bf893f.ctex"
+uid="uid://dxbkk3yhoiulc"
+path="res://.godot/imported/SNES - Final Fantasy IV - Enemies & Bosses - Enemies.png-bb377f446aa2ce78c80a5adc0c298bdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png"
-dest_files=["res://.godot/imported/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png-2decfabf3f4fb86dfdb1741cd4bf893f.ctex"]
+source_file="res://ressources/old_SpriteSheets/SNES - Final Fantasy IV - Enemies & Bosses - Enemies.png"
+dest_files=["res://.godot/imported/SNES - Final Fantasy IV - Enemies & Bosses - Enemies.png-bb377f446aa2ce78c80a5adc0c298bdb.ctex"]
 
 [params]
 

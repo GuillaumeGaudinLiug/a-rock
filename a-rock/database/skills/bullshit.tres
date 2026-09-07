@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cftwp1gawb1bj" path="res://database/effects/base_damage_effect.gd" id="2_vtpq5"]
 [ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="4_hohs5"]
 [ext_resource type="Script" uid="uid://dsiq7qjv2ob8b" path="res://combats/vfxCombatScripts/vfx_particule_converge.gd" id="5_a21gq"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="6_ik3gi"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="6_ik3gi"]
 
 [sub_resource type="Resource" id="Resource_o40o0"]
 script = ExtResource("2_vtpq5")

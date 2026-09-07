@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://ceqfnem3vguuw"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_o36aq"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_o36aq"]
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_fhdmx"]
 [ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="3_jj2n8"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="4_4ctvp"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_tc3nn"]
+[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="6_fhdmx"]
 [ext_resource type="Resource" uid="uid://vujlctwaeedj" path="res://database/skills/basic_sp_attack.tres" id="6_qxrg6"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="7_ule4y"]
 
@@ -51,13 +52,15 @@ metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 script = ExtResource("2_fhdmx")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
+[sub_resource type="Resource" id="Resource_igqgv"]
+script = ExtResource("4_4ctvp")
+level = 0
+skills = Array[ExtResource("5_tc3nn")]([ExtResource("6_fhdmx")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
 [sub_resource type="Resource" id="Resource_0rbgf"]
 script = ExtResource("4_4ctvp")
 skills = Array[ExtResource("5_tc3nn")]([ExtResource("6_qxrg6")])
-metadata/_custom_type_script = "uid://b5pn45pkmw8js"
-
-[sub_resource type="Resource" id="Resource_igqgv"]
-script = ExtResource("4_4ctvp")
 metadata/_custom_type_script = "uid://b5pn45pkmw8js"
 
 [sub_resource type="Resource" id="Resource_6j6mm"]
@@ -69,5 +72,5 @@ script = ExtResource("7_ule4y")
 weapon_name = "Rod"
 icon = SubResource("AtlasTexture_bkvni")
 level_bonuses = Array[ExtResource("2_fhdmx")]([SubResource("Resource_enalh"), SubResource("Resource_e3dx3"), SubResource("Resource_hxi15"), SubResource("Resource_5psba"), SubResource("Resource_ikxex"), SubResource("Resource_10ybm")])
-level_unlocks = Array[ExtResource("4_4ctvp")]([SubResource("Resource_0rbgf"), SubResource("Resource_igqgv"), SubResource("Resource_6j6mm")])
+level_unlocks = Array[ExtResource("4_4ctvp")]([SubResource("Resource_igqgv"), SubResource("Resource_0rbgf"), SubResource("Resource_6j6mm")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"

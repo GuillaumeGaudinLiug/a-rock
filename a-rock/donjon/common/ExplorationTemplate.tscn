@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://7mxxayajin70" path="res://database/chests/loot_entry.gd" id="2_d78d1"]
 [ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="3_ipmad"]
 [ext_resource type="AudioStream" uid="uid://bxuxfs8hrpis3" path="res://ressources/soundeffect/chess.wav" id="4_43e0h"]
-[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="5_losw5"]
+[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="5_losw5"]
 [ext_resource type="PackedScene" uid="uid://c1wosqdvf44qg" path="res://donjon/common/player_exp/player_expl.tscn" id="6_nwsyo"]
 [ext_resource type="PackedScene" uid="uid://d08san4f4qgl2" path="res://donjon/common/room.tscn" id="7_6tsk6"]
 [ext_resource type="Script" uid="uid://debnvj3qq6f70" path="res://donjon/common/door.gd" id="8_ynjr0"]

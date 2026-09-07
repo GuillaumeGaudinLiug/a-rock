@@ -23,6 +23,7 @@ var gauge: float = 0.0
 var source_character: CharacterInstance   # rempli si is_player
 var source_enemy: EnemyData               # rempli si !is_player
 var behavior: EnemyBehavior                # rempli si !is_player
+var is_boss: bool                         # rempli si !is_player
 
 var world_position: Vector2 = Vector2.ZERO
 
@@ -61,6 +62,7 @@ static func from_enemy(member: EncounterMember) -> CombatParticipant:
 	p.current_sp = enemy.max_sp
 	p.source_enemy = enemy
 	p.behavior = enemy.behavior
+	p.is_boss = enemy.is_boss
 	return p
 
 

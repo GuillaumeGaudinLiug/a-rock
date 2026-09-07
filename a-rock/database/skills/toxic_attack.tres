@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_vj84j"]
 [ext_resource type="Script" uid="uid://crs3j186chy5k" path="res://database/effects/apply_statuts_effects.gd" id="3_hprbm"]
 [ext_resource type="Resource" uid="uid://1holg8d2qx7b" path="res://database/statuses/poison.tres" id="4_8pocy"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="6_hprbm"]
 
 [sub_resource type="Resource" id="Resource_tc258"]
 script = ExtResource("2_tc258")

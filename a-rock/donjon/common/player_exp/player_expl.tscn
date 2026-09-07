@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c1wosqdvf44qg"]
 
 [ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://donjon/common/player_exp/player.gd" id="1_e0b2u"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
+[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
+[ext_resource type="Texture2D" uid="uid://kk7pd65j8f48" path="res://ressources/SpritesSheets/Sprite-walk.png" id="3_h83js"]
 [ext_resource type="Script" uid="uid://gkp0fmp20yis" path="res://donjon/common/player_exp/camera_2d_player.gd" id="3_ue14y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]
@@ -15,29 +16,37 @@ region = Rect2(404, 447, 18, 20)
 atlas = ExtResource("2_mnirw")
 region = Rect2(422, 447, 18, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_thhhj"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(364, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqe4"]
+atlas = ExtResource("3_h83js")
+region = Rect2(0, 0, 14, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qes40"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(382, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w34p"]
+atlas = ExtResource("3_h83js")
+region = Rect2(14, 0, 14, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_72e7y"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(444, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h83js"]
+atlas = ExtResource("3_h83js")
+region = Rect2(56, 0, 14, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjum6"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(462, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jplk8"]
+atlas = ExtResource("3_h83js")
+region = Rect2(70, 0, 14, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcisb"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(444, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y10f"]
+atlas = ExtResource("3_h83js")
+region = Rect2(56, 0, 14, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ov5b"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(462, 449, 18, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4xh7"]
+atlas = ExtResource("3_h83js")
+region = Rect2(70, 0, 14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vigwt"]
+atlas = ExtResource("3_h83js")
+region = Rect2(28, 0, 14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4bt0"]
+atlas = ExtResource("3_h83js")
+region = Rect2(42, 0, 14, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iadmu"]
 animations = [{
@@ -54,10 +63,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_thhhj")
+"texture": SubResource("AtlasTexture_2cqe4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qes40")
+"texture": SubResource("AtlasTexture_6w34p")
 }],
 "loop": 1,
 "name": &"walkdown",
@@ -65,10 +74,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_72e7y")
+"texture": SubResource("AtlasTexture_h83js")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sjum6")
+"texture": SubResource("AtlasTexture_jplk8")
 }],
 "loop": 1,
 "name": &"walkleft",
@@ -76,10 +85,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jcisb")
+"texture": SubResource("AtlasTexture_7y10f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ov5b")
+"texture": SubResource("AtlasTexture_f4xh7")
 }],
 "loop": 1,
 "name": &"walkright",
@@ -87,10 +96,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s3den")
+"texture": SubResource("AtlasTexture_vigwt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qk21e")
+"texture": SubResource("AtlasTexture_b4bt0")
 }],
 "loop": 1,
 "name": &"walkup",
@@ -112,6 +121,7 @@ shape = SubResource("RectangleShape2D_e0b2u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerExpl" unique_id=381921272]
 sprite_frames = SubResource("SpriteFrames_iadmu")
 animation = &"walkright"
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerExpl" unique_id=1896209301 groups=["main_camera"]]
 zoom = Vector2(2.5, 2.5)

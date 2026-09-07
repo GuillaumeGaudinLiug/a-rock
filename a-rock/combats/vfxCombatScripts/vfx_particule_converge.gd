@@ -17,6 +17,7 @@ func play(context: Dictionary) -> void:
 	var center := target_view.global_position
 	var particles: Array[AnimatedSprite2D] = []
 
+
 	for i in particle_count:
 		var angle := (TAU / particle_count) * i
 		var offset := Vector2(cos(angle), sin(angle)) * start_radius

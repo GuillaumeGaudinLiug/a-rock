@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cpsg6u62e0t23"]
 
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="1_g4l2x"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_lun3s"]
+[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_lun3s"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="2_lun3s"]
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="3_ucq3q"]
 [ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="3_ypxqk"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_ucq3q"]
+[ext_resource type="Resource" uid="uid://csu4do2saep1y" path="res://database/skills/basic_attack.tres" id="6_m26f5"]
 [ext_resource type="Resource" uid="uid://b38c1tn4ih5uh" path="res://database/skills/bullshit.tres" id="6_wrn5r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypxqk"]
@@ -55,13 +56,15 @@ metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 script = ExtResource("1_g4l2x")
 metadata/_custom_type_script = "uid://cnx4plj7dlti4"
 
+[sub_resource type="Resource" id="Resource_ypxqk"]
+script = ExtResource("2_lun3s")
+level = 0
+skills = Array[ExtResource("4_ucq3q")]([ExtResource("6_m26f5")])
+metadata/_custom_type_script = "uid://b5pn45pkmw8js"
+
 [sub_resource type="Resource" id="Resource_ucq3q"]
 script = ExtResource("2_lun3s")
 skills = Array[ExtResource("4_ucq3q")]([ExtResource("6_wrn5r")])
-metadata/_custom_type_script = "uid://b5pn45pkmw8js"
-
-[sub_resource type="Resource" id="Resource_ypxqk"]
-script = ExtResource("2_lun3s")
 metadata/_custom_type_script = "uid://b5pn45pkmw8js"
 
 [sub_resource type="Resource" id="Resource_2klat"]
@@ -73,5 +76,5 @@ script = ExtResource("3_ucq3q")
 weapon_name = "Discourse"
 icon = SubResource("AtlasTexture_ypxqk")
 level_bonuses = Array[ExtResource("1_g4l2x")]([SubResource("Resource_wrn5r"), SubResource("Resource_m26f5"), SubResource("Resource_cxfbq"), SubResource("Resource_q6xw7"), SubResource("Resource_2dieq"), SubResource("Resource_ct1es")])
-level_unlocks = Array[ExtResource("2_lun3s")]([SubResource("Resource_ucq3q"), SubResource("Resource_ypxqk"), SubResource("Resource_2klat")])
+level_unlocks = Array[ExtResource("2_lun3s")]([SubResource("Resource_ypxqk"), SubResource("Resource_ucq3q"), SubResource("Resource_2klat")])
 metadata/_custom_type_script = "uid://cv1qi0ih4sfmr"
