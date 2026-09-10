@@ -17,4 +17,5 @@ is_passive = true
 description = "Passive xp bonus"
 usable_contexts = 0
 effects = Array[ExtResource("1_ffqtl")]([SubResource("Resource_2h6hn")])
+target_scope = 5
 metadata/_custom_type_script = "uid://sbpk6fndm31f"

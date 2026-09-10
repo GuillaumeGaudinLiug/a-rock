@@ -71,10 +71,11 @@ func play_skill_vfx(actor: CombatParticipant, targets: Array[CombatParticipant],
 			step.play(context)
 
 
-func _flash_hit(sprite: AnimatedSprite2D) -> void:
-	var tween := create_tween()
-	tween.tween_property(sprite, "modulate", Color.RED, 0.05)
-	tween.tween_property(sprite, "modulate", Color.WHITE, 0.15)
+func _flash_hit(sprite: AnimatedSprite2D, target: CombatParticipant) -> void:
+	if !target.is_player:
+		var tween := create_tween()
+		tween.tween_property(sprite, "modulate", Color.RED, 0.05)
+		tween.tween_property(sprite, "modulate", Color.WHITE, 0.15)
 
 
 # Retour à l'animation idle

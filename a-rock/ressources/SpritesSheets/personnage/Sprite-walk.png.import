@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kk7pd65j8f48"
-path="res://.godot/imported/Sprite-walk.png-0f28c2cc533c0e560fcc5114a9588144.ctex"
+path="res://.godot/imported/Sprite-walk.png-6f6c81f0446c3c0d64f874d532eb9f27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SpritesSheets/Sprite-walk.png"
-dest_files=["res://.godot/imported/Sprite-walk.png-0f28c2cc533c0e560fcc5114a9588144.ctex"]
+source_file="res://ressources/SpritesSheets/personnage/Sprite-walk.png"
+dest_files=["res://.godot/imported/Sprite-walk.png-6f6c81f0446c3c0d64f874d532eb9f27.ctex"]
 
 [params]
 

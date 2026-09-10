@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://donjon/common/player_exp/player.gd" id="1_e0b2u"]
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
-[ext_resource type="Texture2D" uid="uid://kk7pd65j8f48" path="res://ressources/SpritesSheets/Sprite-walk.png" id="3_h83js"]
+[ext_resource type="Texture2D" uid="uid://kk7pd65j8f48" path="res://ressources/SpritesSheets/personnage/Sprite-walk.png" id="3_h83js"]
 [ext_resource type="Script" uid="uid://gkp0fmp20yis" path="res://donjon/common/player_exp/camera_2d_player.gd" id="3_ue14y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]

@@ -250,7 +250,7 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 
 	var view: CombatTargetView = view_by_participant.get(target)
 	if view != null and result.hit and (result.kind == EffectResult.Kind.DAMAGE or result.kind == EffectResult.Kind.DAMAGE_SP):
-		_flash_hit(view.sprite)
+		_flash_hit(view.sprite, target)
 
 
 
@@ -280,6 +280,8 @@ func _refresh_dead_views() -> void:
 					view.sprite.sprite_frames = frames
 					if frames.has_animation("default"):
 						view.sprite.play("default")
+						
+						
 # Conserver les pertes d'ep et sp à la fin du combat
 func _sync_participants_to_characters() -> void:
 	for p in player_participants:

@@ -1,23 +1,27 @@
 [gd_resource type="Resource" script_class="CombatAnimationSet" format=3 uid="uid://f8u132vy7cao"]
 
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="1_mc4em"]
+[ext_resource type="Texture2D" uid="uid://vfi4k027l1gd" path="res://ressources/SpritesSheets/personnage/Protector.png" id="1_b74ey"]
 [ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="2_mc4em"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0a4ov"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(60, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(32, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1e3qm"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(90, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a574y"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(150, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(48, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sth8h"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(120, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(80, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahqns"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(64, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fmue"]
 animations = [{
@@ -25,42 +29,68 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0a4ov")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_1e3qm")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_a574y")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_sth8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahqns")
 }],
 "loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc4em"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(270, 30, 16, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b74ey"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(60, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(160, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riwf1"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dal7s"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(160, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjluv"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(32, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwidp"]
 animations = [{
 "frames": [{
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_mc4em")
-}, {
-"duration": 0.3,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_b74ey")
 }, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_mc4em")
+"texture": SubResource("AtlasTexture_riwf1")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_dal7s")
 }, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_b74ey")
+"texture": SubResource("AtlasTexture_qjluv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc4em"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(144, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsevi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc4em")
 }],
 "loop": 1,
 "name": &"default",
@@ -68,14 +98,34 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sufy1"]
-atlas = ExtResource("1_mc4em")
-region = Rect2(300, 30, 16, 24)
+atlas = ExtResource("1_b74ey")
+region = Rect2(96, 0, 16, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lsevi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x10vg"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(112, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn7ep"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(128, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b74ey"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_sufy1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_x10vg")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_sufy1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_x10vg")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_nn7ep")
 }],
 "loop": 1,
 "name": &"default",
@@ -87,4 +137,5 @@ script = ExtResource("2_mc4em")
 combat = SubResource("SpriteFrames_0fmue")
 damage = SubResource("SpriteFrames_gwidp")
 ko = SubResource("SpriteFrames_lsevi")
+spell = SubResource("SpriteFrames_b74ey")
 metadata/_custom_type_script = "uid://dktbxvpu6u11y"

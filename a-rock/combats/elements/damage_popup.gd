@@ -18,7 +18,7 @@ func setup(text: String, color: Color, icon: Texture2D = null) -> void:
 func play() -> void:
 	var tween := create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "position:y", position.y - 40, 0.6).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label, "modulate:a", 0.0, 0.6).set_delay(0.2)
-	tween.tween_property(icon_rect, "modulate:a", 0.0, 0.6).set_delay(0.2)
+	tween.tween_property(self, "position:y", position.y - 25, 0.6).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label, "modulate:a", 0.0, 0.6).set_delay(0.5)
+	tween.tween_property(icon_rect, "modulate:a", 0.0, 0.6).set_delay(0.5)
 	tween.chain().tween_callback(queue_free)

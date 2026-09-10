@@ -11,6 +11,10 @@ size = Vector2(27, 38)
 atlas = ExtResource("2_u8ad6")
 region = Rect2(99.4347, 239.6693, 10.010948, 14.145905)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b0qvs"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w4dlt"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ad6"]
 atlas = ExtResource("3_8py7k")
 region = Rect2(611.938, 632.9124, 10.949585, 16.419006)
@@ -23,6 +27,7 @@ script = ExtResource("1_2pvfi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327913756]
 light_mask = 2
 visibility_layer = 2
+scale = Vector2(1.1, 1.1)
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2094892728]
 
@@ -51,6 +56,7 @@ scale = Vector2(0.3, 0.3)
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxLine_b0qvs")
 show_percentage = false
 
 [node name="EpLabel" type="Label" parent="StatBars" unique_id=1163710617]
@@ -60,6 +66,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxLine_w4dlt")
 show_percentage = false
 
 [node name="SpLabel" type="Label" parent="StatBars" unique_id=1478331302]

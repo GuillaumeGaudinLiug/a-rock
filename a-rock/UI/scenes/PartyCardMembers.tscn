@@ -6,6 +6,14 @@
 [sub_resource type="LabelSettings" id="LabelSettings_xqxiv"]
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Theme" id="Theme_dh1gw"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jpbwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aajes"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oy3ng"]
+
 [node name="PartyCardMembers" type="HBoxContainer" unique_id=555477135]
 theme_override_constants/separation = 80
 script = ExtResource("1_l8r5a")
@@ -38,6 +46,8 @@ layout_mode = 2
 [node name="EPBar" type="ProgressBar" parent="InfoColumn/EPRow" unique_id=959841215]
 custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
+theme = SubResource("Theme_dh1gw")
+theme_override_styles/background = SubResource("StyleBoxLine_jpbwf")
 show_percentage = false
 
 [node name="EPLabel" type="Label" parent="InfoColumn/EPRow" unique_id=1474664414]
@@ -50,6 +60,8 @@ layout_mode = 2
 [node name="SPBar" type="ProgressBar" parent="InfoColumn/SPRow" unique_id=316096456]
 custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_aajes")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_oy3ng")
 show_percentage = false
 
 [node name="SPLabel" type="Label" parent="InfoColumn/SPRow" unique_id=1045530406]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vfi4k027l1gd"
-path="res://.godot/imported/Protector.png-a8e65ac4ccabc2a96e024150709943ee.ctex"
+path="res://.godot/imported/Protector.png-555bc88abf066bfd665ce9b046e80323.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/SpritesSheets/Protector.png"
-dest_files=["res://.godot/imported/Protector.png-a8e65ac4ccabc2a96e024150709943ee.ctex"]
+source_file="res://ressources/SpritesSheets/personnage/Protector.png"
+dest_files=["res://.godot/imported/Protector.png-555bc88abf066bfd665ce9b046e80323.ctex"]
 
 [params]
 
