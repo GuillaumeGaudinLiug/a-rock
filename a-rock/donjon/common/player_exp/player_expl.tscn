@@ -1,94 +1,79 @@
 [gd_scene format=3 uid="uid://c1wosqdvf44qg"]
 
 [ext_resource type="Script" uid="uid://b1202eoj67ghg" path="res://donjon/common/player_exp/player.gd" id="1_e0b2u"]
-[ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_mnirw"]
 [ext_resource type="Texture2D" uid="uid://kk7pd65j8f48" path="res://ressources/SpritesSheets/personnage/Sprite-walk.png" id="3_h83js"]
 [ext_resource type="Script" uid="uid://gkp0fmp20yis" path="res://donjon/common/player_exp/camera_2d_player.gd" id="3_ue14y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b2u"]
 size = Vector2(15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s3den"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(404, 447, 18, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qk21e"]
-atlas = ExtResource("2_mnirw")
-region = Rect2(422, 447, 18, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cqe4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue14y"]
 atlas = ExtResource("3_h83js")
-region = Rect2(0, 0, 14, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6w34p"]
-atlas = ExtResource("3_h83js")
-region = Rect2(14, 0, 14, 18)
+region = Rect2(1, 0, 14, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h83js"]
 atlas = ExtResource("3_h83js")
-region = Rect2(56, 0, 14, 18)
+region = Rect2(17, 0, 14, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jplk8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cqe4"]
 atlas = ExtResource("3_h83js")
-region = Rect2(70, 0, 14, 18)
+region = Rect2(65, 0, 14, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7y10f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w34p"]
 atlas = ExtResource("3_h83js")
-region = Rect2(56, 0, 14, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4xh7"]
-atlas = ExtResource("3_h83js")
-region = Rect2(70, 0, 14, 18)
+region = Rect2(81, 0, 14, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vigwt"]
 atlas = ExtResource("3_h83js")
-region = Rect2(28, 0, 14, 18)
+region = Rect2(65, 0, 14, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4bt0"]
 atlas = ExtResource("3_h83js")
-region = Rect2(42, 0, 14, 18)
+region = Rect2(81, 0, 14, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jplk8"]
+atlas = ExtResource("3_h83js")
+region = Rect2(33, 0, 14, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y10f"]
+atlas = ExtResource("3_h83js")
+region = Rect2(49, 0, 14, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iadmu"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s3den")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qk21e")
-}],
+"frames": [],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cqe4")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ue14y")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6w34p")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_h83js")
 }],
 "loop": 1,
 "name": &"walkdown",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h83js")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_2cqe4")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jplk8")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_6w34p")
 }],
 "loop": 1,
 "name": &"walkleft",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7y10f")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_vigwt")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f4xh7")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_b4bt0")
 }],
 "loop": 1,
 "name": &"walkright",
@@ -96,10 +81,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vigwt")
+"texture": SubResource("AtlasTexture_jplk8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b4bt0")
+"texture": SubResource("AtlasTexture_7y10f")
 }],
 "loop": 1,
 "name": &"walkup",
@@ -120,7 +105,7 @@ shape = SubResource("RectangleShape2D_e0b2u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerExpl" unique_id=381921272]
 sprite_frames = SubResource("SpriteFrames_iadmu")
-animation = &"walkright"
+animation = &"walkup"
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerExpl" unique_id=1896209301 groups=["main_camera"]]

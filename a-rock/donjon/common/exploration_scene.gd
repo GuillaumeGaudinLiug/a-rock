@@ -4,14 +4,14 @@ extends Node2D
 @export var spawn_points: Node2D
 @export var encounter_table: EncounterTable
 @export_range(0.0, 1.0, 0.01) var encounter_chance_per_step: float = 0.05
-@export var min_steps_between_encounters: int = 4
+@export var min_steps_between_encounters: int = 3
 @export var music: AudioStream
 
 @export_group("Infos de combat")
 @export var combat_background: Texture2D
 @export var combat_music: AudioStream
 
-const STEP_DISTANCE := 32.0
+const STEP_DISTANCE := 60.0
 
 var player: Node2D
 var last_player_position: Vector2

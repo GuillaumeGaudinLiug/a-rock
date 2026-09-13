@@ -5,7 +5,7 @@ extends Resource
 @export var skill_name: String = ""
 @export var is_passive: bool = false
 @export var description: String = ""
-@export var icon: Texture2D
+var icon: Texture2D
 
 @export_flags("Exploration", "Combat", "Menu") var usable_contexts: int = 2
 @export var effects: Array[AbstractEffect] = []

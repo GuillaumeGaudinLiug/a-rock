@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_m8n82"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_m8n82"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_d4www"]
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="5_epqx1"]
 [ext_resource type="Resource" uid="uid://dl0enp4mrjtrw" path="res://database/skills/toxic_attack.tres" id="7_g86rf"]
 
 [sub_resource type="Resource" id="Resource_d4www"]
@@ -39,6 +40,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdtav"]
+atlas = ExtResource("5_epqx1")
+region = Rect2(0, 0, 11.49979, 11.873149)
+
 [sub_resource type="Resource" id="Resource_hprbm"]
 script = ExtResource("2_6v4x3")
 skills = Array[ExtResource("5_d4www")]([ExtResource("7_g86rf")])
@@ -57,6 +62,7 @@ script = ExtResource("3_m8n82")
 class_name_display = "Avoidant"
 idle_sprite_frame = SubResource("SpriteFrames_lqjpe")
 combat_animations = ExtResource("1_d4www")
+innate_icon = SubResource("AtlasTexture_bdtav")
 base_determination = 7
 base_courage = 3
 base_passion = 3

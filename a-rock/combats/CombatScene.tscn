@@ -11,7 +11,8 @@ script = ExtResource("1_ys6n8")
 [node name="Background" type="Sprite2D" parent="." unique_id=1819496018]
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(2, 2)
+position = Vector2(60, 30)
+scale = Vector2(1.65, 1.65)
 
 [node name="EnemySprites" type="Node2D" parent="." unique_id=1196702216]
 

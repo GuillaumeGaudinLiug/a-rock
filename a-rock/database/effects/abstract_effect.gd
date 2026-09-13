@@ -7,6 +7,7 @@ extends Resource
 @export var can_miss: bool = false
 @export var miss_sfx: AudioStream
 
+@export_range(0.0, 1.0, 0.01) var base_accuracy: float = 0.9
 
 func execute(context: Dictionary) -> EffectResult:
 	var result := EffectResult.new()
@@ -43,8 +44,10 @@ func _resolve_hit(context: Dictionary) -> bool:
 	var log2_ratio: float = log(ratio) / log(2.0)
 	var modifier: float = clamp(log2_ratio * 0.1, -0.1, 0.1)
 
-	var chance: float = clamp(0.9 + modifier, 0.01, 0.99)
-	return randf() > 0
+	var chance: float = (base_accuracy + modifier) * user.get_accuracy_multiplier()
+
+	print("Chance to hit: %d" % chance)
+	return randf() < chance
 
 func _on_miss(context: Dictionary) -> void:
 	var user = context.get("user")

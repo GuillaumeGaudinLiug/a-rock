@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://bl2y6ipja22id"]
+
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_7ehxw"]
+[ext_resource type="Script" uid="uid://copqmwidbebvd" path="res://database/effects/healing_effect.gd" id="2_uue8i"]
+[ext_resource type="AudioStream" uid="uid://6uj7idwpholy" path="res://ressources/soundeffect/heal.wav" id="3_ul012"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_tfs5s"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="5_3hxcf"]
+
+[sub_resource type="Resource" id="Resource_yfkd8"]
+script = ExtResource("2_uue8i")
+amount = 30
+use_sfx = ExtResource("3_ul012")
+metadata/_custom_type_script = "uid://copqmwidbebvd"
+
+[resource]
+script = ExtResource("4_tfs5s")
+skill_name = "Heal"
+description = "Heal small amount of EP"
+usable_contexts = 7
+effects = Array[ExtResource("1_7ehxw")]([SubResource("Resource_yfkd8")])
+sp_cost = 2
+sp_cost_percent = 0.05
+default_animation_state = 3
+target_scope = 1
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

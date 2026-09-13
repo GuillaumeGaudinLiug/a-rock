@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dliccs0ptxvek" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Playable Characters - Bartz Klauser.png" id="2_ygbvh"]
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_ygbvh"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="4_ibi0u"]
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="5_0du7k"]
 [ext_resource type="Resource" uid="uid://dldqj155jemu7" path="res://database/skills/xp_multiplier.tres" id="6_ny3m2"]
 
 [sub_resource type="Resource" id="Resource_hk7sv"]
@@ -39,6 +40,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jes2t"]
+atlas = ExtResource("5_0du7k")
+region = Rect2(1.4311397, 0, 8.558353, 11.285811)
+
 [sub_resource type="Resource" id="Resource_ny3m2"]
 script = ExtResource("2_7yqeg")
 skills = Array[ExtResource("4_ibi0u")]([ExtResource("6_ny3m2")])
@@ -57,6 +62,7 @@ script = ExtResource("3_ygbvh")
 class_name_display = "Merchant"
 idle_sprite_frame = SubResource("SpriteFrames_ibi0u")
 combat_animations = ExtResource("2_0du7k")
+innate_icon = SubResource("AtlasTexture_jes2t")
 base_max_ep = 40
 default_weapon = ExtResource("2_bdjan")
 class_levels = Array[ExtResource("1_5u5s2")]([SubResource("Resource_hk7sv"), SubResource("Resource_h3lkc"), SubResource("Resource_l6wr8")])

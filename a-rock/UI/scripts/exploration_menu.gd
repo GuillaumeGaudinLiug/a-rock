@@ -19,6 +19,7 @@ const PARTY_CARD_SCENE := preload("res://UI/scenes/PartyCardMembers.tscn")
 @onready var level_stats_button: Button = $Root/MainPanel/LevelStatsButton
 @onready var return_button: Button = $Root/MainPanel/ReturnToPrisonButton
 @onready var quit_button: Button = $Root/MainPanel/QuitButton
+@onready var leave_menu_button: Button = $Root/LeaveMenu
 
 
 func _ready() -> void:
@@ -34,6 +35,7 @@ func _ready() -> void:
 	return_button.pressed.connect(func(): _show_panel(return_to_prison_panel))
 	inventory_button.pressed.connect(func(): _show_panel(inventory_panel))
 	skills_button.pressed.connect(func(): _show_panel(skills_panel))
+	leave_menu_button.pressed.connect(func(): close_requested.emit())
 
 
 	weapons_panel.back_requested.connect(_show_main_panel)

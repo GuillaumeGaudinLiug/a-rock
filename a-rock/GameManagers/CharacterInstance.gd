@@ -30,6 +30,7 @@ var equipped_weapon: Weapon
 var available_skills: Array[Skill] = []  # calculé, jamais sauvegardé
 
 var row: PartyRow = PartyRow.FRONT
+var skill_icons: Dictionary = {}  # Skill -> Texture2D
 
 
 
@@ -79,11 +80,18 @@ func resync_attributes() -> CharacterInstance:
 
 	# --- Compétences débloquées (classe + arme) ---
 	available_skills = []
+	skill_icons = {}
+
 	if cls != null:
 		available_skills.append_array(cls.get_skills_by_level(class_level))
+		for skill in cls.get_skills_by_level(class_level):
+			skill_icons[skill] = cls.innate_icon
+
 	if equipped_weapon != null:
 		var weapon_level: int = weapon_levels.get(equipped_weapon, 0)
 		available_skills.append_array(equipped_weapon.get_skills_by_level(weapon_level))
+		for skill in equipped_weapon.get_skills_by_level(weapon_level):
+			skill_icons[skill] = equipped_weapon.icon
 
 	return self
 
@@ -233,3 +241,7 @@ func set_row(new_row: PartyRow) -> void:
 # Recuperer la valeur d'une stat par son nom
 func get_stat(stat_name: String) -> float:
 	return get(stat_name)
+
+# recuperation des icons de skills chargées
+func get_skill_icon(skill: Skill) -> Texture2D:
+	return skill_icons.get(skill, skill.icon)

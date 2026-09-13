@@ -61,7 +61,7 @@ func _show_skills() -> void:
 
 		var button := Button.new()
 		button.text = "%s — EP:%d SP:%d" % [skill.skill_name, ep_cost, sp_cost]
-		button.icon = skill.icon
+		button.icon = current_actor.source_character.get_skill_icon(skill)
 		button.disabled = (current_actor.current_ep < ep_cost) or (current_actor.current_sp < sp_cost)
 
 		skill_list_container.add_child(button)

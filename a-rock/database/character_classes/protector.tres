@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="3_t34gp"]
 [ext_resource type="Texture2D" uid="uid://vfi4k027l1gd" path="res://ressources/SpritesSheets/personnage/Protector.png" id="4_62iog"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="4_t34gp"]
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="5_lwgjb"]
 
 [sub_resource type="Resource" id="Resource_g1ui6"]
 script = ExtResource("1_m76wr")
@@ -22,33 +23,31 @@ script = ExtResource("1_m76wr")
 xp_required = 5000
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwgjb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_62iog"]
 atlas = ExtResource("4_62iog")
-region = Rect2(0, 0, 16, 24)
+region = Rect2(1, 0, 16, 26)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n3e52"]
-atlas = ExtResource("4_62iog")
-region = Rect2(32, 0, 16, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_58gu6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kccyu"]
 animations = [{
 "frames": [{
-"duration": 2.2,
-"texture": SubResource("AtlasTexture_lwgjb")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_n3e52")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62iog")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwgjb"]
+atlas = ExtResource("5_lwgjb")
+region = Rect2(1.8506668, 0.8815384, 8.306638, 10.65599)
+
 [resource]
 script = ExtResource("3_t34gp")
 class_name_display = "Protector"
-idle_sprite_frame = SubResource("SpriteFrames_58gu6")
+idle_sprite_frame = SubResource("SpriteFrames_kccyu")
 combat_animations = ExtResource("1_62iog")
+innate_icon = SubResource("AtlasTexture_lwgjb")
 base_courage = 8
 base_passion = 3
 base_spirit = 6

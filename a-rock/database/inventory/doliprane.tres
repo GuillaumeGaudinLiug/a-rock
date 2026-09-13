@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://bsuvjr7ywgfp" path="res://database/inventory/inventory_item.gd" id="1_a5bwe"]
 [ext_resource type="Script" uid="uid://copqmwidbebvd" path="res://database/effects/healing_effect.gd" id="1_ukxu0"]
 [ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_xxlvq"]
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="2_xxlvq"]
+[ext_resource type="Texture2D" uid="uid://s5j7jjpsdkvt" path="res://ressources/SpritesSheets/effects_icons/small-icons.png" id="3_xxlvq"]
 
 [sub_resource type="Resource" id="Resource_22hvn"]
 script = ExtResource("1_ukxu0")
 metadata/_custom_type_script = "uid://copqmwidbebvd"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukxu0"]
-atlas = ExtResource("2_xxlvq")
-region = Rect2(430.2784, 607.7273, 18.061401, 16.078125)
+atlas = ExtResource("3_xxlvq")
+region = Rect2(30.678486, 0.1938262, 8.0119095, 9.156467)
 
 [resource]
 script = ExtResource("1_a5bwe")

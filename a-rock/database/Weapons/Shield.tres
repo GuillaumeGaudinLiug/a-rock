@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c1ri8ixxfrw78"]
 
-[ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="1_mjf68"]
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="1_irfkd"]
 [ext_resource type="Script" uid="uid://cnx4plj7dlti4" path="res://database/Weapons/WeaponLevelStats.gd" id="2_38nse"]
 [ext_resource type="Resource" uid="uid://41cpn2l7tnms" path="res://database/inventory/diploma.tres" id="3_b2vrb"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="3_irfkd"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://cv1qi0ih4sfmr" path="res://database/Weapons/Weapon.gd" id="6_8d7nh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bovy6"]
-atlas = ExtResource("1_mjf68")
-region = Rect2(628.6279, 671.3795, 10.46521, 16.70813)
+atlas = ExtResource("1_irfkd")
+region = Rect2(25.193916, 0.50284576, 9.91597, 10.944456)
 
 [sub_resource type="Resource" id="Resource_nwefo"]
 script = ExtResource("2_38nse")

@@ -71,8 +71,8 @@ func _populate_skill_list() -> void:
 		var sp_cost := skill.get_sp_cost(selected_caster)
 
 		button.text = "%s — EP:%d SP:%d" % [skill.skill_name, ep_cost, sp_cost]
-		button.icon = skill.icon
-
+		button.icon = selected_caster.get_skill_icon(skill)
+		
 		var usable_here := skill.is_usable_in(GameManager.GameState.EXPLORATION) and not skill.is_passive
 		var has_resources := (selected_caster.current_ep >= ep_cost) and (selected_caster.current_sp >= sp_cost)
 

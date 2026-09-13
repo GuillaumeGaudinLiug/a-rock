@@ -10,6 +10,8 @@ var can_transition: bool = true
 @onready var point_a: Area2D = $PointA
 @onready var point_b: Area2D = $PointB
 @export var use_sfx: AudioStream
+@export var point_a_canenter: bool = true
+@export var point_b_canenter: bool = true
 
 
 func _ready() -> void:
@@ -23,13 +25,15 @@ func _ready() -> void:
 func _on_point_a_entered(body: Node2D) -> void:
 	if not body.is_in_group("player") or not can_transition:
 		return
-	_teleport(body, point_b, room_b)
+	if point_a_canenter:
+		_teleport(body, point_b, room_b)
 
 
 func _on_point_b_entered(body: Node2D) -> void:
 	if not body.is_in_group("player") or not can_transition:
 		return
-	_teleport(body, point_a, room_a)
+	if point_b_canenter:
+		_teleport(body, point_a, room_a)
 
 
 func _teleport(body: Node2D, target_point: Area2D, target_room: Room) -> void:

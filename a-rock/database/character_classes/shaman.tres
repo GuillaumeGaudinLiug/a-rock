@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c3m2paatdugg7" path="res://database/character_classes/Character_class.gd" id="4_2k2r2"]
 [ext_resource type="Script" uid="uid://b5pn45pkmw8js" path="res://database/lvlup/level_unlock.gd" id="4_ivgvp"]
 [ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="5_55k37"]
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="5_ogt8n"]
 [ext_resource type="Resource" uid="uid://cswrvd8ocdfxs" path="res://database/skills/heal.tres" id="6_ogt8n"]
 
 [sub_resource type="Resource" id="Resource_i4r2f"]
@@ -39,6 +40,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7013"]
+atlas = ExtResource("5_ogt8n")
+region = Rect2(1.8506668, 0.2942009, 8.306637, 11.705799)
+
 [sub_resource type="Resource" id="Resource_2my44"]
 script = ExtResource("4_ivgvp")
 skills = Array[ExtResource("5_55k37")]([ExtResource("6_ogt8n")])
@@ -49,6 +54,7 @@ script = ExtResource("4_2k2r2")
 class_name_display = "shaman"
 idle_sprite_frame = SubResource("SpriteFrames_nh5cd")
 combat_animations = ExtResource("1_55k37")
+innate_icon = SubResource("AtlasTexture_h7013")
 base_determination = 3
 base_courage = 4
 base_spirit = 10

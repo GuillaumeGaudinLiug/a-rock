@@ -125,3 +125,12 @@ func get_idle_frames() -> SpriteFrames:
 	if is_player:
 		return source_character.character_class.idle_sprite_frame
 	return source_enemy.idle_sprite_frame
+
+# Permet de modifier la precision
+func get_accuracy_multiplier() -> float:
+	var multiplier := 1.0
+	for instance in active_statuses:
+		for modifier in instance.status.stat_modifiers:
+			if modifier.stat_name == "accuracy_multiplier":
+				multiplier *= (1.0 + modifier.percent_amount)
+	return multiplier
