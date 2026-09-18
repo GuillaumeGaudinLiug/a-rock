@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://du4cip46s5v4k"]
+
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_2wdl3"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_n5ssq"]
+[ext_resource type="Script" uid="uid://cx2dyewxbajkj" path="res://database/effects/status_cleanse.gd" id="2_pb41j"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="3_pb41j"]
+
+[sub_resource type="Resource" id="Resource_lbct4"]
+script = ExtResource("2_pb41j")
+base_accuracy = 1.0
+metadata/_custom_type_script = "uid://cx2dyewxbajkj"
+
+[resource]
+script = ExtResource("2_n5ssq")
+skill_name = "Cleanse"
+description = "Cleanse status"
+effects = Array[ExtResource("1_2wdl3")]([SubResource("Resource_lbct4")])
+sp_cost = 1
+sp_cost_percent = 0.05
+default_animation_state = 3
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

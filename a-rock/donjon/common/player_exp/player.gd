@@ -13,6 +13,12 @@ func _ready() -> void:
 	interaction_zone.area_exited.connect(_on_interactable_exited)
 
 func _physics_process(delta: float) -> void:
+	# Blocage des déplacements
+	if GameManager.is_interaction_locked:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+		
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
 	move_and_slide()
@@ -41,6 +47,8 @@ func update_animation(direction: Vector2) -> void:
 
 
 func _on_interactable_entered(area: Area2D) -> void:
+	if GameManager.is_interaction_locked:
+		return
 	if area is InteractableObject:
 		nearby_interactables.append(area)
 		MenuManager.show_message(area.message_prompt)

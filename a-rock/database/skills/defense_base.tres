@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://c5ynnt1h6dwiv"]
+
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="1_h70ne"]
+[ext_resource type="Script" uid="uid://sbpk6fndm31f" path="res://database/skills/skills.gd" id="2_3bouo"]
+[ext_resource type="Script" uid="uid://crs3j186chy5k" path="res://database/effects/apply_statuts_effects.gd" id="2_pvifx"]
+[ext_resource type="Script" uid="uid://dxc4q463nwqgl" path="res://combats/vfxCombatScripts/abstract_vfx_step.gd" id="3_pvifx"]
+[ext_resource type="Resource" uid="uid://le32ro1q6tb6" path="res://database/statuses/defense.tres" id="3_u3qro"]
+
+[sub_resource type="Resource" id="Resource_u3qro"]
+script = ExtResource("2_pvifx")
+status = ExtResource("3_u3qro")
+base_accuracy = 1.0
+metadata/_custom_type_script = "uid://crs3j186chy5k"
+
+[resource]
+script = ExtResource("2_3bouo")
+skill_name = "Defend"
+description = "Reduce damage and statuses"
+effects = Array[ExtResource("1_h70ne")]([SubResource("Resource_u3qro")])
+target_scope = 5
+metadata/_custom_type_script = "uid://sbpk6fndm31f"

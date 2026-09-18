@@ -10,6 +10,8 @@ signal action_confirmed(action: CombatAction)
 @onready var defend_tab: Button = $CategoryTabs/DefendTabButton
 @onready var row_tab: Button = $CategoryTabs/RowTabButton
 
+@export var defend_skill: Skill
+
 var combat_scene: Node
 
 var current_actor: CombatParticipant
@@ -118,12 +120,15 @@ func _on_item_chosen(item: InventoryItem) -> void:
 
 
 func _on_defend_pressed() -> void:
-	var action := CombatAction.new()
-	action.type = CombatAction.ActionType.DEFEND
-	action.user = current_actor
-	action.targets = [current_actor]
-	#action.effects = CombatConfig.default_defend_effects
-	action_confirmed.emit(action)
+	_begin_targeting(defend_skill.target_scope, func(targets: Array[CombatParticipant]):
+		var action := CombatAction.new()
+		action.type = CombatAction.ActionType.SKILL
+		action.user = current_actor
+		action.targets = targets
+		action.effects = defend_skill.effects
+		action.skill = defend_skill
+		action_confirmed.emit(action)
+	)
 
 
 func _on_row_pressed() -> void:

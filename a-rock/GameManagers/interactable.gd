@@ -8,4 +8,15 @@ func _ready() -> void:
 
 
 func interact(player: Node) -> void:
-	push_warning("interact() non implémenté pour : %s" % get_class())
+	if GameManager.is_interaction_locked:
+		return
+
+	GameManager.lock_interaction()
+	var self_managed = await _do_interact(player)
+	if not self_managed:
+		GameManager.unlock_interaction()
+
+
+func _do_interact(player: Node) -> bool:
+	push_warning("_do_interact() non implémenté pour : %s" % get_class())
+	return false

@@ -37,8 +37,9 @@ func _draw() -> void:
 	draw_rect(Rect2(-half, size), Color(1.0, 0.4, 0.8, 0.9), false, 2.0)
 
 
-func interact(player: Node) -> void:
+func _do_interact(player: Node) -> bool:
 	TransitionManager.request_transition(target_scene_path, target_spawn_name)
+	return true  # le déverrouillage se fera dans TransitionManager, pas ici
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):

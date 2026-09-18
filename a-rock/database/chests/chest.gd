@@ -37,9 +37,9 @@ func _generate_uuid() -> String:
 	return uuid
 
 
-func interact(player: Node) -> void:
+func _do_interact(player: Node) -> bool:
 	if GameData.chest_flags.has(chest_id):
-		return
+		return false
 
 	GameData.chest_flags.append(chest_id)
 
@@ -50,3 +50,6 @@ func interact(player: Node) -> void:
 	sprite.play("opened")
 	if use_sfx != null:
 		SfxManager.play(use_sfx)
+	# wait
+	await get_tree().create_timer(0.5).timeout  # laisse le temps de voir l'animation avant de redonner le contrôle
+	return false

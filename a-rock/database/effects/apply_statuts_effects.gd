@@ -34,9 +34,12 @@ func _resolve_apply_chance(actor, target) -> bool:
 
 	var ratio: float = actor_value / max(target_value, 0.01)
 	var log2_ratio: float = log(ratio) / log(2.0)
-	var modifier: float = clamp(log2_ratio * 0.5, -0.5, 0.5)
+	var modifier: float = clamp(log2_ratio * 0.3, -0.3, 0.3)
 
-	var chance: float = clamp(status.base_apply_chance + modifier, 0.02, 0.98)
+	var chance: float = clamp(status.base_apply_chance + modifier, 0.0, 1.0)
+	chance *= target.get_status_resist_multiplier()  # nouveau
+
+	print("chance to apply effect: " + str(chance))
 
 	return randf() < chance
 

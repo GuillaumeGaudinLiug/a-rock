@@ -7,7 +7,9 @@ var pending_spawn_name: String = ""
 
 func request_transition(scene_path: String, spawn_name: String) -> void:
 	pending_spawn_name = spawn_name
-	_load_scene_async(scene_path)
+	GameManager.lock_interaction()
+	await _load_scene_async(scene_path)
+	GameManager.unlock_interaction()
 
 
 func _load_scene_async(scene_path: String) -> void:

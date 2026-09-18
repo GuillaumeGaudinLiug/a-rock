@@ -22,6 +22,7 @@ var is_processing_popups := false
 @onready var popup_layer: Node2D = $PopupLayer
 @onready var enemy_names_list: VBoxContainer = $BottomUI/EnemyNamesList
 @onready var action_menu: Control = $BottomUI/ActionMenu
+@onready var action_announce_label: Label = $BottomUI/ActionLabel
 
 var turn_manager := TurnManager.new()
 var all_participants: Array[CombatParticipant] = []
@@ -160,6 +161,8 @@ func _run_combat_loop() -> void:
 		if action != null:
 			# Numéro de tour
 			actor.turn_count += 1
+			_announce_action(actor, action)
+
 			# Petite temps de pause pendant qu'une animation est lancée: ne pas lancer
 			# la damagePopup 
 			_play_action_animation(actor, action)
@@ -177,6 +180,8 @@ func _run_combat_loop() -> void:
 				_reposition_participant(actor)
 
 			await get_tree().create_timer(1).timeout
+			
+			_clear_announce()
 
 		actor.trigger_statuses(StatusEffect.TriggerType.ON_TURN_END, { "actor": actor, "target": actor })
 		actor.tick_turn_end()
@@ -244,7 +249,6 @@ func _show_damage_popup(target: CombatParticipant, result: EffectResult) -> void
 			color = Color.GRAY
 	
 	# TODO: Setup différent en fonction du type d'effet
-	print(JSON.stringify(inst_to_dict(result), "\t"))
 	popup.setup(str(result.value), color, icon)
 	popup.play()
 
@@ -339,3 +343,18 @@ func _process_popup_queue() -> void:
 		_refresh_participant_view(entry["target"])
 
 	is_processing_popups = false
+
+
+func _announce_action(actor: CombatParticipant, action: CombatAction) -> void:
+	var text := ""
+
+	match action.type:
+		CombatAction.ActionType.SKILL:
+			text = action.skill.skill_name if action.skill else "?"
+
+	action_announce_label.text = text
+	action_announce_label.show()
+
+
+func _clear_announce() -> void:
+	action_announce_label.hide()

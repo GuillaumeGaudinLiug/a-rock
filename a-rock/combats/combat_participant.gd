@@ -134,3 +134,30 @@ func get_accuracy_multiplier() -> float:
 			if modifier.stat_name == "accuracy_multiplier":
 				multiplier *= (1.0 + modifier.percent_amount)
 	return multiplier
+
+
+func get_damage_taken_multiplier() -> float:
+	var multiplier := 1.0
+	for instance in active_statuses:
+		for modifier in instance.status.stat_modifiers:
+			if modifier.stat_name == "damage_taken_multiplier":
+				multiplier *= (1.0 + modifier.percent_amount)
+	return multiplier
+	
+
+func get_status_resist_multiplier() -> float:
+	var multiplier := 1.0
+	for instance in active_statuses:
+		for modifier in instance.status.stat_modifiers:
+			if modifier.stat_name == "status_apply_multiplier":
+				multiplier *= (1.0 + modifier.percent_amount)
+	return multiplier
+	
+
+func remove_cancellable_statuses() -> int:
+	var removed_count := 0
+	for instance in active_statuses.duplicate():
+		if instance.status.is_cancellable:
+			active_statuses.erase(instance)
+			removed_count += 1
+	return removed_count

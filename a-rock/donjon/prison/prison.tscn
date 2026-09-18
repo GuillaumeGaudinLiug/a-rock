@@ -512,25 +512,25 @@ texture = ExtResource("2_s6u1d")
 [sub_resource type="TileSet" id="TileSet_s6u1d"]
 sources/0 = SubResource("TileSetAtlasSource_v3l6a")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3l6a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px68n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7sx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfkd8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkjj1"]
+size = Vector2(16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22hvn"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmu0"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8f0"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sokw1"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry2ka"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud7sd"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcwks"]
 size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bu0g3"]
@@ -548,10 +548,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_atytq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8f0"]
 size = Vector2(48, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jlss"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sokw1"]
 size = Vector2(48, 48)
 
 [sub_resource type="Gradient" id="Gradient_22hvn"]
@@ -559,6 +559,8 @@ size = Vector2(48, 48)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ej8f0"]
 gradient = SubResource("Gradient_22hvn")
 height = 93
+fill_from = Vector2(0.51330525, 1)
+fill_to = Vector2(0.56289995, 0.5580205)
 
 [node name="Prison" type="Node2D" unique_id=1182097121 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_4m6bi")
@@ -623,7 +625,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointA" unique_id=695397646]
 position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_22hvn")
+shape = SubResource("RectangleShape2D_v3l6a")
 
 [node name="PointB" type="Area2D" parent="Doors/Door2" unique_id=1532214875]
 position = Vector2(359, -402)
@@ -632,7 +634,7 @@ size = Vector2(16, 16)
 show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door2/PointB" unique_id=1872900881]
-shape = SubResource("RectangleShape2D_lgmu0")
+shape = SubResource("RectangleShape2D_px68n")
 
 [node name="Door1" type="Node2D" parent="Doors" unique_id=2069194942]
 script = ExtResource("11_vi7sx")
@@ -645,7 +647,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointA" unique_id=213675636]
 position = Vector2(-1, -8)
-shape = SubResource("RectangleShape2D_ej8f0")
+shape = SubResource("RectangleShape2D_vi7sx")
 
 [node name="PointB" type="Area2D" parent="Doors/Door1" unique_id=1926606883]
 position = Vector2(-408, -245)
@@ -654,7 +656,7 @@ size = Vector2(16, 16)
 show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door1/PointB" unique_id=1039471717]
-shape = SubResource("RectangleShape2D_sokw1")
+shape = SubResource("RectangleShape2D_yfkd8")
 
 [node name="Door3" type="Node2D" parent="Doors" unique_id=2012018933]
 script = ExtResource("11_vi7sx")
@@ -667,7 +669,7 @@ show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointA" unique_id=1927403943]
 position = Vector2(-3, -10)
-shape = SubResource("RectangleShape2D_ry2ka")
+shape = SubResource("RectangleShape2D_nkjj1")
 
 [node name="PointB" type="Area2D" parent="Doors/Door3" unique_id=1897838368]
 position = Vector2(-1, -350)
@@ -676,7 +678,7 @@ size = Vector2(16, 16)
 show_debug_rect = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door3/PointB" unique_id=898118294]
-shape = SubResource("RectangleShape2D_ud7sd")
+shape = SubResource("RectangleShape2D_22hvn")
 
 [node name="SavePoint" type="Area2D" parent="." unique_id=1107384313]
 position = Vector2(-135, 25)
@@ -684,7 +686,7 @@ script = ExtResource("6_2lfe6")
 use_sfx = ExtResource("7_bu0g3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1967882899]
-shape = SubResource("RectangleShape2D_kcwks")
+shape = SubResource("RectangleShape2D_lgmu0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SavePoint" unique_id=1499129942]
 sprite_frames = SubResource("SpriteFrames_ov0la")
@@ -704,7 +706,7 @@ show_debug_rect = false
 message_prompt = "ENTER"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneDoors/SceneDoor2" unique_id=185621354]
-shape = SubResource("RectangleShape2D_atytq")
+shape = SubResource("RectangleShape2D_ej8f0")
 
 [node name="SceneDoor1" type="Area2D" parent="SceneDoors" unique_id=1125177279]
 position = Vector2(-413, -511)
@@ -715,7 +717,7 @@ show_debug_rect = false
 message_prompt = "ENTER"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneDoors/SceneDoor1" unique_id=1113975426]
-shape = SubResource("RectangleShape2D_8jlss")
+shape = SubResource("RectangleShape2D_sokw1")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1173776786]
 
@@ -748,7 +750,8 @@ show_debug_rect = false
 metadata/_custom_type_script = "uid://diqnotua8rsd6"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=58879163]
-position = Vector2(-407, -555)
+position = Vector2(-19.999992, -438.5225)
+scale = Vector2(3.4553027, 1.020859)
 energy = 1.6
 texture = SubResource("GradientTexture2D_ej8f0")
 texture_scale = 5.74

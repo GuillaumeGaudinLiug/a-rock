@@ -45,5 +45,5 @@ func _teleport(body: Node2D, target_point: Area2D, target_room: Room) -> void:
 	if target_room != null:
 		target_room.apply_camera_limits()
 
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
 	can_transition = true

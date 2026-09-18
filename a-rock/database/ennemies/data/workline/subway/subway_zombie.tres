@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://deyt2i32j2ati"]
+
+[ext_resource type="Resource" uid="uid://dscovi1tnj65s" path="res://database/ennemies/data/workline/subway/subway_zombie_behaviour.tres" id="1_jdecn"]
+[ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="2_p3lvf"]
+[ext_resource type="Texture2D" uid="uid://dmmrlkne6jy2d" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Enemies & Bosses - Enemies.png" id="3_ljeav"]
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="4_5gt6m"]
+[ext_resource type="Script" uid="uid://q4sdesfj265h" path="res://database/ennemies/scripts/loot_entry.gd" id="5_q1p04"]
+[ext_resource type="Resource" uid="uid://bguhpqyj3qla7" path="res://database/inventory/doliprane.tres" id="6_6bgl5"]
+[ext_resource type="Script" uid="uid://bn3756s33afkc" path="res://database/ennemies/scripts/enemy_data.gd" id="7_naxc7"]
+
+[sub_resource type="Resource" id="Resource_lqjpe"]
+script = ExtResource("2_p3lvf")
+metadata/_custom_type_script = "uid://dktbxvpu6u11y"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl4wa"]
+atlas = ExtResource("3_ljeav")
+region = Rect2(639, 590, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ys6n8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl4wa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_117nj"]
+script = ExtResource("5_q1p04")
+item = ExtResource("6_6bgl5")
+drop_chance = 0.1
+metadata/_custom_type_script = "uid://q4sdesfj265h"
+
+[resource]
+script = ExtResource("7_naxc7")
+enemy_name = "Subway Zombie"
+idle_sprite_frame = SubResource("SpriteFrames_ys6n8")
+behavior = ExtResource("1_jdecn")
+combat_animations = SubResource("Resource_lqjpe")
+determination = 7
+courage = 5
+passion = 3
+spirit = 5
+adaptability = 3
+max_ep = 30
+max_sp = 5
+xp_value = 20
+loot_table = Array[ExtResource("5_q1p04")]([SubResource("Resource_117nj")])
+metadata/_custom_type_script = "uid://bn3756s33afkc"

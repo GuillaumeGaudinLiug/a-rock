@@ -6,6 +6,7 @@ enum GameState { EXPLORATION, COMBAT, MENU, CUTSCENE, TITLESCREEN }
 
 var current_state: GameState = GameState.TITLESCREEN
 var _state_stack: Array[GameState] = []
+var is_interaction_locked: bool = false
 
 
 func change_state(new_state: GameState) -> void:
@@ -39,3 +40,12 @@ func is_state(state: GameState) -> bool:
 func goto_scene(scene_path: String, new_state: GameState = GameState.EXPLORATION) -> void:
 	get_tree().change_scene_to_file(scene_path)
 	change_state(new_state)
+
+# lock et unlock interaction
+func lock_interaction() -> void:
+	print("lock interactable")
+	is_interaction_locked = true
+
+func unlock_interaction() -> void:
+	print("unlock interactable")
+	is_interaction_locked = false

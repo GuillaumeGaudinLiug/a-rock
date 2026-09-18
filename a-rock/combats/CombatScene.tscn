@@ -41,6 +41,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ActionMenu" parent="BottomUI" unique_id=1309334554 instance=ExtResource("2_6wk8l")]
 
+[node name="ActionLabel" type="Label" parent="BottomUI" unique_id=1236452914]
+light_mask = 2
+visibility_layer = 2
+offset_left = 353.0
+offset_top = 5.0
+offset_right = 818.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CombatCamera" type="Camera2D" parent="." unique_id=1488651866]
 position = Vector2(117, 71)
 zoom = Vector2(3, 3)

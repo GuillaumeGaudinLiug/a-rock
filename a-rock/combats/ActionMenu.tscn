@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgakje7jxgkxg"]
 
 [ext_resource type="Script" uid="uid://buwfmdpj2e0ww" path="res://combats/action_menu.gd" id="1_0fmue"]
+[ext_resource type="Resource" uid="uid://c5ynnt1h6dwiv" path="res://database/skills/defense_base.tres" id="2_lbct4"]
 
 [node name="ActionMenu" type="Control" unique_id=1309334554]
 layout_mode = 3
@@ -15,6 +16,7 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_0fmue")
+defend_skill = ExtResource("2_lbct4")
 
 [node name="SkillListContainer" type="VBoxContainer" parent="." unique_id=785396235]
 layout_mode = 0

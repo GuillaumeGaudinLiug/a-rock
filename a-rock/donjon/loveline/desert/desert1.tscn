@@ -409,7 +409,6 @@ show_debug_rect = false
 shape = SubResource("RectangleShape2D_qmpne")
 
 [node name="Room" parent="." unique_id=1634010203 instance=ExtResource("4_wkowc")]
-visible = false
 size = Vector2(3800, 3200)
 wall_thickness = 20.0
 show_debug_rect = false

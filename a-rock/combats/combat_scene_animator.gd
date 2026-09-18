@@ -67,7 +67,6 @@ func play_skill_vfx(actor: CombatParticipant, targets: Array[CombatParticipant],
 			"vfx_parent": self,  # CombatScene elle-même, garantie d'être la bonne scène
 		}
 		for step in sequence:
-			print("Step: " + step.get_class())
 			step.play(context)
 
 

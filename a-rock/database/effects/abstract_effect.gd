@@ -46,7 +46,7 @@ func _resolve_hit(context: Dictionary) -> bool:
 
 	var chance: float = (base_accuracy + modifier) * user.get_accuracy_multiplier()
 
-	print("Chance to hit: %d" % chance)
+	print("Chance to hit:" + str(chance))
 	return randf() < chance
 
 func _on_miss(context: Dictionary) -> void:

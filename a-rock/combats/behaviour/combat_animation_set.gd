@@ -2,13 +2,13 @@
 class_name CombatAnimationSet
 extends Resource
 
-enum State { COMBAT, DAMAGE, KO, SPELL, WEAK }
+enum State { COMBAT, DAMAGE, KO, SPELL, DEFEND }
 
 @export var combat: SpriteFrames
 @export var damage: SpriteFrames
 @export var ko: SpriteFrames
 @export var spell: SpriteFrames
-@export var weak: SpriteFrames
+@export var defend: SpriteFrames
 
 
 # Recuperer les SpriteFrames en pointant sur le STATE
@@ -18,5 +18,5 @@ func get_frames(state: State) -> SpriteFrames:
 		State.DAMAGE: return damage
 		State.KO: return ko
 		State.SPELL: return spell
-		State.WEAK: return weak
+		State.DEFEND: return defend
 		_: return combat

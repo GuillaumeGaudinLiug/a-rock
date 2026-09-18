@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://le32ro1q6tb6"]
+
+[ext_resource type="Texture2D" uid="uid://dao1tu5xw1yhn" path="res://ressources/SpritesSheets/effects_icons/mid-icons.png" id="1_ocfyp"]
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="1_xep0i"]
+[ext_resource type="Script" uid="uid://cfk3fhyyyl1q3" path="res://combats/behaviour/stats_modifier.gd" id="2_ocfyp"]
+[ext_resource type="Script" uid="uid://dow1wm5hhwn4j" path="res://database/effects/abstract_effect.gd" id="3_1ubs4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dgil"]
+atlas = ExtResource("1_ocfyp")
+region = Rect2(25.07834, 0.7494564, 10.220785, 10.515612)
+
+[sub_resource type="Resource" id="Resource_1ubs4"]
+resource_local_to_scene = true
+script = ExtResource("2_ocfyp")
+stat_name = "damage_taken_multiplier"
+percent_amount = -0.6
+metadata/_custom_type_script = "uid://cfk3fhyyyl1q3"
+
+[sub_resource type="Resource" id="Resource_ocfyp"]
+script = ExtResource("2_ocfyp")
+stat_name = "status_apply_multiplier"
+percent_amount = -1.0
+metadata/_custom_type_script = "uid://cfk3fhyyyl1q3"
+
+[resource]
+script = ExtResource("1_xep0i")
+status_name = "Defense"
+visible_in_battle = true
+icon = SubResource("AtlasTexture_0dgil")
+duration_turns = 2
+stat_modifiers = Array[ExtResource("2_ocfyp")]([SubResource("Resource_1ubs4"), SubResource("Resource_ocfyp")])
+trigger = 4
+is_cancellable = false
+base_apply_chance = 1.3
+min_duration_turns = 2
+max_duration_turns = 2
+duration_stat_influence = 0.0
+metadata/_custom_type_script = "uid://crvqrxeyh3pcb"
