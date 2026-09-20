@@ -5,9 +5,9 @@ extends AbstractEffect
 @export var amount: int = 5
 @export_range(0.0, 1.0, 0.01) var variance: float = 0.15
 @export_range(0.0, 5.0, 0.01) var att_determination_multiplier = 0.5
-@export_range(0.0, 5.0, 0.01) var att_passion_multiplier = 1.5
+@export_range(0.0, 5.0, 0.01) var att_passion_multiplier = 1.8
 @export_range(0.0, 5.0, 0.01) var def_courage_multiplier = 0.5
-@export_range(0.0, 5.0, 0.01) var def_spirit_multiplier = 1.55
+@export_range(0.0, 5.0, 0.01) var def_spirit_multiplier = 1.50
 
 @export_range(0.0, 5.0, 0.01) var def_backrow_multiplier = 1
 @export_range(0.0, 5.0, 0.01) var att_backrow_multiplier = 1
@@ -27,11 +27,11 @@ func _execute(context: Dictionary,result : EffectResult) -> void:
 	
 	var multiplier := 1.0 + randf_range(-variance, variance)
 
-	var formula = max(1, int((att - def)/def_row * multiplier))
+	var formula = max(1, int((att - def)/def_row * multiplier)) * target.get_damage_taken_multiplier()
 	target.current_sp = max(target.current_sp - formula, 0) 
 	
 	result.hit = true
 	result.value = formula
 	result.kind = EffectResult.Kind.DAMAGE_SP
-	print("Damage result: " + str(result.value))
+	print("Damage SP result: " + str(result.value))
 	return 

@@ -11,8 +11,8 @@ script = ExtResource("1_ys6n8")
 [node name="Background" type="Sprite2D" parent="." unique_id=1819496018]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(60, 30)
-scale = Vector2(1.65, 1.65)
+position = Vector2(120, 60)
+scale = Vector2(3, 3)
 
 [node name="EnemySprites" type="Node2D" parent="." unique_id=1196702216]
 
@@ -54,4 +54,4 @@ vertical_alignment = 1
 
 [node name="CombatCamera" type="Camera2D" parent="." unique_id=1488651866]
 position = Vector2(117, 71)
-zoom = Vector2(3, 3)
+zoom = Vector2(1.5, 1.5)

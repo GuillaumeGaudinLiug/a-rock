@@ -44,22 +44,26 @@ theme_override_constants/separation = 25
 custom_minimum_size = Vector2(80, 0)
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "SKills"
 
 [node name="ItemsTabButton" type="Button" parent="CategoryTabs" unique_id=317098082]
 custom_minimum_size = Vector2(80, 0)
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Items"
 
 [node name="DefendTabButton" type="Button" parent="CategoryTabs" unique_id=275501425]
 custom_minimum_size = Vector2(80, 0)
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Defend"
 
 [node name="RowTabButton" type="Button" parent="CategoryTabs" unique_id=235957632]
 custom_minimum_size = Vector2(80, 0)
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Row"

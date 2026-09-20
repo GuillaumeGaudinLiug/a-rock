@@ -25,15 +25,15 @@ script = ExtResource("1_m76wr")
 xp_required = 5000
 metadata/_custom_type_script = "uid://ci3ugbqxtir1c"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_62iog"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7013"]
 atlas = ExtResource("4_62iog")
-region = Rect2(1, 0, 16, 26)
+region = Rect2(1, 1, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kccyu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_62iog")
+"texture": SubResource("AtlasTexture_h7013")
 }],
 "loop": 1,
 "name": &"default",

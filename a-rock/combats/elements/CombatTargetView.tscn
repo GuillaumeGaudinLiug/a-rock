@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cu2m4xnc27kmx"]
 
 [ext_resource type="Script" uid="uid://d0xcbhhfj005j" path="res://combats/elements/combat_target_view.gd" id="1_2pvfi"]
-[ext_resource type="Texture2D" uid="uid://dnyoac27uri5c" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Tilesets - Castle Interior _ Jail.png" id="2_u8ad6"]
+[ext_resource type="Texture2D" uid="uid://chu22fk61hanf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - White Magic Effects.png" id="2_8py7k"]
 [ext_resource type="Texture2D" uid="uid://lphyaka20ygf" path="res://ressources/old_SpriteSheets/SNES - Final Fantasy V - Effects - Weapons Effects.png" id="3_8py7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_320xt"]
 size = Vector2(27, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6m34"]
-atlas = ExtResource("2_u8ad6")
-region = Rect2(99.4347, 239.6693, 10.010948, 14.145905)
+atlas = ExtResource("2_8py7k")
+region = Rect2(15.078531, 206.42683, 17.71501, 18.911972)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_b0qvs"]
 
@@ -27,15 +27,16 @@ script = ExtResource("1_2pvfi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327913756]
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(1.1, 1.1)
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2094892728]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1425148011]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_320xt")
 
 [node name="Highlight" type="Sprite2D" parent="." unique_id=332596651]
 visible = false
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_y6m34")
 
 [node name="StatusIcons" type="HBoxContainer" parent="." unique_id=212264503]
@@ -46,31 +47,33 @@ offset_bottom = -20.0
 theme_override_constants/separation = 4
 
 [node name="StatBars" type="VBoxContainer" parent="." unique_id=308573001]
-offset_left = -14.0
-offset_top = 13.0
-offset_right = 202.0
-offset_bottom = 59.0
+offset_left = -20.0
+offset_top = 35.0
+offset_right = 380.0
+offset_bottom = 185.0
 scale = Vector2(0.3, 0.3)
 
 [node name="EpBar" type="ProgressBar" parent="StatBars" unique_id=1560634754]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 theme_override_styles/background = SubResource("StyleBoxLine_b0qvs")
 show_percentage = false
 
 [node name="EpLabel" type="Label" parent="StatBars" unique_id=1163710617]
 layout_mode = 2
+theme_override_font_sizes/font_size = 34
 
 [node name="SpBar" type="ProgressBar" parent="StatBars" unique_id=250144131]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 34
 theme_override_styles/background = SubResource("StyleBoxLine_w4dlt")
 show_percentage = false
 
 [node name="SpLabel" type="Label" parent="StatBars" unique_id=1478331302]
 layout_mode = 2
+theme_override_font_sizes/font_size = 34
 
 [node name="EnemyStatsBar" type="VBoxContainer" parent="." unique_id=1838063038]
 visible = false
@@ -82,17 +85,17 @@ scale = Vector2(0.3, 0.3)
 
 [node name="EnemyEpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=1372549521]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 34
 show_percentage = false
 
 [node name="EnemySpBar" type="ProgressBar" parent="EnemyStatsBar" unique_id=81102817]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 34
 show_percentage = false
 
 [node name="ActiveTurnIndicator" type="Sprite2D" parent="." unique_id=1939004473]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-26, -9.536743e-07)
-scale = Vector2(1.7499998, 1.2747395)
+position = Vector2(-39, 1.1368684e-13)
+scale = Vector2(2, 1.457)
 texture = SubResource("AtlasTexture_u8ad6")

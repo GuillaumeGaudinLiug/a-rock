@@ -1,12 +1,12 @@
 extends CombatSceneAnimator
 
-@export var ENEMY_FRONT_X := 0.0
-@export var  ENEMY_BACK_X := -50.0
-@export var  PLAYER_FRONT_X := 100.0
-@export var  PLAYER_BACK_X := 120.0
-@export var  PLAYER_ROW_SPACING_Y := 55.0
-@export var  ENEMY_ROW_SPACING_Y := 90.0
-@export var  OFFSET_Y := 25
+@export var ENEMY_FRONT_X := -10.0
+@export var  ENEMY_BACK_X := -150.0
+@export var  PLAYER_FRONT_X := 200.0
+@export var  PLAYER_BACK_X := 240.0
+@export var  PLAYER_ROW_SPACING_Y := 110.0
+@export var  ENEMY_ROW_SPACING_Y := 180.0
+@export var  OFFSET_Y := -10
 @export var BOSS_y := 120
 
 
@@ -34,8 +34,8 @@ var player_participants: Array[CombatParticipant] = []
 
 
 func _ready() -> void:
-	combat_camera.position = Vector2(60, 50)  # ajuste le Y selon le nombre de lignes (ROW_SPACING_Y * nb participants / 2)
-	combat_camera.zoom = Vector2(3, 3) 
+	combat_camera.position = Vector2(120, 100)  # ajuste le Y selon le nombre de lignes (ROW_SPACING_Y * nb participants / 2)
+	combat_camera.zoom = Vector2(1.5, 1.5) 
 	combat_camera.make_current()
 	#Ouverture du bus de signal des effets pour alimenter les damagePopup
 	EffectSignalBus.effect_applied.connect(_on_effect_applied)

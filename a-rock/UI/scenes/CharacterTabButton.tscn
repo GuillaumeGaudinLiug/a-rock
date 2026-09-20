@@ -41,7 +41,7 @@ render_target_update_mode = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/PreviewViewport/SubViewport" unique_id=334547146]
 position = Vector2(37, 57)
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 
 [node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1073690736]
 layout_mode = 2

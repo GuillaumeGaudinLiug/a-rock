@@ -3,30 +3,33 @@
 [ext_resource type="Texture2D" uid="uid://vfi4k027l1gd" path="res://ressources/SpritesSheets/personnage/Protector.png" id="1_b74ey"]
 [ext_resource type="Script" uid="uid://dktbxvpu6u11y" path="res://combats/behaviour/combat_animation_set.gd" id="2_mc4em"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc4em"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(69, 1, 32, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0a4ov"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(37, 0, 16, 26)
+region = Rect2(35, 1, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1e3qm"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(19, 0, 16, 26)
+region = Rect2(103, 1, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a574y"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(55, 0, 16, 26)
+region = Rect2(171, 1, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sth8h"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(91, 0, 16, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahqns"]
-atlas = ExtResource("1_b74ey")
-region = Rect2(73, 0, 16, 26)
+region = Rect2(137, 1, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fmue"]
 animations = [{
 "frames": [{
 "duration": 0.8,
+"texture": SubResource("AtlasTexture_mc4em")
+}, {
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_0a4ov")
 }, {
 "duration": 0.5,
@@ -35,35 +38,32 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_a574y")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_sth8h")
-}, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ahqns")
+"texture": SubResource("AtlasTexture_sth8h")
 }],
 "loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc4em"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sufy1"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(181, 0, 16, 26)
+region = Rect2(341, 1, 32, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gwidp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc4em"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mc4em")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sufy1")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b74ey"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(163, 0, 16, 26)
+region = Rect2(307, 1, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lsevi"]
 animations = [{
@@ -76,37 +76,37 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sufy1"]
-atlas = ExtResource("1_b74ey")
-region = Rect2(109, 0, 16, 26)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_riwf1"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(127, 0, 16, 26)
+region = Rect2(205, 1, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dal7s"]
 atlas = ExtResource("1_b74ey")
-region = Rect2(145, 0, 16, 26)
+region = Rect2(239, 1, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjluv"]
+atlas = ExtResource("1_b74ey")
+region = Rect2(273, 1, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a4ov"]
 animations = [{
 "frames": [{
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_sufy1")
+"texture": SubResource("AtlasTexture_riwf1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dal7s")
 }, {
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_riwf1")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_riwf1")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_sufy1")
+"texture": SubResource("AtlasTexture_dal7s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dal7s")
+"texture": SubResource("AtlasTexture_qjluv")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -114,7 +114,7 @@ animations = [{
 [resource]
 script = ExtResource("2_mc4em")
 combat = SubResource("SpriteFrames_0fmue")
-damage = SubResource("SpriteFrames_gwidp")
+damage = SubResource("SpriteFrames_mc4em")
 ko = SubResource("SpriteFrames_lsevi")
 spell = SubResource("SpriteFrames_0a4ov")
 metadata/_custom_type_script = "uid://dktbxvpu6u11y"

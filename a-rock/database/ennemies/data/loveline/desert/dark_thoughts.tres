@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dcjrocbtyd0cx"]
+
+[ext_resource type="Script" uid="uid://crvqrxeyh3pcb" path="res://combats/behaviour/status_effect.gd" id="1_cdymk"]
+[ext_resource type="Script" uid="uid://q4sdesfj265h" path="res://database/ennemies/scripts/loot_entry.gd" id="2_fmtp3"]
+[ext_resource type="Script" uid="uid://bn3756s33afkc" path="res://database/ennemies/scripts/enemy_data.gd" id="3_w7epu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1ic0"]
+
+[resource]
+script = ExtResource("3_w7epu")
+enemy_name = "Dark thougth"
+idle_sprite_frame = SubResource("SpriteFrames_a1ic0")
+metadata/_custom_type_script = "uid://bn3756s33afkc"
